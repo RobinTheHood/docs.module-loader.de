@@ -37,13 +37,13 @@ An dieser Stelle kann zudem erwähnt werden, dass die offizielle Schreibweise vo
 
 modified ist eine unter der GNU General Public License (GPL v2) lizenzierte E-Commerce Online Shopsoftware, mit der Einzelpersonen oder Firmen einen Online-Shop auf ihrem eigenen Server oder bei einem Hostingprovider im Internet betreiben können.
 
-Der Programmcode von modified wird auf der offiziellen Webseite [www.modified-shop.org/download](www.modified-shop.org/download) kostenlos veröffentlicht und von einem Entwicklerteam in einem SVN Repository entwickelt. Ein großteil der aktuellen Entwicklung findet dort von den Geschäftsführern Gerhard Waldemair und Torsten Riemer der modified UG (haftungsbeschränkt) & Co. KG statt.
+Der Programmcode von modified wird auf der offiziellen Webseite [www.modified-shop.org/download](www.modified-shop.org/download) kostenlos veröffentlicht und von einem Entwicklerteam in einem SVN Repository entwickelt. Ein Großteil der aktuellen Entwicklung findet dort von den Geschäftsführern Gerhard Waldemair und Torsten Riemer der modified UG (haftungsbeschränkt) & Co. KG statt.
 
 ## Wie du dich am Projekt modified beteiligen kannst
 
-In diesem Text fokusieren wir uns darauf, wie du dich durch die Entwicklung von Modulen, am modified Projekt beteiligen kannst. Abgesehen davon gibt es weitere Möglichkeiten der Beteiligung, die wir dir in diesem Abschnitt kurz vorstellen möchten.
+In diesem Text fokussieren wir uns darauf, wie du dich durch die Entwicklung von Modulen, am modified Projekt beteiligen kannst. Abgesehen davon gibt es weitere Möglichkeiten der Beteiligung, die wir dir in diesem Abschnitt kurz vorstellen möchten.
 
-- Eine direkte Mitarbeit am Quellcode ist z. B. möglich, sobald du dich als erfahrener Entwickler beweist. Eine öffentliche Anleitung die beschreibt, welche Anforderungen ein Entwickler erfüllen muss, damit er als erfahren gilt, gibt es nicht. Versuche dich im modified Forum zu beteiligen und zeige dort was du kannst.
+- Eine direkte Mitarbeit am Quellcode ist z. B. möglich, sobald du dich als erfahrener Entwickler beweist. Eine öffentliche Anleitung, die beschreibt, welche Anforderungen ein Entwickler erfüllen muss, damit er als erfahren gilt, gibt es nicht. Versuche dich im modified Forum zu beteiligen und zeige dort, was du kannst.
 
 - Fehler, Bugs und Verbesserungswünsche können von jedem in einen Bugtracker eingetragen werden. modified verwendet hierfür die Software Trac [trac.modified-shop.org](https://trac.modified-shop.org).
 
