@@ -36,11 +36,7 @@ echo $modifedVariable
 
 Der Programmcode in Zeile 5 wird bei modified Autoinclude genannt. Dieser Autoinclude kann für uns Code aus einer Datei mit der Endung `.php` nachladen. Die Konstante `DIR_FS_CATALOG` beinhaltet den Pfad des Rootverzeichnises. Somit werden mit `require_once` alle Datei mit der Endung `.php` aus dem Verzeichnis `/includes/extra/example/` in die Datei `/example_xyz.php` zwischen Zeile 7 und 9 eingefügt.
 
-<<<<<<< HEAD
-_Hinweis: Beachte das nicht immer `require_once()` verwendet wird um Code zu laden. Es gibt Autoincludes, bei denen `require()` oder `include()` verwendet werden. Du solltest dir die Datei vorher immer ansehen und überprüfen, mit welcher Funktion deine Datei in den Programmcode hinzugefügt wird._
-=======
 _Hinweis: Beachte, dass nicht immer `require_once()` verwendet wird, um Code zu laden. Es gibt Autoincludes, bei denen `require()` oder `include()` verwendet werden. Du solltest dir dediei Datei vorher immer ansehen und überprüfen, mit welcher Funktion deine Datei in den Programmcode hinzugefügt wird._
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 Um die Zeile 5 in unserem fiktiven Controller Programmcode zu erweitern, benötigen wir eine Datei, die in `/includes/extra/example/` liegt. Diese Datei solltest du nach der Konvention aus Abschnitt [_"???"_](#) benennen. Wir wählen z. B. `mc_my_first_module.php`. Diese Datei soll jetzt dafür sorgen, dass wir die Variable `$modifedVariable` aus der `/example_xyz.php` Datei mit unserem eigenen Wert überschreiben.
 
@@ -54,21 +50,13 @@ declare(strict_types=1);
 $modifiedVariable = 20 // Überschreibe mit unserem Wert.
 ```
 
-<<<<<<< HEAD
-Mit unserem Modul bzw. mit unserer Autoinclude-Datei `mc_my_first_module.php` in `/includes/extra/example/` konnten wir den Shop soweit erweitern, dass statt der Zahl `10` die Zahl `20` im Browser ausgegeben wird.
-=======
 Mit unserem Modul bzw. mit unserer Autoinclude-Datei `mc_my_first_module.php` in `/includes/extra/example/` konnten wir den Shop so weit erweitern, dass statt der Zahl `10` die Zahl `20` im Browser ausgegeben wird.
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 ??? note "Textstatus 1"
 
     Status: 3 von 5 - Skizze
 
-<<<<<<< HEAD
-Zu bachten ist das `declare(strict_types = 1);` und das am Ende der Datei kein `?>` vorkommt, wieso du am Ende von PHP Dateien kein PHP Closing Tag `?>` verwenden solltest, beschreibt der PSR Standard X und folgende Link: https://stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag
-=======
 Zubachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `?>` vorkommt, wieso du am Ende von PHP Dateien kein PHP Closing Tag `?>` verwenden solltest, beschreibt der PSR Standard X und folgende Link: https://stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 ## Konkretes Beispiel anhand von login.php
 
@@ -76,11 +64,7 @@ Zubachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `
 
     Status: 2 von 5 - Erster Entwurf
 
-<<<<<<< HEAD
-Anhand der `/login.php` wollen wir uns ansehen, wie das _Autoinclude System_ für eine richtige Shop Funktion funktioniert. Wir wollen `/login.php` so erweitern, dass der Warenkorb des Kunden beim Einloggen nicht wieder hergestellt wird. Dazu schauen wir uns als erstes die Controller-Datei `/login.php` an und überprüfen, an welcher Stelle wir per Autoinclude in das System eingreifen können.
-=======
 Anhand der `/login.php` wollen wir uns ansehen, wie das _Autoinclude System_ für eine richtige Shop-Funktion funktioniert. Wir wollen `/login.php` so erweitern, dass der Warenkorb des Kunden beim Einloggen nicht wieder hergestellt wird. Dazu schauen wir uns all erstes die Controller-Datei `/login.php` an und überprüfen, an welcher Stelle wir per Autoinclude in das System eingreifen können.
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 ```php title="/login.php"
 <?php
@@ -98,11 +82,7 @@ foreach (auto_include(DIR_FS_CATALOG.'includes/extra/login/','php') as $file) re
 
 Normalerweise lädt `$_SESSION['cart']->restore_contents();` den Warenkorb des Kunden aus der Datenbank. Das können wir nicht verhindern. Allerdings können wir versuchen, den Warenkorb nachträglich zu verändern.
 
-<<<<<<< HEAD
-Hier sehen wir, dass wir nach `$_SESSION['cart']->restore_contents();` einen Autoinclude / Hookpoint vorfinden. An dieser Stelle können wir Code nachladen, der den Warenkorb wieder leert. Das können wir mit einer Datei machen, die wir unter `/includes/extra/login/`. Die Datei bennen wir wieder nach unserer Namenskonvention (Abschnitt [_"???"_](#)) `mc_my_first_module.php`.
-=======
 Hier sehen wir, dass wir nach `$_SESSION['cart']->restore_contents();` einen Autoinclude / Hookpoint vorfinden. An dieser Stelle können wir Code nachladen, der den Warenkorb wieder leert. Das können wir mit einer Datei machen, die wir unter `/includes/extra/login/`. Die Datei benennen wir wieder nach unserer Namenskonvention (Abschnitt [_"???"_](#)) `mc_my_first_module.php`.
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 ```php title="/includes/extra/login/mc_my_first_module.php"
 <?php
@@ -152,15 +132,9 @@ Im Wiki von modified gibt es mittlerweile ebenfalls einen Eintrag, der versucht 
 
     Status: 2 von 5 - Erster Entwurf
 
-<<<<<<< HEAD
-Es ist immer sinnvoll feste Namenskonventionen zu verwenden. Diese solltest du auch auf Autoinclude-Datein anwenden. Das hilft Namenskollisionen mit Bezeichnern aus dem Core und anderen Modulen zu vermeiden und erleichtert das Wiederfinden und Zuordnen von Dateien, die im System verteilt wurden.
-
-Wenn Dateien die zu einem Modul gehören unterschiedlich benannt wurden, können Entwickler und Anwender, nicht mehr auf den ersten Blick erkennen, zu welchem Modul eine Datei gehört. Möglicherweise lässt sich nicht einmal erkennen, ob die Datei sogar Teil des Cores ist. Besonders wenn ein Modul wieder aus dem System entfernt werden soll, bleibt oft nur der Weg jedes Verzeichnis zu kontrollieren und betroffene Dateien zu entfernen. Lassen sich die Dateien nicht an ihrem Namen erkennen, ist der Aufwand um ein Vielfaches größer.
-=======
 Es ist immer sinnvoll, feste Namenskonventionen zu verwenden. Diese solltest du auch auf Autoinclude-Datein anwenden. Das hilft Namenskollisionen mit Bezeichnern aus dem Core und anderen Modulen zu vermeiden und erleichtert das Wiederfinden und Zuordnen von Dateien, da im System verteilt wurden.
 
 Wenn Dateien, die zu einem Modul gehören, unterschiedlich benannt wurden, können Entwickler und Anwender, nicht mehr auf den ersten Blick erkennen, zu welchem Modul eine Datei gehört. Möglicherweise lässt sich nicht einmal erkennen, ob die Datei sogar Teil des Cores ist. Besonders wenn ein Modul wieder aus dem System entfernt werden soll, bleibt oft nur der Weg jedes Verzeichnis zu kontrollieren und betroffenen Dateien zu entfernen. Lassen sich die Dateien nicht an ihrem Namen erkennen, ist der Aufwand um ein Vielfaches größer.
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 Leider gibt uns modified keine Namenskonvention vor, an die wir uns halten könnten. Aus diesem Grund übernimmt das dieser Text. Wir stellen dir eine Namenskonvention vor, die sich über viele Module hinweg bewährt hat und die selbst gesteckten Anforderungen erfüllt.
 
@@ -170,11 +144,7 @@ Leider gibt uns modified keine Namenskonvention vor, an die wir uns halten könn
 
     Status: 3 von 5 - Skizze
 
-<<<<<<< HEAD
-Autoinclude-Dateinamen sollten alle in snakecase geschrieben sein.
-=======
 Autoinclude-Dateinamen sollten alle in `snake_case` geschrieben sein.
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 Der Vendorprefix ist eine kurze Zeichenkombination, die den Hersteller des Moduls eindeutig bestimmen kannen. Er kann z. B. aus den Anfangsbuchstaben deines Namens bestehen oder aus den Anfangsbuchstaben eines Firmennamens. Wichtig ist, dass du versuchst einen VendorPrefix zu wählen, von dem du glaubst oder ausgehen kann, dass er im modified Umfeld nur von dir verwendet wird. Leider gibt es zurzeit keine Möglichkeit, um herauszufinden, dass du einen VendorPrefix verwendest, der von sonst niemanden verwendet wird. Solltest du Module mit dem MMLC programmieren, können mit diesem nur Module veröffentlicht werden, die einen eindeutigen VendorPrefix verwenden.
 
@@ -184,11 +154,7 @@ Der Vendorprefix ist eine kurze Zeichenkombination, die den Hersteller des Modul
 
     Status: 2 von 5 - Erster Entwurf
 
-<<<<<<< HEAD
-In diesem Abschnitt schauen wir uns zwei Beispiele an, wie du Autoinclude-Dateien bennen solltest. Wie bereits geschrieben, setzt sich der Dateiname (Filename) aus folgenden Elementen zusammen: dem Vendorprefix und Modulnamen in Snakecase.
-=======
 In diesem Abschnitt schauen wir uns zwei Beispiele an, wie du Autoinclude-Dateien benennen solltest. Wie bereits geschrieben, setzt sich der Dateiname (Filename) aus folgenden Elementen zusammen, dem Vendorprefix und Modulnamen in `snake_case`.
->>>>>>> a4f6b98 (docs: fix some spellings)
 
 Filename: `<Vendor-Prefix>_<SnakeCase>.php`
 
