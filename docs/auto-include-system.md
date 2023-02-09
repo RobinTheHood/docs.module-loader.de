@@ -18,7 +18,9 @@ Wie das Autoinclude System genau funktioniert und wie wir es verwenden können, 
 
 Als Erstes schauen wir uns ein allgemeines Beispiel zum Verständnis an, danach werden wir uns mit einem realen Beispiel beschäftigen, in dem wir die Login-Funktion von modified mit einer Autoinclude-Datei erweitern.
 
-_Hinweis: Die hier aufgeführten Beispiele sind nicht mit einem System Modul verknüpft. Schaue dir den Abschnitt [_"System Module"_](#) an, damit du erfährst, wie du eine Autoinclude-Datei erweiterst, damit diese in Kombination mit einem System Modul arbeitet._
+!!! note "Heinweis"
+
+    Die hier aufgeführten Beispiele sind nicht mit einem System Modul verknüpft. Schaue dir den Abschnitt [_"System Module"_](#) an, damit du erfährst, wie du eine Autoinclude-Datei erweiterst, damit diese in Kombination mit einem System Modul arbeitet._
 
 Für dieses allgemeine Beispiel stellen wir uns vor, dass es im modified Shop eine Seite bzw. eine Controller-Datei im Rootverzeichnis mit dem Namen `example_xyz.php` gibt, die wir erweitern möchten. Diese fiktive Seite gibt immer den Wert 10 an den Browser aus. Wir sehen im Browser immer die Zahl 10, wenn wir diese Seite aufrufen. Nun möchten wir `example_xyz.php` so erweitern oder verändern, dass mit unserem Modul bzw. unsere Autoinclude-Datei nur noch die Zahl 20 an den Browser ausgegeben wird.
 
@@ -34,15 +36,17 @@ foreach (auto_include(DIR_FS_CATALOG.'includes/extra/example/','php') as $file) 
 echo $modifedVariable
 ```
 
-Der Programmcode in Zeile 5 wird bei modified Autoinclude genannt. Dieser Autoinclude kann für uns Code aus einer Datei mit der Endung `.php` nachladen. Die Konstante `DIR_FS_CATALOG` beinhaltet den Pfad des Rootverzeichnises. Somit werden mit `require_once` alle Datei mit der Endung `.php` aus dem Verzeichnis `/includes/extra/example/` in die Datei `/example_xyz.php` zwischen Zeile 7 und 9 eingefügt.
+Der Programmcode in Zeile 5 wird bei modified Autoinclude genannt. Dieser Autoinclude kann für uns Code aus einer Datei mit der Endung `.php` nachladen. Die Konstante `DIR_FS_CATALOG` beinhaltet den Pfad des Rootverzeichnises. Somit werden mit `require_once` alle Datei mit der Endung `.php` aus dem Verzeichnis `/includes/extra/example/` in die Datei `/example_xyz.php` zwischen Zeile 4 und 6 eingefügt.
 
-_Hinweis: Beachte, dass nicht immer `require_once()` verwendet wird, um Code zu laden. Es gibt Autoincludes, bei denen `require()` oder `include()` verwendet werden. Du solltest dir dediei Datei vorher immer ansehen und überprüfen, mit welcher Funktion deine Datei in den Programmcode hinzugefügt wird._
+!!! warning "Achtung"
+
+    Beachte, dass nicht immer `require_once()` verwendet wird, um Code zu laden. Es gibt Autoincludes, bei denen `require()` oder `include()` verwendet werden. Du solltest dir dediei Datei vorher immer ansehen und überprüfen, mit welcher Funktion deine Datei in den Programmcode hinzugefügt wird.
 
 Um die Zeile 5 in unserem fiktiven Controller Programmcode zu erweitern, benötigen wir eine Datei, die in `/includes/extra/example/` liegt. Diese Datei solltest du nach der Konvention aus Abschnitt [_"???"_](#) benennen. Wir wählen z. B. `mc_my_first_module.php`. Diese Datei soll jetzt dafür sorgen, dass wir die Variable `$modifedVariable` aus der `/example_xyz.php` Datei mit unserem eigenen Wert überschreiben.
 
 Unser Code in `mc_my_first_module.php` könnte zu diesem Zweck wie folgt aussehen:
 
-```php linenums="1" title="/includes/extra/example/mc_my_first_module.php"
+```php title="/includes/extra/example/mc_my_first_module.php"
 <?php
 
 declare(strict_types=1);
@@ -56,7 +60,7 @@ Mit unserem Modul bzw. mit unserer Autoinclude-Datei `mc_my_first_module.php` in
 
     Status: 3 von 5 - Skizze
 
-Zubachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `?>` vorkommt, wieso du am Ende von PHP Dateien kein PHP Closing Tag `?>` verwenden solltest, beschreibt der PSR Standard X und folgende Link: https://stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag
+Zubachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `?>` vorkommt, wieso du am Ende von PHP Dateien kein PHP Closing Tag `?>` verwenden solltest, beschreibt der PSR Standard X und folgende Link: [stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag](https://stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag)
 
 ## Konkretes Beispiel anhand von login.php
 
@@ -124,7 +128,7 @@ Da sich die Anzahl der Autoincludes von Version zu Version des modified Systems 
 
 Wenn du eine IDE oder einen Code-Editor wie VS Code verwendest, in dem du global über dein gesamtes Projekt eine Suche starten kannst, bietet es sich an, nach dem Vorkommen der Zeichenkette 'auto_include' zu suchen, um alle Autoincludes in deiner modified Version zu finden.
 
-Im Wiki von modified gibt es mittlerweile ebenfalls einen Eintrag, der versucht alle Autoincludes aufzuführen (https://www.modified-shop.org/wiki/Auto_include_Modul_System). Falls du eine sehr neue modified Version verwendest, werden hier jedoch nicht immer ganz aktuell alle Autoincludes aufgelistet.
+Im Wiki von modified gibt es mittlerweile ebenfalls einen Eintrag, der versucht alle Autoincludes aufzuführen [www.modified-shop.org/wiki/Auto_include_Modul_System](https://www.modified-shop.org/wiki/Auto_include_Modul_System). Falls du eine sehr neue modified Version verwendest, werden hier jedoch nicht immer ganz aktuell alle Autoincludes aufgelistet.
 
 ## Namenskonventionen von Autoinclude-Dateien
 
@@ -156,15 +160,15 @@ Der Vendorprefix ist eine kurze Zeichenkombination, die den Hersteller des Modul
 
 In diesem Abschnitt schauen wir uns zwei Beispiele an, wie du Autoinclude-Dateien benennen solltest. Wie bereits geschrieben, setzt sich der Dateiname (Filename) aus folgenden Elementen zusammen, dem Vendorprefix und Modulnamen in `snake_case`.
 
-Filename: `<Vendor-Prefix>_<SnakeCase>.php`
+Filename: `<Vendorprefix>_<snake_case>.php`
 
 | Bezeichnung  | Beispiel 1               | Beispiel 2               |
 | ------------ | ------------------------ | ------------------------ |
 | Vendor       | My Company               | RobinTheHood             |
 | Modulname    | My first Module          | Example Module           |
 | Vendorprefix | `mc`                     | `rth`                    |
-| SnakeCase    | `my_first_module`        | `example_module`         |
+| snake_case   | `my_first_module`        | `example_module`         |
 | Filename     | `mc_my_first_module.php` | `rth_example_module.php` |
 
 Weitere Informationen zu Namensconventionen findest du unter:
-(https://module-loader.de/docs/naming_convention.php)
+[module-loader.de/docs/naming_convention.php](https://module-loader.de/docs/naming_convention.php)

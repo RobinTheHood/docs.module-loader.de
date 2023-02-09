@@ -1,0 +1,3 @@
+# Klassenerweiterung für modified programmieren
+
+Lorem ...

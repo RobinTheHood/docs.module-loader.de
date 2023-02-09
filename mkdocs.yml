@@ -6,12 +6,20 @@ site_url: "https://docs.module-loader.de"
 nav:
   - Vorwort: index.md
   - Einleitung: introduction.md
-  - Die Architektur von modified: architecture.md
-  - Was ist ein Modul im modified Kontext?: module-modified.md
-  - Das Autoinclude System von modified: auto-include-system.md
-  - System Modul: module-system.md
-  - Shipping Modul: module-shipping.md
-  - Payment Modul: module-payment.md
+  - Architektur: architecture.md
+  - Module : module-modified.md
+  - Autoinclude System: auto-include-system.md
+  - Modul Klassen:
+    - System: module-system.md
+    - Shipping: module-shipping.md
+    - Payment: module-payment.md
+    - OrderTotal: module-order-total.md
+    - ClassExtention: module-class-extention.md
+  - Configuration:
+    - configuration.md
+    - setFunction: configuration-set.md
+    - useFunction: configuration-use.md
+  - Admin-Menü erweitern: admin-menu.md
   - Appendix:
     - modifed Menüpunkte: modified-menu.md
 
@@ -22,6 +30,7 @@ theme:
 
   features:
     #- navigation.instant
+    - navigation.indexes
     - navigation.tracking
     - navigation.sections
     - navigation.footer

@@ -10,7 +10,9 @@ Ein Modul für modified kannst du dir als Ansammlung von hauptsächlich Include-
 
 Die Autoinclude-Dateien werden durch Autoinclude-Stellen in den modified Core geladen, an denen du mit deinem Modul eingreifen möchtest. Nicht jede beliebige Stelle des modified Systems ist erweiterbar. Auf die Möglichkeiten und Grenzen gehen wir im Abschnitt [_"Das Autoinclude System"_](#) ein.
 
-_Hinweis: Einige Entwickler umgehen die Einschränkung, nicht jede beliebige Stelle erweitern zu können, indem sie "nicht updatefähige Module" programmieren (siehe Abschnitt [_"Nicht updatefähige Module"_](#)). Das kann jedoch nicht empfohlen werden. Nicht updatefähige Module sollten nur im Ausnahmefall programmiert werden._
+!!! warning "Achtung"
+
+    Einige Entwickler umgehen die Einschränkung, nicht jede beliebige Stelle erweitern zu können, indem sie "nicht updatefähige Module" programmieren (siehe Abschnitt [*"Nicht updatefähige Module"*](#)). Das kann jedoch nicht empfohlen werden. Nicht updatefähige Module sollten nur im Ausnahmefall programmiert werden.
 
 ## Entwicklung von Modulen
 
@@ -44,7 +46,9 @@ Im modified Umfeld wird von einem _nicht updatefähigen Modul_ gesprochen, wenn 
 
 Ein nicht updatefähiges Modul verhindert also, dass du dein modified System fehlerfrei updaten kannst, ohne dass du nach dem Update kontrollieren musst, ob das Modul noch ordnungsgemäß eingebaut ist und funktioniert.
 
-_Hinweis: Änderungen an den Core-Dateien sollten, wenn möglich, immer vermieden werden. Aus diesem Grund ist die Verwendung, der Einbau und die Entwicklung von nicht updatefähigen Modulen nicht zu empfehlen._
+!!! warning "Achtung"
+
+    Änderungen an den Core-Dateien sollten, wenn möglich, immer vermieden werden. Aus diesem Grund ist die Verwendung, der Einbau und die Entwicklung von nicht updatefähigen Modulen nicht zu empfehlen.
 
 ## Updatefähige Module
 
