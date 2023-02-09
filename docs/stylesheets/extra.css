@@ -1,4 +1,5 @@
-:root {
+:root,
+[data-md-color-scheme="default"] {
     --md-code-hl-variable-color: #3f104a;
 }
 
