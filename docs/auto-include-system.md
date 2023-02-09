@@ -110,9 +110,9 @@ Wenn in einem Verzeichnis mehre Autoinclude-Dateien vorhanden sind, werden die D
 
 Alle Datein liegen unter:
 
-- `/includes/etxra/`
-- `/admin/includes/extra/`
-- `/lang/{LANGUAGE}/extra/`
+-   `/includes/etxra/`
+-   `/admin/includes/extra/`
+-   `/lang/{LANGUAGE}/extra/`
 
 ## Eine Liste aller verfügbaren Autoincludes in modified
 
