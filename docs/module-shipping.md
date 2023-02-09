@@ -6,9 +6,9 @@
 
 Ein Versand- oder Shipping Modul ist wie ein normales Modul (System Modul) aufgebaut. Es benötigt lediglich die zusätzliche Methode `quote()`. Mit dieser Methode werden die Versandkosten bestimmt.
 
-Um ein Shipping Modul zu erstellen, musst du eine Modul Datei in das Verzeichnis `/includes/modules/shipping/` anlegen. Achtung: Bei Shipping Modulen darf der Klassenname keine Unterstriche `_` enthalten.
+Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/shipping/` anlegen. Achtung: Bei Shipping Modulen darf der Klassenname keine Unterstriche `_` enthalten.
 
-Zusätzlich muss dass Modul eine `*_ALLOWED` (`MODULE_SHIPPING_MC_MY_FIRST_MODULE_ALLOWED`) Konstante/Einstellung zur Verfügung stellen, mit der modified entscheidet, ob die Versandart im Checkout angezeigt werden soll. Üblicherweise befinden sich dort die Zonen (bzw. zweistellige Länderkürzel), in der die Versandart angeboten werden soll, wie z. B. `DE,AT`.
+Zusätzlich muss das Modul eine `*_ALLOWED` (`MODULE_SHIPPING_MC_MY_FIRST_MODULE_ALLOWED`) Konstante/Einstellung zur Verfügung stellen, mit der modified entscheidet, ob die Versandart im Checkout angezeigt werden soll. Üblicherweise befinden sich dort die Zonen (bzw. zweistellige Länderkürzel), in der die Versandart angeboten werden soll, wie z. B. `DE,AT`.
 
 Die Sprachdateien liegen in `/lang/<LANGUAGE>/modules/shipping/`.
 
@@ -32,9 +32,9 @@ public function quote(string $method = '', string $module = ''): ShippingQuoteAr
 
 #### Beschreibung
 
-Die Methode `quote()` muss ein Array zurückliefern. Wir nennen dieses Array in diesem Text `ShippingQuoteArray`. Mit diesem Array wird dem Shop mitgeteilt, wie hoch die Verstandkosten für die aktuelle Bestellung (die sich im Betellablauf befindet) ausfallen werden. Zudem können in dem Array `ShippingQuoteArray` mehrere Versandoption definiert werden. Diese nennen sich im modified-Kontext `methods`. Wir nennen einen Eintrag `ShippingQuoteMethodArray`. So könnte dem Käufer z. B. ein *Standard Versand* und ein *Express Versand* angeboten werden. Das Array `ShippingQuoteArray` muss mindestens ein `ShippingQuoteMethodArray` beinhalten.
+Die Methode `quote()` muss ein Array zurückliefern. Wir nennen dieses Array in diesem Text `ShippingQuoteArray`. Mit diesem Array wird dem Shop mitgeteilt, wie hoch die Versandkosten für die aktuelle Bestellung (die sich im Bestellablauf befindet) ausfallen werden. Zudem können in dem Array `ShippingQuoteArray` mehrere Versandoption definiert werden. Diese nennen sich im modified-Kontext `methods`. Wir nennen einen Eintrag `ShippingQuoteMethodArray`. So könnte dem Käufer z. B. ein *Standard-Versand* und ein *Express-Versand* angeboten werden. Das Array `ShippingQuoteArray` muss mindestens ein `ShippingQuoteMethodArray` beinhalten.
 
-In der Methode `quote()` werden typischerweise auf die globale Variablen `$total_weight`, `$shipping_weight`, `$shipping_quoted` und `$shipping_num_boxes` zugegriffen.
+In der Methode `quote()` werden typischerweise auf die globalen Variablen `$total_weight`, `$shipping_weight`, `$shipping_quoted` und `$shipping_num_boxes` zugegriffen.
 
 | Variable | Beschreibung |
 |----------|--------------|
