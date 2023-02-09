@@ -21,6 +21,7 @@ Hier ist eine Liste mit guter Literatur zur moderner PHP Programmierung:
 - [Open Source Guides](https://opensource.guide)
 
 Hier ist eine Liste mit guten Videos zur modernen PHP Programmierug:
+
 - [PHP for Beginners (2023 Edition) - Youtube](https://www.youtube.com/watch?v=U2lQWR6uIuo&list=PL3VM-unCzF8ipG50KDjnzhugceoSG3RTC)
 - [Vitalij Mik - Youtube](https://www.youtube.com/@VitalijMik)
 
@@ -36,7 +37,7 @@ An dieser Stelle kann zudem erwähnt werden, dass die offizielle Schreibweise vo
 
 modified ist eine unter der GNU General Public License (GPL v2) lizenzierte E-Commerce Online Shopsoftware, mit der Einzelpersonen oder Firmen einen Online-Shop auf ihrem eigenen Server oder bei einem Hostingprovider im Internet betreiben können.
 
-Der Programmcode von modified wird auf der offiziellen Webseite (www.modified-shop.org/download) kostenlos veröffentlicht und von einem Entwicklerteam in einem SVN Repository entwickelt. Ein großteil der aktuellen Entwicklung findet dort von den Geschäftsführern Gerhard Waldemair und Torsten Riemer der modified UG (haftungsbeschränkt) & Co. KG statt.
+Der Programmcode von modified wird auf der offiziellen Webseite [www.modified-shop.org/download](www.modified-shop.org/download) kostenlos veröffentlicht und von einem Entwicklerteam in einem SVN Repository entwickelt. Ein großteil der aktuellen Entwicklung findet dort von den Geschäftsführern Gerhard Waldemair und Torsten Riemer der modified UG (haftungsbeschränkt) & Co. KG statt.
 
 ## Wie du dich am Projekt modified beteiligen kannst
 
@@ -44,8 +45,8 @@ In diesem Text fokusieren wir uns darauf, wie du dich durch die Entwicklung von 
 
 - Eine direkte Mitarbeit am Quellcode ist z. B. möglich, sobald du dich als erfahrener Entwickler beweist. Eine öffentliche Anleitung die beschreibt, welche Anforderungen ein Entwickler erfüllen muss, damit er als erfahren gilt, gibt es nicht. Versuche dich im modified Forum zu beteiligen und zeige dort was du kannst.
 
-- Fehler, Bugs und Verbesserungswünsche können von jedem in einen Bugtracker eingetragen werden. modified verwendet hierfür die Software Trac (https://trac.modified-shop.org).
+- Fehler, Bugs und Verbesserungswünsche können von jedem in einen Bugtracker eingetragen werden. modified verwendet hierfür die Software Trac [trac.modified-shop.org](https://trac.modified-shop.org).
 
-- Ein reger Austausch findet zudem im Forum (https://www.modified-shop.org/forum/) auf der modified Webseite statt.
+- Ein reger Austausch findet zudem im Forum [www.modified-shop.org/forum/](https://www.modified-shop.org/forum/) auf der modified Webseite statt.
 
-- Auch im modified Wiki kannst du dich über eine Mitarbeit beteiligen (https://www.modified-shop.org/wiki/Hauptseite). In diesem Wiki befinden sich Informationen für Endanwendner und einige Themen zur Programmierung im modified Ökosystem. Wenn du eine ausführliche Dokumentation zum Thema Modulentwicklung suchst, empfehlen wir dir den Text, den du gerade liest. An diesem kannst du dich ebenfalls über GitHub beteiligen. (https://github.com/RobinTheHood/module-loader.de)
+- Auch im [modified Wiki](https://www.modified-shop.org/wiki/Hauptseite) kannst du dich über eine Mitarbeit beteiligen. In diesem Wiki befinden sich Informationen für Endanwendner und einige Themen zur Programmierung im modified Ökosystem. Wenn du eine ausführliche Dokumentation zum Thema Modulentwicklung suchst, empfehlen wir dir den Text, den du gerade liest. An diesem kannst du dich ebenfalls über GitHub beteiligen. [github.com/RobinTheHood/docs.module-loader.de](https://github.com/RobinTheHood/docs.module-loader.de)
