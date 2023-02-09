@@ -5,7 +5,8 @@
     Status: 2 von 5 - Erster Entwurf
 
 ## Einleitung
-Einige Infomationen zur Entwicklung zu Payment Modulen findest du im modified Forum unter https://www.modified-shop.org/forum/index.php?topic=21701
+
+Einige Informationen zur Entwicklung zu Payment Modulen findest du im modified Forum unter https://www.modified-shop.org/forum/index.php?topic=21701
 
 Für einen besseren Überblick schaue dir diese Dokumentation an.
 
@@ -13,9 +14,9 @@ Für einen besseren Überblick schaue dir diese Dokumentation an.
 
 Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul aufgebaut. Es benötigt jedoch zusätzliche Mehtoden, die von modified während des Bestellablaufs aufgerufen werden können.
 
-Um ein Shipping Modul zu erstellen, musst du eine Modul Datei in das Verzeichnis `/includes/modules/payment/` anlegen und in dieser Datei eine Modul Klasse hinzufügen.
+Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis '/includes/modules/payment/' anlegen und in dieser Datei eine Modul-Klasse hinzufügen.
 
-Die Sprachdateien liegen in `/lang/<LANGUAGES>/modules/payment/`.
+Die Sprachdateien liegen in '/lang/<LANGUAGES>/modules/payment/'.
 
 ## Der Bestellablauf
 
@@ -29,11 +30,11 @@ Die Sprachdateien liegen in `/lang/<LANGUAGES>/modules/payment/`.
 | 5 | `success` | /checkout_success.php |
 
 
-Die Reihenfolge wie die Payment-Modul-Methoden vom modified System abgearbeitet werden ist folgende:
+Die Reihenfolge, wie die Payment-Modul-Methoden vom modified System abgearbeitet werden, ist folgende:
 
 ### 1. checkout_shipping.php
 
-In Schritt `shipping` bekommt der Käufer eine Liste mit Versandoptionen angezeigt. Hier kann er sich für eine Versanoption entscheiden. Zahlungsmodule greifen in diesem Schritt nicht in den Bestellablauf ein.
+In Schritt `shipping` bekommt der Käufer eine Liste mit Versandoptionen angezeigt. Hier kann er sich für eine Versandoption entscheiden. Zahlungsmodule greifen in diesem Schritt nicht in den Bestellablauf ein.
 
 ### 2. checkout_payment.php
 
@@ -44,7 +45,7 @@ In Schritt `payment` bekommt der Käufer eine Liste mit Zahlungsoptionen angezei
 
 ### 3. checkout_confirmation.php
 
-In Schritt `confirmation` bekommt der Käufer eine Übersicht mit allen Daten angezeigt, die während des Kaufsprozess erhoben wurden. Wie z. B. Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen. Der Käufer wird zudem aufgefordert diese Daten zu bestätigen, um den Kauf abzuschließen.
+In Schritt 'confirmation' bekommt der Käufer eine Übersicht mit allen Daten angezeigt, die während des Kaufprozesses erhoben wurden. Wie z. B. Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen. Der Käufer wird zudem aufgefordert, diese Daten zu bestätigen, um den Kauf abzuschließen.
 
 1. `update_status()` - überprüft, ob die Zahlungsoption möglich ist
 1. `pre_confirmation_check()`
@@ -53,7 +54,7 @@ In Schritt `confirmation` bekommt der Käufer eine Übersicht mit allen Daten an
 
 ### 4a. checkout_process.php
 
-In Schritt `process` werden die Daten, die während des Kaufsprozess gesammeltwurden verarbeiet. 
+In Schritt `process` werden die Daten, die während des Kaufsprosses gesammelt wurden, verarbeitet.
 
 1. `before_process()`
 1. `payment_action()`
@@ -86,10 +87,12 @@ public function update_status(): void
 | caller   | checkout_confirmation.php |
 
 #### Beschreibung
+
 Diese Methode wird vom System aufgerufen, um zu kontrollieren, ob die Zahlungsart (weiterhin) zur Verfügung steht. Z. B. können Bedingungen, wie Warenwert, Land, Kundenstatus etc. dazu führen, dass eine Zahlart nicht zur Verfühgung stehen soll. Oft wird dazu auf `$order` oder `$xtPrice` per `global` Statement zugegriffen. Als Ergebnis kann die Methode die Klassenvariable `$this->enabled` auf `true` oder `false` setzen.
 
 #### Zeitpunkt der Verwendung
-Die Methode wird zu beginn der `checkout_confirmation.php` aufgerufen.
+
+Die Methode wird zu Beginn der `checkout_confirmation.php` aufgerufen.
 
 #### Beispiel
 
@@ -150,9 +153,10 @@ public function selection(): SelectionArray
 
 #### Beschreibung
 
-Diese Methode wird vom System aufgerufen, um eine Eingabemaske für die Daten zur Zahlungsabwicklung anzuzeigen. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Als Ergbnis gibt die Methode ein Eingabeformular als Array zurück. Z. B. Felder zur Eingabe von Vor- und Nachname, IBAN, Kreditkartennummer etc.
+Diese Methode wird vom System aufgerufen, um eine Eingabemaske für die Daten zur Zahlungsabwicklung anzuzeigen. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Als Ergebnis gibt die Methode ein Eingabeformular als Array zurück. Z. B. Felder zur Eingabe von Vor- und Nachname, IBAN, Kreditkartennummer etc.
 
 #### Zeitpunkt der Verwendung
+
 Die Methode wird in `checkout_payment.php` aufgerufen.
 
 #### Objekte und Arraystrukturen
@@ -213,6 +217,7 @@ public function confirmation(): ConfirmationArray
 // TODO: Die Method macht ...
 
 #### Zeitpunkt der Verwendung
+
 Die Methode wird in `checkout_confirmation.php` aufgerufen.
 
 ### Objekte und Arraystrukturen
@@ -253,9 +258,9 @@ public function process_button(): string
 
 #### Beschreibung
 
-Oft wird diese Methode dazu verwendet, um mit Hilfe von hidden Inputfeldern Informationen per `POST` request weiterzugeben. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Zudem kann mit dieser Methode weiterer Content auf der Seite angezeigt werden. 
+Oft wird diese Methode dazu verwendet, um mithilfe von hidden Inputfeldern Informationen per `POST` request weiterzugeben. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Zudem kann mit dieser Methode weiterer Content auf der Seite angezeigt werden. 
 
-Als Ergbnis gibt die Methode ein Eingabeformular als HTML (string) zurück. Z. B. Felder für Vor- und Nachname, IBAN, Kreditkartennummer etc.
+Als Ergebnis gibt die Methode ein Eingabeformular als HTML (string) zurück. Z. B. Felder für Vor- und Nachname, IBAN, Kreditkartennummer etc.
 
 Im Checkout Schritt `proccess` kann dann mit `$_POST` auf die Daten zugegriffen werden.
 
@@ -299,7 +304,9 @@ In dieser Methode können Daten für den Zahlungsablauf aufbereitet werden, kurz
 
 // TODO: Die Method macht ...
 
-Anmerkung: Einige Module geben bei dieser Methode als Rückgabewert `boolean` `true` oder `false` zurück. Das ist jedoch nicht nötig, da vom modified Core kein Rückgabewert von der Methode erwartet oder verarbeitet wird.
+!!! note "Anmerkung"
+
+    Einige Module geben bei dieser Methode als Rückgabewert `boolean` `true` oder `false` zurück. Das ist jedoch nicht nötig, da vom modified Core kein Rückgabewert von der Methode erwartet oder verarbeitet wird.
 
 #### Zeitpunkt der Verwendung
 
@@ -439,7 +446,7 @@ public function iframeAction(): string
 
 #### Beschreibung
 
-Diese Methode wird vom System aufgerufen, eine Url zu generieren. Diese Url wird von modified in einem iFrame geöffnet.
+Diese Methode wird vom System aufgerufen, eine URL zu generieren. Diese URL wird von modified in einem iFrame geöffnet.
 
 // TODO: Die Method macht ...
 
@@ -460,7 +467,7 @@ public function create_paypal_link(): ???
 
 #### Beschreibung
 
-Es sieht so aus, als würd diese Methode niemals vom modified Core aufgerufen werden, obwohl Sie in in der Klasse /includes/classes/payment.php vorhanden ist. Es gibt externe (drittanbieter) Module wie *Micropayment* die die Methode create_paypal_link() über payment.php Klasse aufrufen. Der modified Core selbst scheint dieses nicht zu tun.
+Es sieht so aus, als würde diese Methode niemals vom modified Core aufgerufen werden, obwohl diese in der Klasse `/includes/classes/payment.php` vorhanden ist. Es gibt externe (Drittanbieter) Module, wie *Micropayment* die die Methode `create_paypal_link()` über die `payment.php` Klasse aufrufen. Der modified Core selbst scheint dieses nicht zu tun.
 
 // TODO: Die Method macht ...
 
@@ -481,7 +488,7 @@ public function info(): mixed
 
 #### Beschreibung
 
-Es sieht so aus, als würd diese Methode niemals vom modified Core aufgerufen werden, obwohl Sie in in der Klasse /includes/classes/payment.php vorhanden ist. Es gibt externe (drittanbieter) Module wie *Micropayment* die die Methode info() über payment.php Klasse aufrufen. Der modified Core selbst scheint dieses nicht zu tun.
+Es sieht so aus, als würde diese Methode niemals vom modified Core aufgerufen werden, obwohl diese in der Klasse `/includes/classes/payment.php` vorhanden ist. Es gibt externe (Drittanbieter) Module, wie *Micropayment* die die Methode `info()` über die Klasse `payment.php` aufrufen. Der modified Core selbst scheint dieses nicht zu tun.
 
 // TODO: Die Method macht ...
 
@@ -627,7 +634,7 @@ class mc_my_first_payment_module extends StdModule
     /**
      * ???
      *
-     * @return string Eine Url die in einem iFrame geöffnet werden soll.
+     * @return string Eine URL die in einem iFrame geöffnet werden soll.
      */
     public function iframeAction(): string
     {
