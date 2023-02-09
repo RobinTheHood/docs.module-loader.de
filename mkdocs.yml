@@ -71,3 +71,6 @@ markdown_extensions:
   - pymdownx.snippets
   - toc:
       permalink: true
+
+extra:
+  generator: false
