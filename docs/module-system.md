@@ -4,15 +4,15 @@
 
     Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
 
-In diesem Abschnitt erklären wir dir alles was du wissen musst, um ein System Modul für modified zu programmieren.
+In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System Modul für modified zu programmieren.
 
-Ein System Modul ist der zentrale Anker deines Moduls. Es ist eine PHP Klasse, die hauptsächlich die Installation deines Moduls steuert und stellt den erster Anlaufpunkt für grundlegene Einstellungen zu deinem Modul dar.
+Ein System Modul ist der zentrale Anker deines Moduls. Es ist eine PHP Klasse, die hauptsächlich die Installation deines Moduls steuert und stellt den ersten Anlaufpunkt für grundlegende Einstellungen zu deinem Modul dar.
 
 Alle System Module findest du im Verzeichnis `/admin/includes/modules/admin/`. Sie werden dir im Admininterface unter dem Menüpunkt _Admin > Module > System Module_ aufgelistet. Dort erscheinen diese entweder als _installiert_ oder _deinstalliert_.
 
 Ein Modul solltest du immer zusammen mit einem System Modul entwickeln, auch wenn das von modified nicht vorgeschrieben wird. Du könntest zwar Autoincludes unabhängig von einem System Modul programmieren, best practice ist aber, dass dein Modul ein System Modul beinhaltet. Durch dieses kann der Anwender an einem zentralen Ort im Shop alle Module und Erweiterungen steuern und bedienen.
 
-Du kannst dir ein System Modul wie eine [Klassenerweiterung](x) vorstellen, die jedoch im gegensatz zu dieser keine modified Methoden erweitert. Aus deinem Grund könnten wir ein System Module ebenfalls als Klassenerweiterung bezeichnen. Klassenerweiterungen schauen wir uns in späteren Abschnitten an.
+Du kannst dir ein System Modul wie eine [Klassenerweiterung](#) vorstellen, die jedoch im Gegensatz zu dieser keine modified Methoden erweitert. Aus deinem Grund könnten wir ein System Module ebenfalls als Klassenerweiterung bezeichnen. Klassenerweiterungen schauen wir uns in späteren Abschnitten an.
 
 ## Wie wird ein System Modul in modified programmiert?
 
@@ -24,13 +24,13 @@ Wenn du ein System Modul von Hand (ohne das StandardModul aus dem MMLC) erstelle
 
 Im nächsten Abschnitt zeigen wir dir, wie viel weniger Arbeit du hast, wenn du ein System Modul mit dem StandardModul aus dem MMLC erstellst.
 
-Nicht erschrecken, in diesem Abschnitt zeigen wir dir eine Menge Programmcode. Dieser ist glücklicherweise darauf optimiert leicht lesbar zu sein. Du musst diesen Code nur an wenige Stellen verändern, um ihn an ein eigenes Modul anzupassen. Wir gehen zudem auf alle Codeabschnitte genau ein und erklären dir, was die jeweiligen Zeilen machen und warum diese nötig sind. Oft erklären wir die Funktionalität anhand von Kommentaren im Quellcode.
+Nicht erschrecken, in diesem Abschnitt zeigen wir dir eine Menge Programmcode. Dieser ist glücklicherweise darauf optimiert, leicht lesbar zu sein. Du musst diesen Code nur an wenige Stellen verändern, um ihn an ein eigenes Modul anzupassen. Wir gehen zudem auf alle Codeabschnitte genau ein und erklären dir, was die jeweiligen Zeilen machen und warum diese nötig sind. Oft erklären wir die Funktionalität anhand von Kommentaren im Quellcode.
 
 Wie du sehen wirst, benötigt ein System Modul relativ viel Code. Die Schreibarbeit könnte uns das modified Entwicklerteam mit einer einfachen Anpassung im Code ersparen. Das würde es Entwicklern erleichtert eigene System Module und Klassenerweiterungen zu schreiben.
 
-Mit dem StandardModul aus dem MMLC lässt sich dieser immer wiederkehrende Code jedoch troztem vermeiden. Mehr dazu später im Abschnitt [_"xxx"_](#). Als erstes schauen wir uns ein System Modul ohne das Standard Modul an, damit du die grundlegende Arbeitsweise von System Modulen verstehst.
+Mit dem StandardModul aus dem MMLC lässt sich dieser immer wiederkehrende Code jedoch trotzdem vermeiden. Mehr dazu später im Abschnitt [???](#). Als Erstes schauen wir uns ein System Modul ohne das StandardModul an, damit du die grundlegende Arbeitsweise von System Modulen verstehst.
 
-Eine System Modul Datei bzw. eine kleinst mögliche System Modul Klasse besteht mindestens aus den folgenden Elementen:
+Eine System Modul-Datei bzw. eine kleinst mögliche System Modul Klasse besteht mindestens aus den folgenden Elementen:
 
 - Attribute
     - string $code
@@ -54,9 +54,9 @@ Was die jeweiligen Aufgaben dieser Elemente sind, werden wir uns im folgenden Ab
 
     Status: 2 von 5 - Erster Entwurf
 
-Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen in der sie liegen. Alle System Module Dateien liegen im Verzeichnis `/admin/includes/modules/`. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [_"xxx"_](#) lesen.
+Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen, in der sie liegen. Alle System Module Dateien liegen im Verzeichnis `/admin/includes/modules/`. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
 
-Das beteutet für uns das wir die Klasse `mc_my_first_module`nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden. Uns wird dann im Adminbereich unter Module > System Module die Klase nicht anezeigt. Auch würden abhängige Autoinclude-Dateien nicht funktionieren. Hier eine Beispiel:
+Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden. Uns wird dann im Adminbereich unter Module > System Module die Klasse nicht angezeigt. Auch würden abhängige Autoinclude-Dateien nicht funktionieren. Hier ein Beispiel:
 
 ```php title="/admin/includes/modules/mc_my_first_module.php"
 <?php
@@ -77,7 +77,7 @@ class mc_my_first_module
 
     Status: 2 von 5 - Erster Entwurf
 
-Die Klasse benötigt 6 Attribute auf die das modified Zugreift um sich informationen von unserer System Modul Klasse zu holen. Aus diesem Grund müssen wir die Folgenden Attribute definieren. Mach wir das nicht, wirft uns PHP je nach Einstellung Notice, Warnings oder Erorrs aus. Das sollten wir vermeinden.
+Die Klasse benötigt 6 Attribute auf die das modified zugreift, um sich Informationen von unserer System Modul Klasse zu holen. Aus diesem Grund müssen wir die folgenden Attribute definieren. Machen wir das nicht, wirft uns PHP je nach Einstellung Notice, Warnings oder Erorrs aus. Das sollten wir vermeiden.
 
 ```php
 class mc_my_first_module
@@ -217,9 +217,9 @@ class mc_my_first_module
 
     Status: 2 von 5 - Erster Entwurf
 
-Als erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen Beispiels. Dieses Beispiel solltest du in dieser Form aber nicht verwenden. Das Modul ist so nicht mehrsprachig und kann auch nicht über das Admininterface vom Nutzer aktiviert oder deaktiviert werden, da der Wert für `$this->enabled` immer auf `true` steht.
+Als Erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen Beispiels. Dieses Beispiel solltest du in dieser Form aber nicht verwenden. Das Modul ist so nicht mehrsprachig und kann auch nicht über das Admininterface vom Nutzer aktiviert oder deaktiviert werden, da der Wert für `$this->enabled` immer auf `true` steht.
 
-Im Contructor müssen wir jetzt die Attribute mit Werte füllen. Wir könnten für viele Attribute feste Werte verwenden.
+Im Constructor müssen wir jetzt die Attribute mit Werte füllen. Wir könnten für viele Attribute feste Werte verwenden.
 
 ```php title="mc_my_first_module.php"
 class mc_my_first_module
@@ -245,7 +245,7 @@ class mc_my_first_module
 
     Status: 2 von 5 - Erster Entwurf
 
-Um die Unzulänglichkeiten aus dem ersten Contructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
+Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
 
 ```php title="mc_my_first_module.php"
 class mc_my_first_module
@@ -268,17 +268,17 @@ class mc_my_first_module
 }
 ```
 
-Statt feste Werte für `$this->title` und `$this->description`, holen wir uns diese Werte aus Konstenden, die wir später in einer Sprachdatei definieren. Siehe hierfür den Abschnitt [_"xxx"_](#).
+Statt feste Werte für `$this->title` und `$this->description`, holen wir uns diese Werte aus Konstanten, die wir später in einer Sprachdatei definieren. Siehe hierfür den Abschnitt [???](#).
 
-Den vordernen Teil der Konstanden `MODULE_MC_MY_FIRST_MODULE` lassen wir uns bequem automatisch erzeugen und speichern in in der Variablen `$prefix` zwischen.
+Den vorderen Teil der Konstanten `MODULE_MC_MY_FIRST_MODULE` lassen wir uns bequem automatisch erzeugen und speichern in der Variablen `$prefix` zwischen.
 
 ```php
 $prefix = 'MODULE_' . strtoupper(self::class);
 ```
 
-Die Konstanten `MODULE_MC_MY_FIRST_MODULE_SORT_ORDER` und `MODULE_MC_MY_FIRST_MODULE_STATUS` lädt der modifed Core für uns aus der Datenbank Tabelle `configure`, bevor er versucht eine Instanz der Klasse zu erzeugen und der Contructor aufgerufen wird.
+Die Konstanten `MODULE_MC_MY_FIRST_MODULE_SORT_ORDER` und `MODULE_MC_MY_FIRST_MODULE_STATUS` lädt der modifed Core für uns aus der Datenbanktabelle `configure`, bevor er versucht eine Instanz der Klasse zu erzeugen und der Constructor aufgerufen wird.
 
-Wie wir die Konstanzen in die Datenbank bekommen schauen wir uns auch noch an. Das passiert automatisch vom modified Core, soblad die Funktion install() aufgerufen wird, wie wir uns auch gleich noch anscheun werden.
+Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. Das passiert automatisch vom modified Core, sobald die Funktion `install()` aufgerufen wird, wie wir uns auch gleich noch anschauen werden.
 
 ### Die Methode - keys(): array
 
@@ -287,7 +287,7 @@ Wie wir die Konstanzen in die Datenbank bekommen schauen wir uns auch noch an. D
     Status: 2 von 5 - Erster Entwurf
 
 Der modified Core ruft diese Methode auf, um sich eine Liste mit allen
-Einstellungen aus der Datenbank aus der Tabelle Configuration zu holen. Diese Werte werden z. B. in der Admin Modul Übersicht und beim Bearbeiten angezeigt. Gibst du keinen Key an, wird dir auch keiner Angezeigt und du kannst keinen bearbeiten. Zudem kann der modified Core anhand dieser key abgleichen, ob keys in der Datenbank fehlen. Unabhängig davon welche key hier angegeben werden, lädt modified zu Beginn eines jeden Requests alle Configuration Werte aus der Datenbank als Konstante.
+Einstellungen aus der Datenbank aus der Tabelle Configuration zu holen. Diese Werte werden z. B. in der Admin Modul Übersicht und beim Bearbeiten angezeigt. Gibst du keinen Key an, wird dir auch keiner angezeigt und du kannst keinen bearbeiten. Zudem kann der modified Core anhand dieser key abgleichen, ob keys in der Datenbank fehlen. Unabhängig davon welche key hier angegeben werden, lädt modified zu Beginn eines jeden Requests alle Configuration Werte aus der Datenbank als Konstante.
 
 ```php
 class mc_my_first_module
@@ -312,11 +312,11 @@ class mc_my_first_module
 
     Status: 2 von 5 - Erster Entwurf
 
-Diese Methode überprüft, ob das Modul installiert ist. Das kann auf unterschiedliche Art und Weise passieren. Wenn das Modul ordnungsgemäß installiert ist muss die Methode eine Zahl ungleich 0 zurückgeben.
+Diese Methode überprüft, ob das Modul installiert ist. Das kann auf unterschiedliche Art und Weise passieren. Wenn das Modul ordnungsgemäß installiert ist, muss die Methode eine Zahl ungleich 0 zurückgeben.
 
 In diesem Beispiel kontrollieren wir, ob in der Datenbanktabelle `configuration` in der Spalte `configuration_key` ein Eintrag mit dem Wert `MODULE_MC_MY_FIRST_MODULE_STATUS` vorhanden ist.
 
-Du kannst dir theoretisch einen eigenen Weg ausdenken, um zu überprüfen ob dein Modul korrekt installiert ist. Z. B. ob ein anderer Wert vorhanden ist, oder ob bestimmte Dateien vorhanden sind. Die meisten System Module machen das jedoch immer auf dem hier gezeigten Weg über die Konstante `MODULE_MC_MY_FIRST_MODULE_STATUS`:
+Du kannst dir theoretisch einen eigenen Weg ausdenken, um zu überprüfen, ob dein Modul korrekt installiert ist. Z. B. ob ein anderer Wert vorhanden ist, oder ob bestimmte Dateien vorhanden sind. Die meisten System Module machen das jedoch immer auf dem hier gezeigten Weg über die Konstante `MODULE_MC_MY_FIRST_MODULE_STATUS`:
 
 ```php
 class mc_my_first_module
@@ -352,7 +352,7 @@ class mc_my_first_module
 
     Status: 2 von 5 - Erster Entwurf
 
-Diese Methode wird aufgerufen, wenn der Nutzer im Admin beim Modul auf die Taste "Installieren" klickt. In diesem Moment müssen wir selbst die nötigen Configurationen in der Datenbank anlegen. Wie du das machst, siehst du im folgendem Beispiel:
+Diese Methode wird aufgerufen, wenn der Nutzer im Admin beim Modul auf die Taste "Installieren" klickt. In diesem Moment müssen wir selbst die nötigen Configurationen in der Datenbank anlegen. Wie du das machst, siehst du im folgenden Beispiel:
 
 _Erklären welche Dinge man noch in der install Methode machen kann, wie z. B. weitere Configurationen anlegen oder den Access auf Admin Controller Dateien erlauben._
 
@@ -439,7 +439,7 @@ class mc_my_first_module
 public function display(): array
 ```
 
-In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jeden Eigenschaft die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Über die `display()` Methode kann man beliebe Buttons wie den Save Button generiern oder eine ander beliebge HTML ausgabe. Die Ausgabe wird nach den Eigenschaften/Keys ausgegeben / gerendert.
+In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jede Eigenschaft, die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Über die `display()` Methode kann man beliebe Buttons wie den Save Button generieren oder eine andere beliebige HTML-Ausgabe. Die Ausgabe wird nach den Eigenschaften/Keys ausgegeben / gerendert.
 
 ### Die Methode - custome()
 
@@ -457,7 +457,7 @@ Lorem ...
 
     Status: 1 von 5 - Skizze
 
-Wir vom modified Core aufgerufen, sobald auf im Bearbeitunsmodus auf die Taste `Save`geklickt wird, bzw. sobald die Action `save`. In diesem Fall wird als Parameter `$filePath` xxx übergeben (siehe admin/module_export.php:136) Mit `$_POST['process'] == 'module_processing_do'` kann verhindert werden, dass die Methode `function process(string $filePath): void`durch den Core aufgerufen wird.
+Wird vom modified Core aufgerufen, sobald auf im Bearbeitungsmodus auf die Taste `Save` geklickt wird, bzw. sobald die Action `save`. In diesem Fall wird als Parameter `$filePath` ??? übergeben (siehe `admin/module_export.php:136`) Mit `$_POST['process'] == 'module_processing_do'` kann verhindert werden, dass die Methode `function process(string $filePath): void` durch den Core aufgerufen wird.
 
 Eine alternative die Methode durch den modified Core aufrufen zu lassen ist über `?action=module_processing_d` in diesem Fall wird `$_GET['file']` an die Methode als Parameter `$filePath` übergeben.
 
@@ -566,11 +566,11 @@ class mc_my_first_module
 
     Status: 1 von 5 - Skizze
 
-In diesem Abschnitt schauen wir uns an, was es mit der `setFunction`auf sich hat. Mit der `setFunction` können wir eine Funktion oder Methode bestimmen, die modified aufrufen soll, wenn die Anzeige für die Bearbeitung eines Konfigurationswertes in der Eingabemaske der Konfiguration gerendert werden soll. Du kannst dir das wie folgt vorstellen. Du befindest dich im Admin under *Module > System Module* und klickst dort bei einem Modul auf bearbeiten. Jetzt werden dir alle Werte angezeigt, die du zu diesem Modul bearbeiten kannst. Bei manchen Werten reicht ein einfaches Texteingabefeld aus. Bei anderen Werte möchten wir z. B. ein DropDownMenü oder sogar etwas noch Spezielleres anzeigen. Hier kommt jetzt die `setFunction` ins Spiel.
+In diesem Abschnitt schauen wir uns an, was es mit der `setFunction` auf sich hat. Mit der `setFunction` können wir eine Funktion oder Methode bestimmen, die modified aufrufen soll, wenn die Anzeige für die Bearbeitung eines Konfigurationswertes in der Eingabemaske der Konfiguration gerendert werden soll. Du kannst dir das wie folgt vorstellen. Du befindest dich im Admin unter *Module > System Module* und klickst dort bei einem Modul auf bearbeiten. Jetzt werden dir alle Werte angezeigt, die du zu diesem Modul bearbeiten kannst. Bei manchen Werten reicht ein einfaches Texteingabefeld aus. Bei anderen Werten möchten wir z. B. ein DropDownMenü oder sogar etwas noch Spezielleres anzeigen. Hier kommt jetzt die `setFunction` ins Spiel.
 
-Wie schon kurz erwähnt, können wir mit der `setFunction` eine Funktion oder Methode bestimmen, die modifed verwenden soll, um das Eingabefeld zu rendern. Diese Funktion oder Methode sollte als Rückgabe einen HTML-String liefern. Für einige Tricks kann man die `setFunction` auch dazu verwenden, um seinen eigenen HTML Code an eine bestimmte Stelle in der Ausgabe der Konfiguration mit einfließen zu lassen. Das ist aber nicht Thema dieses Abschnitts.
+Wie schon kurz erwähnt, können wir mit der `setFunction` eine Funktion oder Methode bestimmen, die modifed verwenden soll, um das Eingabefeld zu rendern. Diese Funktion oder Methode sollte als Rückgabe einen HTML-String liefern. Für einige Tricks kann man die `setFunction` auch dazu verwenden, um seinen eigenen HTML-Code an eine bestimmte Stelle in der Ausgabe der Konfiguration mit einfließen zu lassen. Das ist aber nicht Thema dieses Abschnitts.
 
-Eine `setFunction` muss über den global Scope erreichbar. Das Interface oder die Signatur einer `setFunction`  muss dabei wie folgt aufgebaut sein, damit modified die `setFunction` ohne Fehler aufrufen kann:
+Eine `setFunction` muss über den global Scope erreichbar. Das Interface oder die Signatur einer `setFunction` muss dabei wie folgt aufgebaut sein, damit modified die `setFunction` ohne Fehler aufrufen kann:
 
 ```php
 /**
@@ -591,7 +591,7 @@ In der Tabelle `configuration` in der Datenbank ist die `setFunction` zusammen m
 |--|--|--|
 | `MODULE_COLOR` | `red` | `globalFuncSelectColor(`
 
-In der Datenbank steht als `setFunction` der Wert `global_func_select_color(`. Wenn modified die Konfiguration rendern möchte, hängt es an die Funktion die Werte aus `configuration_value` und `configuration_key` an die Funktion, bevor modified die Funktion aufruft. modified macht folgendes:
+In der Datenbank steht als `setFunction` der Wert `global_func_select_color(`. Wenn modified die Konfiguration rendern möchte, hängt es an die Funktion, die Werte aus `configuration_value` und `configuration_key` an die Funktion, bevor modified die Funktion aufruft. modified macht Folgendes:
 
 ```php
 echo eval("globalFuncSelectColor(" . "'red', 'MODULE_COLOR')");
@@ -612,7 +612,7 @@ Jetzt wo wir verstanden haben, wie modifid die `setFunction` aufruft, können wi
 | `MODULE_COLOR` | `green` | `selectColor('hex',`
 
 
-In unserem Code kann oder muss es jetzt eine Funktion im globalen Scope mit dem Name `selectColor` geben, die drei Parameter entgegen nehmen kann, da modified die Funktion wie folgt anrufen wird:
+In unserem Code kann oder muss es jetzt eine Funktion im globalen Scope mit dem Name `selectColor` geben, die drei Parameter entgegennehmen kann, da modified die Funktion wie folgt anrufen wird:
 
 ```php
 echo eval("selectColor('hex'," . "'red', 'MODULE_COLOR')");
@@ -660,14 +660,14 @@ Hier ein paar Beispiele für `setFunction`:
 
     Status: 1 von 5 - Skizze
 
-modified bringt von Haus aus einige `setFunction` mit. Das ist ganz praktisch und erspart dir einiges an Programmierarbeit. Die meisten Funktionen die unter `/admin/includes/functions/` mit dem Präfix `xtc_cfg_` anfangen, kannst du als `setFunction` verwenden. Hier einige Beispiele:
+modified bringt von Haus aus einige `setFunction` mit. Das ist ganz praktisch und erspart dir einiges an Programmierarbeit. Die meisten Funktionen, die unter `/admin/includes/functions/` mit dem Präfix `xtc_cfg_` anfangen, kannst du als `setFunction` verwenden. Hier einige Beispiele:
 
 -   `xtc_cfg_select_option()`
 -   `xtc_cfg_textarea()`
 -   `xtc_cfg_pull_down_order_statuses()`
 -   ...
 
-Es gibt noch viele weitere `setFunction`. Um diese zu finden, kann du das gesamte modified Projekt im Quellcode nach `function xtc_cfg_` durchsuchen.
+Es gibt noch viele weitere `setFunction`. Um diese zu finden, kannst du das gesamte modified Projekt im Quellcode nach `function xtc_cfg_` durchsuchen.
 
 ### Was macht die useFunction?
 
@@ -675,21 +675,21 @@ Es gibt noch viele weitere `setFunction`. Um diese zu finden, kann du das gesamt
 
     Status: 2 von 5 - Erster Entwurf
 
-Die useFunction wird eingesetzt, um einen Wert aus der Configuration zu Formatieren. Wenn wir beispielsweise eine OrderStatusId in einem ConfigurationFeld speichern, wird uns in der Modulübersicht ebenfalls die Id angezeigt. Oft möchte man jedoch nicht das einem die Id angezeigt wird sondern der Name des dazugehörigen Statuses. Um die Id in den Namen zu konvertieren können wir die useFunction verwenden. In der useFunction können wir eine Funktion angeben, die modified aufruft, um den Wert aus der Configuration zu formatieren.
+Die useFunction wird eingesetzt, um einen Wert aus der Configuration zu formatieren. Wenn wir beispielsweise eine OrderStatusId in einem ConfigurationFeld speichern, wird uns in der Modulübersicht ebenfalls die Id angezeigt. Oft möchte man jedoch nicht, dass einem die Id angezeigt wird, sondern der Name des dazugehörigen Status. Um die Id in den Namen zu konvertieren, können wir die useFunction verwenden. In der useFunction können wir eine Funktion angeben, die modified aufruft, um den Wert aus der Configuration zu formatieren.
 
-Wenn wir bei unserem Beispiel mit OrderStatus bleiben, können wir folgende useFunction verwenden, um uns den Namen zu einer Ide geben zu lassen:
+Wenn wir bei unserem Beispiel mit OrderStatus bleiben, können wir folgende useFunction verwenden, um uns den Namen zu einer Id geben zu lassen:
 
 ```php
 function xtc_get_orders_status_name($orders_status_id, $language_id = '')
 ```
 
-Auch bei den useFunction lassen wir wieder das `)` und am Ende des Eintrags weg. In die Datenbank soll nur folgendes geschrieben werden:
+Auch bei den useFunction lassen wir wieder das `)` und am Ende des Eintrags weg. In die Datenbank soll nur Folgendes geschrieben werden:
 
 ```php
 xtc_get_orders_status_name(
 ```
 
-Zubeachten ist auch, modifed die Function nur mit einem Parameter aufruft. Dieser Parameter ist der Wert der in Configuration gespeichert ist. Wenn wir das mit unserem Beispiel vergleicht, wird für den Parameter `$languages_id` nie ein Wert gesetzt. Das ist in diesem Fall nicht so schlimm, da die Function `xtc_get_orders_status_name` intern den Wert von `$language_id` auf den Wert aus der Session setzt, wenn kein Wert angegen ist. Allgemein kann jedoch gesagt werden, dass sich nur useFunction angeben lassen, die nur einen Wert als Parameter benötigen, um ein brauchbaren Ergebnis zu liefern.
+Zubeachten ist auch, modifed die Function nur mit einem Parameter aufruft. Dieser Parameter ist der Wert, der in Configuration gespeichert ist. Wenn wir das mit unserem Beispiel vergleicht, wird für den Parameter `$languages_id` nie ein Wert gesetzt. Das ist in diesem Fall nicht so schlimm, da die Function `xtc_get_orders_status_name` intern den Wert von `$language_id` auf den Wert aus der Session setzt, wenn kein Wert angegeben ist. Allgemein kann jedoch gesagt werden, dass sich nur useFunction angeben lassen, die nur einen Wert als Parameter benötigen, um ein brauchbares Ergebnis zu liefern.
 
 ## Configuration Group
 
@@ -731,7 +731,7 @@ class mc_my_first_module extends StdModul
 }
 ```
 
-Das Standard Modul übernimmt die für uns die wichtigsten Konfigurationsarbeiten die wir ohne das StdModul per Hand selbst erledigen mussten. Zudem bietet uns das StdModul nützliche Helper-Methoden die uns die Arbeit mit System Modulen und Klassenerweiterungen erleichtern, wie wir in den nächsten Beispielen sehen werden.
+Das Standard Modul übernimmt die für uns die wichtigsten Konfigurationsarbeiten, die wir ohne das StdModul per Hand selbst erledigen mussten. Zudem bietet uns das StdModul nützliche Helper-Methoden, die uns die Arbeit mit System Modulen und Klassenerweiterungen erleichtern, wie wir in den nächsten Beispielen sehen werden.
 
 Lorem ...
 
@@ -745,7 +745,7 @@ Jeweils das System Modul aus dem Beispiel mit dem StandardModul und ohne dem Sta
 
 Die Sprachdateien zu einem System Modul liegen in `/lang/<LANGUAGE>/modules/system/`. Wobei `<LANGUAGE>` der Name einer Sprache (auf englisch mit kleinem ersten Buchstabe) entspricht. Die Datei solltest du wieder nach unserer Namenskonvention aus Abschnitt XXX benennen. In diesem Fall wäre das `mc_my_first_module.php`.
 
-Wir wir das Modul in deutscher Sprache bereitstellen möchten, können wir eine PHP-Datei erstellen die wie folgt aussieht:
+Wie wir das Modul in deutscher Sprache bereitstellen möchten, können wir eine PHP-Datei erstellen, die wie folgt aussieht:
 
 ```php
 <?php
@@ -799,9 +799,9 @@ StdModule::registerLanguage($translations, 'MC_MY_FIRST_MODULE', StdModule::TYPE
 
 Wie bereist im Abschnitt [_"Autoinclude System - Allgemeines Beispiel"_](#) beschrieben, können oder sollten Autoinclude zusmmen mit System Module arbeiten. Im Grunde möchte man, dass Autoinclude-Dateien nur einen Effekt hervorrufen, wenn ein zugehöriges System Modul einen aktiven Status hat. Der Shop-Nutzer kann im Adminbereich einstellen, welche System Module installiert und/oder aktiv sind. Es ist wünschenswert, wenn sich zugehörige Autoinclude-Dateien an diesen Wunsch des Shop-Nutzers halten. So kann der Nutzer nach seinen Bedürfnissen Module aktivieren oder deaktivieren.
 
-Das funktioniert auch bei Menü Datei Erweiterungen siehe Abschnit xxx.
+Das funktioniert auch bei Menü Datei-Erweiterungen siehe Abschnitt ???.
 
-Das Ganze lässt sich glücklicherweise leicht bewerksteligen, dazu müssen wir unsere Autoinclude-Datei nur um folgenden Code erweitern:
+Das Ganze lässt sich glücklicherweise leicht bewerkstelligen, dazu müssen wir unsere Autoinclude-Datei nur um folgenden Code erweitern:
 
 ```php
 if (!defined('MODULE_MC_MY_FIRST_MODULE_STATUS') || MODULE_MC_MY_FIRST_MODULE_STATUS != 'true') {
@@ -809,7 +809,7 @@ if (!defined('MODULE_MC_MY_FIRST_MODULE_STATUS') || MODULE_MC_MY_FIRST_MODULE_ST
 }
 ```
 
-Der Anfang eine Autoinclude-Datei zu userem Modul würde dann wie folgt aussehen:
+Der Anfang eine Autoinclude-Datei zu unserem Modul würde dann wie folgt aussehen:
 
 ```php
 <?php
@@ -825,7 +825,7 @@ if (!defined('MODULE_MC_MY_FIRST_MODULE_STATUS') || MODULE_MC_MY_FIRST_MODULE_ST
 
 ```
 
-_Hier sollte noch eine Erklärung kommen was dieser Code macht, also wie das `return` funktioniert und woher wir wissen wie die Konstante heißen muss die wir in dem Code verwenden._
+_Hier sollte noch eine Erklärung kommen, was dieser Code macht, also wie das `return` funktioniert und woher wir wissen, wie die Konstante heißen muss, die wir in dem Code verwenden._
 
 ## Erweiterung der Menüpunkte
 
@@ -833,7 +833,7 @@ _Hier sollte noch eine Erklärung kommen was dieser Code macht, also wie das `re
 
     Status: 1 von 5 - Skizze
 
-In modified kannst kannst du einige Menüpunkte erweitern.
+In modified kannst du einige Menüpunkte erweitern.
 
 ### Menüpunkte
 
@@ -841,7 +841,7 @@ In modified kannst kannst du einige Menüpunkte erweitern.
 
     Status: 1 von 5 - Skizze
 
-Hier eine List mit allen Standard Menüpunkten die du dynamisch mit einem Modul erweitern kannst:
+Hier eine List mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst:
 
 | Konstante                     | Menüpfad               | Erweiterbar |
 | ----------------------------- | ---------------------- | :---------: |
