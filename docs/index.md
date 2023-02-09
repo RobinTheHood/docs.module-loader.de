@@ -12,7 +12,7 @@
 ## Autoren
 
 - [Robin Wieschendorf](https://github.com/RobinTheHood)
-- [Jay](https://github.com/grandeljay)
+- [Jay Trees](https://github.com/grandeljay)
 
 ## Annotations
 
