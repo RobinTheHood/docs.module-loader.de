@@ -37,8 +37,8 @@ repo_name: RobinTheHood/docs.module-loader.de
 
 edit_uri: edit/main/docs/
 plugins:
-  - search: null
-lang: de
+  - search:
+      lang: de
 
 markdown_extensions:
   - admonition
