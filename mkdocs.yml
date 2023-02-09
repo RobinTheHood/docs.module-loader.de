@@ -20,12 +20,18 @@ theme:
     #- navigation.instant
     - navigation.tracking
     - navigation.sections
+    - navigation.footer
     - navigation.top
     - content.action.edit
     - content.code.copy
 
+extra_css:
+  - stylesheets/extra.css
+
 repo_url: https://github.com/RobinTheHood/docs.module-loader.de
 repo_name: RobinTheHood/docs.module-loader.de
+
+edit_uri: edit/main/docs/
 
 plugins:
   - search:
