@@ -1,0 +1,48 @@
+site_name: modified Entwickler Dokumentation
+site_description: Einstieg in die Modulentwicklung für modified Shops
+site_author: Robin Wieschendorf, Jay Trees
+
+nav:
+    - Vorwort: index.md
+    - Einleitung: introduction.md
+    - Die Architektur von modified: architecture.md
+    - Was ist ein Modul im modified Kontext?: module-modified.md
+    - Das Autoinclude System von modified: auto-include-system.md
+    - System Modul: module-system.md
+    - Shipping Modul: module-shipping.md
+    - Payment Modul: module-payment.md
+
+theme:
+  name: material
+  language: de
+
+  features:
+    #- navigation.instant
+    - navigation.tracking
+    - navigation.sections
+    - navigation.top
+    - content.action.edit
+    - content.code.copy
+
+repo_url: https://github.com/RobinTheHood/modified-docs
+repo_name: RobinTheHood/modified-docs
+
+plugins:
+  - search:
+      lang: de
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+      extend_pygments_lang:
+        - name: php
+          lang: php
+          options:
+            startinline: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - toc:
+      permalink: true
