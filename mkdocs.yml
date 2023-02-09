@@ -29,6 +29,19 @@ theme:
     - content.action.edit
     - content.code.copy
 
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
 extra_css:
   - stylesheets/extra.css
 
@@ -36,6 +49,7 @@ repo_url: "https://github.com/RobinTheHood/docs.module-loader.de"
 repo_name: RobinTheHood/docs.module-loader.de
 
 edit_uri: edit/main/docs/
+
 plugins:
   - search:
       lang: de
