@@ -16,7 +16,7 @@
 
 ## Annotations
 
-Zurzeit befinden sich in dieser Anleitung noch viele Annotations, die Auskunft darüber geben, in welchem Zustand sich ein Textabschnitt befindet:
+Zurzeit befinden sich in dieser Anleitung noch viele Annotations, die Auskunft darüber geben, in welchem Zustand sich ein Textabschnitt befindet. Hier eine Liste:
 
 !!! note "Textstatus 1"
 
