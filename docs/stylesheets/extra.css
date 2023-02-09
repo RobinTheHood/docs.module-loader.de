@@ -1,3 +1,7 @@
 :root > * {
     --md-code-hl-variable-color: #3f104a;
 }
+
+html {
+    hyphens: auto;
+}
