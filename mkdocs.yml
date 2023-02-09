@@ -31,12 +31,14 @@ theme:
 
   palette:
     - media: "(prefers-color-scheme: light)"
+      primary: blue
       scheme: default
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
 
     - media: "(prefers-color-scheme: dark)"
+      primary: blue
       scheme: slate
       toggle:
         icon: material/brightness-4
