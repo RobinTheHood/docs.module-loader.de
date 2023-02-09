@@ -74,7 +74,7 @@ In der Regel besteht ein updatefähiges Module aus folgenden Elementen:
 -   Optional: Eine oder mehrere Klassenerweiterungen die in `/includes/modules` oder `/admin/includes/modules/` liegen.
 -   Optional: Eine oder mehrere Controller-Dateien die in `/` oder `/admin/` liegen
 -   Optional: Eine oder mehrere Menu-Dateien die in `/admin/includes/extra/menu/` liegen.
--   Optional: Eine oder mehrere Themplate-Dateien die in `/templates/<TEMPLATE>/` liegen.
+-   Optional: Eine oder mehrere Template-Dateien die in `/templates/<TEMPLATE>/` liegen.
 
 Um die Programmierung von Modulen für das modified System zu verstehen, solltest du dir folgende Themen in der aufgeführten Reihenfolge ansehen:
 
