@@ -1,19 +1,18 @@
 site_name: modified Entwickler Dokumentation
 site_description: Einstieg in die Modulentwicklung für modified Shops
-site_author: Robin Wieschendorf, Jay Trees
-site_url: https://docs.module-loader.de
+site_author: "Robin Wieschendorf, Jay Trees"
+site_url: "https://docs.module-loader.de"
 
 nav:
-    - Vorwort: index.md
-    - Einleitung: introduction.md
-    - Die Architektur von modified: architecture.md
-    - Was ist ein Modul im modified Kontext?: module-modified.md
-    - Das Autoinclude System von modified: auto-include-system.md
-    - System Modul: module-system.md
-    - Shipping Modul: module-shipping.md
-    - Payment Modul: module-payment.md
-
-    - Appendix:
+  - Vorwort: index.md
+  - Einleitung: introduction.md
+  - Die Architektur von modified: architecture.md
+  - Was ist ein Modul im modified Kontext?: module-modified.md
+  - Das Autoinclude System von modified: auto-include-system.md
+  - System Modul: module-system.md
+  - Shipping Modul: module-shipping.md
+  - Payment Modul: module-payment.md
+  - Appendix:
       - modifed Menüpunkte: modified-menu.md
 
 theme:
@@ -33,14 +32,13 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-repo_url: https://github.com/RobinTheHood/docs.module-loader.de
+repo_url: "https://github.com/RobinTheHood/docs.module-loader.de"
 repo_name: RobinTheHood/docs.module-loader.de
 
 edit_uri: edit/main/docs/
-
 plugins:
-  - search:
-      lang: de
+  - search: null
+lang: de
 
 markdown_extensions:
   - admonition
