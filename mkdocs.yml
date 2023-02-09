@@ -12,6 +12,9 @@ nav:
     - Shipping Modul: module-shipping.md
     - Payment Modul: module-payment.md
 
+    - Appendix:
+      - modifed Menüpunkte: modified-menu.md
+
 theme:
   name: material
   language: de
