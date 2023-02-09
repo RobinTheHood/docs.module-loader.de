@@ -74,3 +74,9 @@ markdown_extensions:
 
 extra:
   generator: false
+  social:
+    - icon: fontawesome/brands/discord
+      link: https://discord.gg/kfUamcNBRH
+
+    - icon: fontawesome/brands/github
+      link: https://github.com/RobinTheHood/docs.module-loader.de
