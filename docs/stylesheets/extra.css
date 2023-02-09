@@ -3,6 +3,11 @@
     --md-code-hl-variable-color: #3f104a;
 }
 
+:root,
+[data-md-color-scheme="slate"] {
+    --md-code-hl-variable-color: #dc91ed;
+}
+
 html {
     hyphens: auto;
 }
