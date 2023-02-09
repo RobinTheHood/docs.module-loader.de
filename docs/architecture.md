@@ -60,6 +60,8 @@ Beispielsweise befindet sich in der Datei `/inc/xtc_get_description.inc.php` ein
 
 Das modified System verwaltet viele Klassen, Funktionen, Variablen und Konstanten im globalen Scope und gibt uns keine Namenskonvention mit an die Hand, um die Kollision gleicher Symbole und Bezeichner zu vermeiden. Namespaces werden ebenfalls nicht verwendet. Aus diesem Grund kann es leicht zu unerwarteten Konflikten kommen, wenn wir unwissentlich eine Variable in unserem Modul verwenden, die bereits im modified Core oder in einem anderen Modul verwendet wird.
 
+[comment]: <> (TODO: add link to section)
+
 Derartige Fehler lassen sich zum Glück leicht vermeiden. Für Bezeichner sollte immer eine feste einheitliche Namenskonvention verwendet werden, sofern wir es nicht schaffen, Programmcode in eigene Scopes und Namespaces zu verpacken. Tips hierzu findest du im Abschnitt [_"???"_](#).
 
 ## Coding Standards / Codings Styles bei modified / PSR-12
