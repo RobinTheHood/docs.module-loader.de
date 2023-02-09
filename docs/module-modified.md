@@ -20,19 +20,19 @@ _Hinweis: Einige Entwickler umgehen die Einschränkung, nicht jede beliebige Ste
 
 Dieser Text erklärt dir die nötigen Konzepte, wie du Module für modified programmierst. Dazu gehen wir zuerst auf alle Bestandteile ein, aus denen ein Modul aufgebaut werden kann und schauen uns an, wozu sie dienen und wie sie funktionieren. Hier ein Überblick:
 
-- Controller-Dateien
-- Inklude-Dateien
-- Autoinclude-Dateien
-- System Modul
-- Shipping Modul
-- Payment Modul
-- Klassenerweiterungen
-- etc.
+-   Controller-Dateien
+-   Inklude-Dateien
+-   Autoinclude-Dateien
+-   System Modul
+-   Shipping Modul
+-   Payment Modul
+-   Klassenerweiterungen
+-   etc.
 
 Da dir dieser Text nicht jedes Detail erklären kann, kannst du dir zusätzlich ansehen, wie Probleme in anderen Modulen gelöst werden. Leider schwankt die Qualität von Modul zu Modul. Aus diesesm Grund führen wir hier eine Liste mit ausgewählten Modulen für dich, an denen du dich orientieren solltest. Der Quellcode der aufgeführten Module lässt sich direkt im Browser ansehen. Zudem erweitern wir die Liste kontinuierlich:
 
-- [robinthehood/attribute-price-update](https://github.com/RobinTheHood/attribute-price-update)
-- [grandeljay/modified-spanish-language](https://github.com/grandeljay/modified-spanish-language) ([und viele mehr](https://github.com/grandeljay?tab=repositories&q=modified-shop&type=public))
+-   [robinthehood/attribute-price-update](https://github.com/RobinTheHood/attribute-price-update)
+-   [grandeljay/modified-spanish-language](https://github.com/grandeljay/modified-spanish-language) ([und viele mehr](https://github.com/grandeljay?tab=repositories&q=modified-shop&type=public))
 
 ## Nicht updatefähige Module
 
@@ -66,13 +66,13 @@ In all diesen Fällen, verteilst du deine PHP-Dateien in den Verzeichnissen von 
 
 In der Regel besteht ein updatefähiges Module aus folgenden Elementen:
 
-- Eine System Modul Datei/Klasse die im Verzeichnis `/admin/includes/modules/system/` liegt.
-- Eine oder mehrere Sprachdateien die im Verzeichnis `/lang/<LANGUAGE>/modules/system/` liegen.
-- Optional: Eine oder mehrere Auto-Include-Dateien die in `/includes/extra` oder `/admin/includes/extra/` liegen.
-- Optional: Eine oder mehrere Klassenerweiterungen die in `/includes/modules` oder `/admin/includes/modules/` liegen.
-- Optional: Eine oder mehrere Controller-Dateien die in `/` oder `/admin/` liegen
-- Optional: Eine oder mehrere Menu-Dateien die in `/admin/includes/extra/menu/` liegen.
-- Optional: Eine oder mehrere Themplate-Dateien die in `/templates/<TEMPLATE>/` liegen.
+-   Eine System Modul Datei/Klasse die im Verzeichnis `/admin/includes/modules/system/` liegt.
+-   Eine oder mehrere Sprachdateien die im Verzeichnis `/lang/<LANGUAGE>/modules/system/` liegen.
+-   Optional: Eine oder mehrere Auto-Include-Dateien die in `/includes/extra` oder `/admin/includes/extra/` liegen.
+-   Optional: Eine oder mehrere Klassenerweiterungen die in `/includes/modules` oder `/admin/includes/modules/` liegen.
+-   Optional: Eine oder mehrere Controller-Dateien die in `/` oder `/admin/` liegen
+-   Optional: Eine oder mehrere Menu-Dateien die in `/admin/includes/extra/menu/` liegen.
+-   Optional: Eine oder mehrere Themplate-Dateien die in `/templates/<TEMPLATE>/` liegen.
 
 Um die Programmierung von Modulen für das modified System zu verstehen, solltest du dir folgende Themen in der aufgeführten Reihenfolge ansehen:
 
