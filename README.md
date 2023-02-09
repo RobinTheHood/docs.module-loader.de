@@ -10,3 +10,14 @@ Hier geht es zum Dokument ["Einstieg in die Modulentwicklung für modified Shops
 Wenn du Hilfe bei der Programmierung benötigst oder dir anschauen möchtest, wie andere Entwickler ihren Code umgesetzt haben, kannst du gerne auf unseren [discord server](https://discord.gg/9NqwJqP) vorbeischauen. Hier kannst du auch Vorschläge machen, falls du etwas an der Dokumenation verändern oder beitragen möchtest.
 
 Viel Spaß beim Programmieren 🥳
+
+## Mindestvorausetzungen
+
+1. git v2.26.3
+1. Python v3 (sowie pip)
+
+## Einrichtung
+
+1. `install.sh` ausführen
+1. `mkdocs serve` ausführen
+1. `localhost:8000`aufrufen
