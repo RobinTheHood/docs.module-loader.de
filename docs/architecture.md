@@ -1,10 +1,10 @@
 # Die Architektur von modified
 
-Es ist hilfreich den Aufbau und die Organisation des modified System zu verstehen, damit du einfacher Module für dieses programmieren kannst. Aus diesem Grund erfährst du in diesem Abschnitt einige Hintergründe zum System.
+Es ist hilfreich den Aufbau und die Organisation des modified Systems zu verstehen, damit du einfacher Module für dieses programmieren kannst. Aus diesem Grund erfährst du in diesem Abschnitt einige Hintergründe zum System.
 
 ## Grundlegende Technologien die modified verwendet
 
-Historisch ist modified als Fork aus dem shopsystem xt:Commerce hervorgegangen und ähnelt einem Zusammenschluss einer Vielzahl von einzelnen Skripten, die zusammen die Aufgaben eines Onlineshopsystems übernehmen. Dieses Grundsystem wird auch als Core bezeichnet.
+Historisch ist modified als Fork aus dem Shopsystem xt:Commerce hervorgegangen und ähnelt einem Zusammenschluss einer Vielzahl von einzelnen Skripten, die zusammen die Aufgaben eines Onlineshopsystems übernehmen. Dieses Grundsystem wird auch als Core bezeichnet.
 
 Eine lange Zeit war es nicht möglich Module im üblichen Sinne für das System zu programmieren. Zwar gab es die Technik der Klassenerweiterung, Module waren jedoch größtenteils Core-Hacks, die der Benutzer oder Entwickler per Anleitung in den bestehenden Programmcode einbauen musste.
 
@@ -16,13 +16,13 @@ Die modified Shopsoftware ist in der Programmiersprache PHP geschrieben, läuft 
 
 Als Entwickler solltest du als erstes verstehen, dass das modified System historisch aus alten PHP Konzepten gewachsen und nur an wenigen Stellen objektorientiert aufgebaut ist. Das System verwendet keine [Model View Controller Architektur](https://de.wikipedia.org/wiki/Model_View_Controller) und basiert auch nicht auf einem [typischen PHP Framework](https://kinsta.com/de/blog/php-frameworks/). modified verwendet zudem keinen [Paketmanager wie Composer](https://getcomposer.org), um externe Codebibliotheken einzubinden oder zu verwalten.
 
-Ein PHP Entwickler kann nur bedingt moderne Software- und Desingkonzepte anwenden, die mit der modernen OOP in PHP zur Verfügung stehen. Clean Code Konzepte wie [Keep it Simple, Stupid (KISS)](https://de.wikipedia.org/wiki/KISS-Prinzip), [Don't Repeat Yourself (DRY)](https://de.wikipedia.org/wiki/Don’t_repeat_yourself) oder [SOLID](https://de.wikipedia.org/wiki/Prinzipien_objektorientierten_Designs#SOLID-Prinzipien) werden selten angewedet. [Einige Entwickler würden den Programmcode von modified daher als Spaghetticode bezeichnen](https://www.sellerforum.de/shopsysteme-f34/modified-shop-auf-version-2-0-umstellen-t45690.html?sid=d6e7b5bd897a84963d7bad50a14b9e66#p551383). Viel Code besteht aus sehr langen verschachtelten Verzweigungen mit globalen Abhängigkeiten und sich nicht selbst dokumentierenden Bezeichner. Mit einer ebenfalls sehr hohen zyklomatische Komplexität hat das zur Folge, dass der Quellcode von modified schwer zu lesen und aus wissenschaftlicher Sicht fehleranfällig ist.
+Ein PHP Entwickler kann nur bedingt moderne Software- und Desingkonzepte anwenden, die mit der modernen OOP in PHP zur Verfügung stehen. Clean Code Konzepte wie [Keep it Simple, Stupid (KISS)](https://de.wikipedia.org/wiki/KISS-Prinzip), [Don't Repeat Yourself (DRY)](https://de.wikipedia.org/wiki/Don’t_repeat_yourself) oder [SOLID](https://de.wikipedia.org/wiki/Prinzipien_objektorientierten_Designs#SOLID-Prinzipien) werden selten angewedet. [Einige Entwickler würden den Programmcode von modified daher als Spaghetticode bezeichnen](https://www.sellerforum.de/shopsysteme-f34/modified-shop-auf-version-2-0-umstellen-t45690.html?sid=d6e7b5bd897a84963d7bad50a14b9e66#p551383). Viel Code besteht aus sehr langen verschachtelten Verzweigungen mit globalen Abhängigkeiten und sich nicht selbst dokumentierenden Bezeichner. Mit einer ebenfalls sehr hohen zyklomatischen Komplexität hat das zur Folge, dass der Quellcode von modified schwer zu lesen und aus wissenschaftlicher Sicht fehleranfällig ist.
 
 > These studies show that code complexity, such as cyclomatic complexity, correlates with the presence of bugs in code.
 >
 > [C. Chen, “An Empirical Investigation of Correlation between Code Complexity and Bugs,” Dec. 2019, doi: 10.48550/arxiv.1912.01142](https://arxiv.org/abs/1912.01142)
 
-Im Programmcode werden ebenfalls keine Techniken wie [Type-Hints](https://www.php.net/manual/en/language.types.declarations.php) oder [PHPDocs](https://phpstan.org/writing-php-code/phpdocs-basics) verwendet, die eine mögliche falsche Typisierung und somit Fehler vorzeitig aufspüren könnten. Eine statische Codeanalyse z. B. durch [Psalm](https://psalm.dev), [PHPStan](https://phpstan.org) oder durch eine aktuelle IDE, ist kaum möglich. So können Programmfehler leicht übersehen werden.
+Im Programmcode werden ebenfalls keine Techniken wie [Type-Hints](https://www.php.net/manual/en/language.types.declarations.php) oder [PHPDocs](https://phpstan.org/writing-php-code/phpdocs-basics) verwendet, die eine mögliche falsche Typisierung und somit Fehler vorzeitig aufspüren könnten. Eine statische Codeanalyse z. B. durch [Psalm](https://psalm.dev), [PHPStan](https://phpstan.org) oder durch einen aktuellen IDE, ist kaum möglich. So können Programmfehler leicht übersehen werden.
 
 Das alles hat zur Folge, dass das System nur sehr schwierig bis garnicht mit automatisierten Unit-Tests oder einer statischen Codeanalyse zu testen ist. Es werden von modified bei der Entwicklung möglicherweise keine programmatischen Tests verwendet oder mindestens nicht öffentlich zur Verfügung gestellt. Somit lässt sich nicht automatisiert testen, ob ein Modul Fehler im restlichen System verursacht. Tests von Drittanbietern sind ebenfalls nicht bekannt. Solltest du Lust auf ein Projekt haben, könntest du der Erste sein, der Tests für das modified System schreibt. Diese Tests solltest du unbedingt allen Entwicklern als OpenSource Projekt zur Verfügung stellen.
 
@@ -60,7 +60,7 @@ Beispielsweise befindet sich in der Datei `/inc/xtc_get_description.inc.php` ein
 
 Das modified System verwaltet viele Klassen, Funktionen, Variablen und Konstanten im globalen Scope und gibt uns keine Namenskonvention mit an die Hand, um die Kollision gleicher Symbole und Bezeichner zu vermeiden. Namespaces werden ebenfalls nicht verwendet. Aus diesem Grund kann es leicht zu unerwarteten Konflikten kommen, wenn wir unwissentlich eine Variable in unserem Modul verwenden, die bereits im modified Core oder in einem anderen Modul verwendet wird.
 
-Derartige Fehler lassen sich zum Glück leicht vermeiden. Für Bezeichner sollte immer eine feste einheitliche Namenskonvention verwenden werden, sofern wir es nicht schaffen, Programmcode in eigene Scopes und Namespaces zu verpacken. Tips hierzu findest du im Abschnitt [_"???"_](#).
+Derartige Fehler lassen sich zum Glück leicht vermeiden. Für Bezeichner sollte immer eine feste einheitliche Namenskonvention verwendet werden, sofern wir es nicht schaffen, Programmcode in eigene Scopes und Namespaces zu verpacken. Tips hierzu findest du im Abschnitt [_"???"_](#).
 
 ## Coding Standards / Codings Styles bei modified / PSR-12
 
