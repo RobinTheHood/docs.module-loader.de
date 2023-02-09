@@ -1,6 +1,7 @@
 site_name: modified Entwickler Dokumentation
 site_description: Einstieg in die Modulentwicklung für modified Shops
 site_author: Robin Wieschendorf, Jay Trees
+site_url: https://docs.module-loader.de
 
 nav:
     - Vorwort: index.md
