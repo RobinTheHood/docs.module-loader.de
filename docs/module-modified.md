@@ -4,13 +4,13 @@
 
     Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
 
-Anders als bei anderen Modulkonzepten besteht ein Modul im modified Kontext nicht aus einem Verzeichnis, in dem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Verzeichnis `/modules`, das vom modified System geladen werden könnte). Solltest du den MMLC verwenden, kann der dir diese Funktion jedoch simmulieren.
+Anders als bei anderen Modulkonzepten besteht ein Modul im modified Kontext nicht aus einem Verzeichnis, in dem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Verzeichnis `/modules`, das vom modified System geladen werden könnte). Solltest du den MMLC verwenden, kann der dir diese Funktion jedoch simulieren.
 
 Ein Modul für modified kannst du dir als Ansammlung von hauptsächlich Include-Dateien vorstellen, die du in die unterschiedlichen Verzeichnisse des modified Systems verteilen musst. Komplexere modified Module beinhalten oft zusätzlich Controller- und Template-Dateien.
 
 Die Autoinclude-Dateien werden durch Autoinclude-Stellen in den modified Core geladen, an denen du mit deinem Modul eingreifen möchtest. Nicht jede beliebige Stelle das modified System ist erweiterbar. Auf die Möglichkeiten und Grenzen gehen wir im Abschnitt [_"Das Autoinclude System"_](#) ein.
 
-_Heinweis: Einige Entwickler umgehen die Einschränkung, nicht jede beliebige Stelle erweitern zu können, indem sie "nicht updatefähige Module" programmieren (siehe Abschnitt [_"Nicht updatefähige Module"_](#)). Das kann jedoch nicht empfohlen werden. Nicht updatefähige Module sollten nur im Ausnahmefall programmiert werden._
+_Hinweis: Einige Entwickler umgehen die Einschränkung, nicht jede beliebige Stelle erweitern zu können, indem sie "nicht updatefähige Module" programmieren (siehe Abschnitt [_"Nicht updatefähige Module"_](#)). Das kann jedoch nicht empfohlen werden. Nicht updatefähige Module sollten nur im Ausnahmefall programmiert werden._
 
 ## Entwicklung von Modulen
 
@@ -44,7 +44,7 @@ Im modified Umfeld wird von einem _nicht updatefähigen Modul_ gesprochen, wenn 
 
 Ein nicht updatefähiges Modul verhindert also, dass du dein modified System fehlerfrei updaten kannst, ohne dass du nach dem Update kontrollieren musst, ob das Modul noch ordnungsgemäß eingebaut ist und funktioniert.
 
-_Heinweis: Änderungen an den Core-Dateien sollten wenn möglich immer vermieden werden. Aus diesem Grund ist die Verwendung, der Einbau und die Entwicklung von nicht updatefähigen Modulen nicht zu empfehlen._
+_Hinweis: Änderungen an den Core-Dateien sollten wenn möglich immer vermieden werden. Aus diesem Grund ist die Verwendung, der Einbau und die Entwicklung von nicht updatefähigen Modulen nicht zu empfehlen._
 
 ## Updatefähige Module
 
@@ -52,7 +52,7 @@ _Heinweis: Änderungen an den Core-Dateien sollten wenn möglich immer vermieden
 
     Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
 
-Ein Modul wird als _updatefähigs Modul_ bezeichnet, wenn es bei einem Update des modified Systems nicht (in Teilen) gelöscht wird und dein Shopsystem weiterhin ordnungsgemäß funktioniert. Programmcode darf nicht in den Core eingebaut werden. Es ist als das Gegenteil zum _nicht updatefähig Modul_ zu sehen.
+Ein Modul wird als _updatefähigs Modul_ bezeichnet, wenn es bei einem Update des modified Systems nicht (in Teilen) gelöscht wird und dein Shopsystem weiterhin ordnungsgemäß funktioniert. Programmcode darf nicht in den Core eingebaut werden. Es ist als das Gegenteil zum _nicht updatefähigen Modul_ zu sehen.
 
 ## Aufbau von updatefähigen modified Shop Modulen
 
@@ -60,11 +60,11 @@ Ein Modul wird als _updatefähigs Modul_ bezeichnet, wenn es bei einem Update de
 
     Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
 
-Grundsächliche gibt es zwei Möglichkeiten, wie du updatefähige Module in modified aufbauen kannst. In den meisten Fällen wirst du diese beien Möglichkeiten vermischen. Du kannst das "Autoinclude System" verwenden, das wir dir im Abschnitt [_"x"_](#) vorstellen oder einige modified-PHP-Klassen erweitern, was wir in Abschnit x besprechen werden. Zudem solltest du dein Modul immer über eine System-Modul-Klasse verwalten bzw. ins System einbinden, was Thema in Abschnitt [_"x"_](#) sein wird.
+Grundsächlich gibt es zwei Möglichkeiten, wie du updatefähige Module in modified aufbauen kannst. In den meisten Fällen wirst du diese beiden Möglichkeiten vermischen. Du kannst das "Autoinclude System" verwenden, das wir dir im Abschnitt [_"x"_](#) vorstellen oder einige modified-PHP-Klassen erweitern, was wir in Abschnit x besprechen werden. Zudem solltest du dein Modul immer über eine System-Modul-Klasse verwalten bzw. ins System einbinden, was Thema in Abschnitt [_"x"_](#) sein wird.
 
-In all diesen Fällen, verteilst du deine PHP-Dateien in den Verzeichnis von modifed. Es gibt kein Verzeichnis, indem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Ordner `/modules`, das vom modified System geladen wird). Das modified System sucht in ausgewählte Verzeichnisse nach deinen Dateien und lädt den Code in den Core.
+In all diesen Fällen, verteilst du deine PHP-Dateien in den Verzeichnissen von modifed. Es gibt kein Verzeichnis, indem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Ordner `/modules`, das vom modified System geladen wird). Das modified System sucht in ausgewählte Verzeichnisse nach deinen Dateien und lädt den Code in den Core.
 
-In der Regel besteht ein updatefähigen Modulen aus folgenden Elementen:
+In der Regel besteht ein updatefähiges Module aus folgenden Elementen:
 
 - Eine System Modul Datei/Klasse die im Verzeichnis `/admin/includes/modules/system/` liegt.
 - Eine oder mehrere Sprachdateien die im Verzeichnis `/lang/<LANGUAGE>/modules/system/` liegen.
