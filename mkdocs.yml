@@ -19,6 +19,7 @@ nav:
 theme:
   name: material
   language: de
+  custom_dir: overrides
 
   features:
     #- navigation.instant
