@@ -24,8 +24,8 @@ theme:
     - content.action.edit
     - content.code.copy
 
-repo_url: https://github.com/RobinTheHood/modified-docs
-repo_name: RobinTheHood/modified-docs
+repo_url: https://github.com/RobinTheHood/docs.module-loader.de
+repo_name: RobinTheHood/docs.module-loader.de
 
 plugins:
   - search:
