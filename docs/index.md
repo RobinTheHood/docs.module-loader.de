@@ -7,7 +7,7 @@
 ## Vorwort
 
 !!! Warning "Achtung - nicht offiziell"
-    Dieser Text ist keine offiziele Dokumentation des modified Projekts. Dieser Text soll jedoch Entwicklern dabei helfen, Module für die modified Shop Software zu programmieren.
+    Dieser Text ist keine offiziele Dokumentation des modified Projekts. Dieser Text soll jedoch Entwicklern dabei helfen, Module für die modified Shop Software zu programmieren. Viel Spaß beim Programmieren. 🥳
 
 ## Autoren
 
