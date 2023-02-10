@@ -37,6 +37,7 @@ theme:
     - navigation.top
     - content.action.edit
     - content.code.copy
+    - toc.follow
 
   palette:
     - media: "(prefers-color-scheme: light)"
@@ -66,6 +67,7 @@ plugins:
       lang: de
 
 markdown_extensions:
+  - attr_list
   - admonition
   - pymdownx.details
   - pymdownx.superfences

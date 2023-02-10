@@ -32,18 +32,18 @@ Die Sprachdateien liegen in '/lang/<LANGUAGES>/modules/payment/'.
 
 Die Reihenfolge, wie die Payment-Modul-Methoden vom modified System abgearbeitet werden, ist folgende:
 
-### 1. checkout_shipping.php
+### 1. checkout_shipping.php { data-toc-label='checkout_shipping' }
 
 In Schritt `shipping` bekommt der Käufer eine Liste mit Versandoptionen angezeigt. Hier kann er sich für eine Versandoption entscheiden. Zahlungsmodule greifen in diesem Schritt nicht in den Bestellablauf ein.
 
-### 2. checkout_payment.php
+### 2. checkout_payment.php { data-toc-label='checkout_payment' }
 
 In Schritt `payment` bekommt der Käufer eine Liste mit Zahlungsoptionen angezeigt. Hier kann er sich für eine Zahlungsoption entscheiden und die nötigen Informationen in die Eingabemaske eintrage. (z. B. IBAN, Kreditkartennummer, etc.).
 
 1. `selection()` - rendert die Eingabemaske
 1. `get_error()` - liefert Fehlermeldungen, z. B. bei fehlerhafter Eingabe
 
-### 3. checkout_confirmation.php
+### 3. checkout_confirmation.php { data-toc-label='checkout_confirmation' }
 
 In Schritt 'confirmation' bekommt der Käufer eine Übersicht mit allen Daten angezeigt, die während des Kaufprozesses erhoben wurden. Wie z. B. Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen. Der Käufer wird zudem aufgefordert, diese Daten zu bestätigen, um den Kauf abzuschließen.
 
@@ -52,7 +52,7 @@ In Schritt 'confirmation' bekommt der Käufer eine Übersicht mit allen Daten an
 1. `confirmation()`
 1. `process_button()` - zeigt zusätzliche Daten auf der Confirmation an oder leitet Daten per POST reqeust an process weiter
 
-### 4a. checkout_process.php
+### 4a. checkout_process.php { data-toc-label='checkout_process' }
 
 In Schritt `process` werden die Daten, die während des Kaufsprosses gesammelt wurden, verarbeitet.
 
@@ -61,10 +61,10 @@ In Schritt `process` werden die Daten, die während des Kaufsprosses gesammelt w
 1. `before_send_order()`
 1. `after_process()`
 
-### 4b. checkout_payment_iframe.php (optional)
+### 4b. checkout_payment_iframe.php (optional) { data-toc-label='checkout_payment_iframe' }
 1. `iframeAction()`
 
-### 5. checkout_success.php
+### 5. checkout_success.php { data-toc-label='checkout_success' }
 
 In Schritt `success` wird dem Käufer angezeigt, dass er seine Bestellung erfolgreich getätigt hat.
 
@@ -86,15 +86,15 @@ public function update_status(): void
 | optional | ✅ |
 | caller   | checkout_confirmation.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 Diese Methode wird vom System aufgerufen, um zu kontrollieren, ob die Zahlungsart (weiterhin) zur Verfügung steht. Z. B. können Bedingungen, wie Warenwert, Land, Kundenstatus etc. dazu führen, dass eine Zahlart nicht zur Verfühgung stehen soll. Oft wird dazu auf `$order` oder `$xtPrice` per `global` Statement zugegriffen. Als Ergebnis kann die Methode die Klassenvariable `$this->enabled` auf `true` oder `false` setzen.
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird zu Beginn der `checkout_confirmation.php` aufgerufen.
 
-#### Beispiel
+<h4>Beispiel</h4>
 
 ```php
 public function update_status(): void
@@ -120,18 +120,18 @@ public function pre_confirmation_check(): void
 | optional | ✅ |
 | caller   | checkout_confirmation.php |
 
-#### Beschreibung:
+<h4>Beschreibung</h4>:
 
 // TODO: Die Method macht ...
 
-#### Hinweis
+!!! note "Anmerkung"
 
-Einige Module geben bei dieser Methode als Rückgabewert `boolean` `true` oder `false` zurück. Das ist jedoch nicht nötig, da vom modified Core kein Rückgabewert von der Methode erwartet oder verarbeitet wird.
+    Einige Module geben bei dieser Methode als Rückgabewert `boolean` `true` oder `false` zurück. Das ist jedoch nicht nötig, da vom modified Core kein Rückgabewert von der Methode erwartet oder verarbeitet wird.
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 Die Methode wird in `checkout_confirmation.php` aufgerufen.
 
-#### Beispiel
+<h4>Beispiel</h4>
 
 ```php
 public function pre_confirmation_check(): void
@@ -151,15 +151,15 @@ public function selection(): SelectionArray
 | optional | 🚫 |
 | caller   | checkout_payment.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 Diese Methode wird vom System aufgerufen, um eine Eingabemaske für die Daten zur Zahlungsabwicklung anzuzeigen. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Als Ergebnis gibt die Methode ein Eingabeformular als Array zurück. Z. B. Felder zur Eingabe von Vor- und Nachname, IBAN, Kreditkartennummer etc.
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_payment.php` aufgerufen.
 
-#### Objekte und Arraystrukturen
+<h4>Objekte und Arraystrukturen</h4>
 
 **`SelectionArray (array)`**
 
@@ -177,7 +177,7 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 | `title` | string  | // TODO: ... | // TODO: ... |
 | `field` | string  | Html Eingabefeld | // TODO: ... |
 
-#### Beispiel
+<h4>Beispiel</h4>
 
 ```php
 public function selection(): array
@@ -212,15 +212,15 @@ public function confirmation(): ConfirmationArray
 | optional | ✅ |
 | caller   | checkout_confirmation.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_confirmation.php` aufgerufen.
 
-### Objekte und Arraystrukturen
+<h4>Objekte und Arraystrukturen</h4>
 
 **`ConfirmationArray (array)`**
 
@@ -236,7 +236,7 @@ Die Methode wird in `checkout_confirmation.php` aufgerufen.
 | `title` | string  | // TODO: ... | // TODO: ... |
 | `field` | string  | // TODO: ... | // TODO: ... |
 
-#### Beispiel
+<h4>Beispiel</h4>
 
 ```php
 public function confirmation(): array
@@ -245,7 +245,7 @@ public function confirmation(): array
 }
 ```
 
-## process_button()
+### process_button()
 
 ```php
 public function process_button(): string
@@ -256,7 +256,7 @@ public function process_button(): string
 | optional | ✅ |
 | caller   | checkout_confirmation.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 Oft wird diese Methode dazu verwendet, um mithilfe von hidden Inputfeldern Informationen per `POST` request weiterzugeben. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Zudem kann mit dieser Methode weiterer Content auf der Seite angezeigt werden. 
 
@@ -264,11 +264,11 @@ Als Ergebnis gibt die Methode ein Eingabeformular als HTML (string) zurück. Z. 
 
 Im Checkout Schritt `proccess` kann dann mit `$_POST` auf die Daten zugegriffen werden.
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_confirmation.php` aufgerufen.
 
-#### Beispiel
+<h4>Beispiel</h4>
 
 ```php
 public function process_button(): string
@@ -287,7 +287,7 @@ public function process_button(): string
 ```
 
 
-## before_process()
+### before_process()
 
 ```php
 public function before_process(): void
@@ -298,7 +298,7 @@ public function before_process(): void
 | optional | ✅ |
 | caller   | checkout_process.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 In dieser Methode können Daten für den Zahlungsablauf aufbereitet werden, kurz bevor die Bestellung in die Datenbank eingetragen wird.
 
@@ -308,11 +308,11 @@ In dieser Methode können Daten für den Zahlungsablauf aufbereitet werden, kurz
 
     Einige Module geben bei dieser Methode als Rückgabewert `boolean` `true` oder `false` zurück. Das ist jedoch nicht nötig, da vom modified Core kein Rückgabewert von der Methode erwartet oder verarbeitet wird.
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in Checkout-Step `process` in `checkout_confirmation.php` aufgerufen, bevor die Bestellung `order` verarbeitet und in die Datenbank geschrieben wird.
 
-## payment_action()
+### payment_action()
 
 ```php
 public function payment_action(): void
@@ -323,15 +323,15 @@ public function payment_action(): void
 | optional | ✅ |
 | caller   | checkout_process.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_process.php` aufgerufen.
 
-## before_send_order()
+### before_send_order()
 
 ```php
 public function before_send_order(): void
@@ -342,15 +342,15 @@ public function before_send_order(): void
 | optional | ✅ |
 | caller   | checkout_process.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_process.php` aufgerufen.
 
-## after_process()
+### after_process()
 
 ```php
 public function after_process(): void
@@ -361,15 +361,15 @@ public function after_process(): void
 | optional | ✅ |
 | caller   | checkout_process.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_process.php` aufgerufen.
 
-## success()
+### success()
 
 ```php
 public function success(): SuccsessArray
@@ -380,15 +380,15 @@ public function success(): SuccsessArray
 | optional | ✅ |
 | caller   | checkout_success.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_success.php` aufgerufen.
 
-### Objekte und Arraystrukturen
+<h4>Objekte und Arraystrukturen</h4>
 
 **`SuccsessArray (array)`**
 
@@ -416,15 +416,15 @@ public function get_error(): ErrorArray
 | optional | ✅ |
 | caller   | checkout_payment.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_payment.php` aufgerufen.
 
-#### Objekte und Arraystrukturen
+<h4>Objekte und Arraystrukturen</h4>
 
 **`ErrorArray (array)`**
 
@@ -444,13 +444,13 @@ public function iframeAction(): string
 | optional | ✅ |
 | caller   | checkout_payment_iframe.php |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 Diese Methode wird vom System aufgerufen, eine URL zu generieren. Diese URL wird von modified in einem iFrame geöffnet.
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Die Methode wird in `checkout_payment_iframe.php` aufgerufen.
 
@@ -465,13 +465,13 @@ public function create_paypal_link(): ???
 | optional | ✅ |
 | caller   | none |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 Es sieht so aus, als würde diese Methode niemals vom modified Core aufgerufen werden, obwohl diese in der Klasse `/includes/classes/payment.php` vorhanden ist. Es gibt externe (Drittanbieter) Module, wie *Micropayment* die die Methode `create_paypal_link()` über die `payment.php` Klasse aufrufen. Der modified Core selbst scheint dieses nicht zu tun.
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Diese Methode wird nicht vom modified Core auferufen.
 
@@ -486,13 +486,13 @@ public function info(): mixed
 | optional | ✅ |
 | caller   | none |
 
-#### Beschreibung
+<h4>Beschreibung</h4>
 
 Es sieht so aus, als würde diese Methode niemals vom modified Core aufgerufen werden, obwohl diese in der Klasse `/includes/classes/payment.php` vorhanden ist. Es gibt externe (Drittanbieter) Module, wie *Micropayment* die die Methode `info()` über die Klasse `payment.php` aufrufen. Der modified Core selbst scheint dieses nicht zu tun.
 
 // TODO: Die Method macht ...
 
-#### Zeitpunkt der Verwendung
+<h4>Zeitpunkt der Verwendung</h4>
 
 Diese Methode wird nicht vom modified Core aufgerufen.
 

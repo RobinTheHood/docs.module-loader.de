@@ -24,7 +24,11 @@ Ein PHP Entwickler kann nur bedingt moderne Software- und Desingkonzepte anwende
 
 Im Programmcode werden ebenfalls keine Techniken wie [Type-Hints](https://www.php.net/manual/en/language.types.declarations.php) oder [PHPDocs](https://phpstan.org/writing-php-code/phpdocs-basics) verwendet, die eine mögliche falsche Typisierung und somit Fehler vorzeitig aufspüren könnten. Eine statische Codeanalyse z. B. durch [Psalm](https://psalm.dev), [PHPStan](https://phpstan.org) oder durch einen aktuellen IDE, ist kaum möglich. So können Programmfehler leicht übersehen werden.
 
-Das alles hat zur Folge, dass das System nur sehr schwierig bis gar nicht mit automatisierten Unit-Tests oder einer statischen Codeanalyse zu testen ist. Es werden von modified bei der Entwicklung möglicherweise keine programmatischen Tests verwendet oder mindestens nicht öffentlich zur Verfügung gestellt. Somit lässt sich nicht automatisiert testen, ob ein Modul Fehler im restlichen System verursacht. Tests von Drittanbietern sind ebenfalls nicht bekannt. Solltest du Lust auf ein Projekt haben, könntest du der Erste sein, der Tests für das modified System schreibt. Diese Tests solltest du unbedingt allen Entwicklern als Open Source Projekt zur Verfügung stellen.
+Das alles hat zur Folge, dass das System nur sehr schwierig bis gar nicht mit automatisierten Unit-Tests oder einer statischen Codeanalyse zu testen ist. Es werden von modified bei der Entwicklung möglicherweise keine programmatischen Tests verwendet oder mindestens nicht öffentlich zur Verfügung gestellt. Somit lässt sich nicht automatisiert testen, ob ein Modul Fehler im restlichen System verursacht. Tests von Drittanbietern sind ebenfalls nicht bekannt.
+
+!!! tip "Tipp"
+
+    Solltest du Lust auf ein Projekt haben, könntest du der Erste sein, der Tests für das modified System schreibt. Diese Tests solltest du unbedingt allen Entwicklern als Open Source Projekt zur Verfügung stellen.
 
 [Eine umfangreiche API, mit der man auf die Entitäten des modified Systems zugreifen kann, gibt es ebenfalls nicht](https://www.modified-shop.org/forum/index.php?topic=41259.0). Das erschwert die leichte Anbindung von Drittanbierter-Tools. Fast alle Requests werden komplett auf dem Server gerendert, wodurch der Server keine Last an den Client abgeben kann. Auch für eigene Client-Side Tools, musst du Serverseitig jedes mal einen eigenen Endpoint-Controller entwickeln.
 
