@@ -30,21 +30,25 @@ Wie du sehen wirst, benötigt ein System Modul relativ viel Code. Die Schreibarb
 
 Mit dem StandardModul aus dem MMLC lässt sich dieser immer wiederkehrende Code jedoch trotzdem vermeiden. Mehr dazu später im Abschnitt [???](#). Als Erstes schauen wir uns ein System Modul ohne das StandardModul an, damit du die grundlegende Arbeitsweise von System Modulen verstehst.
 
+### Minimale forausetzung für eine System Modul Klasse
+
 Eine System Modul-Datei bzw. eine kleinst mögliche System Modul Klasse besteht mindestens aus den folgenden Elementen:
 
-- Attribute
-    - string $code
-    - string $title
-    - string $description
-    - bool $enabled
-    - int $sort_order
-    - string[] $keys
+#### Attribute
 
-- Methoden
-    - keys(): array
-    - check(): int
-    - install(): void
-    - remove(): void
+- `public string $code`
+- `public string $title`
+- `public string $description`
+- `public bool $enabled`
+- `public int $sort_order`
+- `string[] $keys`
+
+#### Methoden
+
+- `public function keys(): array`
+- `public function check(): int`
+- `public function install(): void`
+- `public function remove(): void`
 
 Was die jeweiligen Aufgaben dieser Elemente sind, werden wir uns im folgenden Abschnitt ausführlich ansehen. Am Ende zeigen wir dir eine vollständige System Modul Datei.
 
