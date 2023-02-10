@@ -9,6 +9,12 @@
 !!! Warning "Achtung - nicht offiziell"
     Dieser Text ist keine offiziele Dokumentation des modified Projekts. Dieser Text soll jedoch Entwicklern dabei helfen, Module für die modified Shop Software zu programmieren. Viel Spaß beim Programmieren. 🥳
 
+## Hilfe und Support
+
+[![dicord](https://img.shields.io/discord/727190419158597683)](https://discord.gg/9NqwJqP)
+
+Wenn du Hilfe bei der Programmierung benötigst oder dir anschauen möchtest, wie andere Entwickler ihren Code umgesetzt haben, kannst du gerne auf unseren [Discord Server - Chat & Forum](https://discord.gg/9NqwJqP) vorbeischauen. Hier kannst du auch Vorschläge machen, falls du etwas an der Dokumenation verändern oder beitragen möchtest.
+
 ## Autoren
 
 - [Robin Wieschendorf](https://github.com/RobinTheHood)
