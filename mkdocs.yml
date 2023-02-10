@@ -6,7 +6,9 @@ site_url: "https://docs.module-loader.de"
 nav:
   - Vorwort: index.md
   - Einleitung: introduction.md
-  - Architektur: architecture.md
+  - Architektur:
+    - Architektur: architecture.md
+    - Versionen: modified-versions.md
   - Module : module-modified.md
   - Autoinclude System: auto-include-system.md
   - Modul Klassen:
