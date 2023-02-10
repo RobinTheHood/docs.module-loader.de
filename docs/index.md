@@ -4,8 +4,6 @@
 
     🛠 Dieser Text befindet sich in der Entwicklung und wird fortlaufend überarbeitet. Solltest du Fehler entdecken oder möchtest dich an dieser Dokumentation beteiligen, kannst du gernen einen Pull Request machen.
 
-## Vorwort
-
 !!! Warning "Achtung - nicht offiziell"
     Dieser Text ist keine offiziele Dokumentation des modified Projekts. Dieser Text soll jedoch Entwicklern dabei helfen, Module für die modified Shop Software zu programmieren. Viel Spaß beim Programmieren. 🥳
 
@@ -24,26 +22,36 @@ Wenn du Hilfe bei der Programmierung benötigst oder dir anschauen möchtest, wi
 
 Zurzeit befinden sich in dieser Anleitung noch viele Annotations, die Auskunft darüber geben, in welchem Zustand sich ein Textabschnitt befindet. Hier eine Liste:
 
-!!! note "Textstatus 1"
+??? note "Textstatus 1"
 
     Status: 1 von 5 - Skizze
 
 
-!!! note "Textstatus 2"
+??? note "Textstatus 2"
 
     Status: 2 von 5 - Erster Entwurf
 
 
-!!! note "Textstatus 3"
+??? note "Textstatus 3"
 
     Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
 
 
-!!! note "Textstatus 4"
+??? note "Textstatus 4"
 
     Status: 4 von 5 - Dieser Abschnitt kann vorerst so bleiben.
 
 
-!!! note "Textstatus 5"
+??? note "Textstatus 5"
 
     Status: 5 von 5 - Fertig.
+
+## Vorwort
+
+Die Geschichte beginnt im Sommer 2017. In diesem Jahr wurde ich das erste Mal mit dem modified Shop System konfrontiert. Mehrere Kunden benötigtigen Änderungen an ihrem Shop und ich musste mich in das System einarbeiten. Doch die positive Erwartung, die Antworten meiner Fragen in der Entwickler-Dokumentation auf der Webseite von modified zu finden, wurde schnell in Luft aufgelöst.
+
+Im Wiki fand ich nur Codestückchen und kleine Anleitungen, wie ich am System-Core Dinge verändern konnte und im Forum fand ich Hinweise und Kommentare, die mein Eindruck bekräftigten, es gab keine Dokumentation für Modul-Entwickler. Man wurde darauf verwiesen, sich bestehende Module anzusehen und von diesen zu lernen.
+
+Im Jahr 2017 waren noch ein Großteil der Module Core-Hacks am System. Nichts, was ich jemanden zum Nachahmen empfehlen würde. So begann meine Reise, mich in den Programmcode von modified einzuarbeiten. Was ich dabei gelernt, habe möchte ich hier mit anderen Entwicklen teilen.
+
+In diesem Sinne - viel Spaß bei der Modul-Entwicklung. 👩‍💻 👨‍💻 🥳 
