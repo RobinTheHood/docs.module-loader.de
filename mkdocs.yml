@@ -11,19 +11,19 @@ nav:
     - Versionen: modified-versions.md
   - Module : module-modified.md
   - Autoinclude System: auto-include-system.md
-  - Modul Klassen:
+  - Klassen:
     - System: module-system.md
     - Shipping: module-shipping.md
     - Payment: module-payment.md
     - OrderTotal: module-order-total.md
     - ClassExtention: module-class-extention.md
   - Configuration:
-    - configuration.md
+    - Configuration: configuration.md
     - setFunction: configuration-set.md
     - useFunction: configuration-use.md
-  - Admin-Menü erweitern: admin-menu.md
+  - Admin-Menü: admin-menu.md
   - Appendix:
-    - modifed Menüpunkte: modified-menu.md
+    - Liste Admin-Menü: modified-menu.md
 
 theme:
   name: material
@@ -34,7 +34,7 @@ theme:
     #- navigation.instant
     - navigation.indexes
     - navigation.tracking
-    - navigation.sections
+    # - navigation.sections
     - navigation.footer
     - navigation.top
     - content.action.edit
@@ -71,6 +71,9 @@ plugins:
 markdown_extensions:
   - attr_list
   - admonition
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.details
   - pymdownx.superfences
   - pymdownx.highlight:
