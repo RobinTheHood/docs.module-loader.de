@@ -48,10 +48,10 @@ Zurzeit befinden sich in dieser Anleitung noch viele Annotations, die Auskunft d
 
 ## Vorwort
 
-Die Geschichte beginnt im Sommer 2017. In diesem Jahr wurde ich das erste Mal mit dem modified Shop System konfrontiert. Mehrere Kunden benötigtigen Änderungen an ihrem Shop und ich musste mich in das System einarbeiten. Doch die positive Erwartung, die Antworten meiner Fragen in der Entwickler-Dokumentation auf der Webseite von modified zu finden, wurde schnell in Luft aufgelöst.
+Die Geschichte beginnt im Sommer 2017. In diesem Jahr wurde ich das erste Mal mit dem modified Shop System konfrontiert. Mehrere Kunden benötigten Änderungen an ihrem Shop und ich musste mich in das System einarbeiten. Doch die positive Erwartung, die Antworten meiner Fragen in der Entwickler-Dokumentation auf der Webseite von modified zu finden, wurde schnell in Luft aufgelöst.
 
 Im Wiki fand ich nur Codestückchen und kleine Anleitungen, wie ich am System-Core Dinge verändern konnte und im Forum fand ich Hinweise und Kommentare, die mein Eindruck bekräftigten, es gab keine Dokumentation für Modul-Entwickler. Man wurde darauf verwiesen, sich bestehende Module anzusehen und von diesen zu lernen.
 
-Im Jahr 2017 waren noch ein Großteil der Module Core-Hacks am System. Nichts, was ich jemanden zum Nachahmen empfehlen würde. So begann meine Reise, mich in den Programmcode von modified einzuarbeiten. Was ich dabei gelernt, habe möchte ich hier mit anderen Entwicklen teilen.
+Im Jahr 2017 waren noch ein Großteil der Module Core-Hacks am System. Nichts, was ich jemanden zum Nachahmen empfehlen würde. So begann meine Reise, mich in den Programmcode von modified einzuarbeiten. Was ich dabei gelernt habe, möchte ich hier mit anderen Entwicklern teilen.
 
 In diesem Sinne - viel Spaß bei der Modul-Entwicklung. 👩‍💻 👨‍💻 🥳 
