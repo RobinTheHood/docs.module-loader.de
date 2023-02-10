@@ -30,7 +30,7 @@ Wie du sehen wirst, benötigt ein System Modul relativ viel Code. Die Schreibarb
 
 Mit dem StandardModul aus dem MMLC lässt sich dieser immer wiederkehrende Code jedoch trotzdem vermeiden. Mehr dazu später im Abschnitt [???](#). Als Erstes schauen wir uns ein System Modul ohne das StandardModul an, damit du die grundlegende Arbeitsweise von System Modulen verstehst.
 
-### Minimale forausetzung für eine System Modul Klasse
+### Minimale Voraussetungen für eine System Modul Klasse
 
 Eine System Modul-Datei bzw. eine kleinst mögliche System Modul Klasse besteht mindestens aus den folgenden Elementen:
 
