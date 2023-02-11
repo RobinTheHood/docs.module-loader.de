@@ -62,18 +62,35 @@ Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gl
 
 Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden. Uns wird dann im Adminbereich unter Module > System Module die Klasse nicht angezeigt. Auch würden abhängige Autoinclude-Dateien nicht funktionieren. Hier ein Beispiel:
 
-```php title="/admin/includes/modules/mc_my_first_module.php"
-<?php
+=== "Mit StdModule"
 
-declare(strict_types=1);
+    ```php title="/admin/includes/modules/mc_my_first_module.php"
+    <?php
 
-defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
+    declare(strict_types=1);
 
-class mc_my_first_module
-{
-    ...
-}
-```
+    use RobinTheHood\ModifiedStdModule\Classes\StdModule;
+
+    class mc_my_first_module extends StdModul
+    {
+        ...
+    }
+    ```
+
+=== "Ohne StdModule"
+
+    ```php title="/admin/includes/modules/mc_my_first_module.php"
+    <?php
+
+    declare(strict_types=1);
+
+    defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
+
+    class mc_my_first_module
+    {
+        ...
+    }
+    ```
 
 ### Die Attribute
 
@@ -227,11 +244,11 @@ Als Erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen 
 
 Im Constructor müssen wir jetzt die Attribute mit Werte füllen. Wir könnten für viele Attribute feste Werte verwenden.
 
-```php title="mc_my_first_module.php"
-class mc_my_first_module
-{
-    ...
 
+
+=== "Ohne StdModule"
+
+    ```php title="mc_my_first_module.php"
     public function __construct()
     {
         $this->code        = 'mc_my_first_module';
@@ -240,10 +257,7 @@ class mc_my_first_module
         $this->sort_order  = 0;
         $this->enabled     = true;
     }
-
-    ...
-}
-```
+    ```
 
 ### Der Constructor - mehrsprachig und dynamisch
 
@@ -253,26 +267,30 @@ class mc_my_first_module
 
 Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
 
-```php title="mc_my_first_module.php"
-class mc_my_first_module
-{
-    ...
+=== "Mit StdModule"
 
+    ```php title="mc_my_first_module.php"
+    public function __construct()
+    {
+        parrent::__construct('MC_MY_FIRST_MODULE');
+    }
+    ```
+
+=== "Ohne StdModule"
+
+    ```php title="mc_my_first_module.php"
     public function __construct()
     {
         // Der Wert in $prefix ist: MODULE_MC_MY_FIRST_MODULE
         $prefix = 'MODULE_' . strtoupper(self::class);
 
         $this->code        = self::class;
-        $this->title       = $prefix . '_TITLE';
-        $this->description = $prefix . '_DESC';
-        $this->sort_order  = $prefix . '_SORT_ORDER';
+        $this->title       = constant($prefix . '_TITLE');
+        $this->description = constant$prefix . '_DESC');
+        $this->sort_order  = constant$prefix . '_SORT_ORDER');
         $this->enabled     = defined($prefix . '_STATUS') && 'true' === constant($prefix . '_STATUS');
     }
-
-    ...
-}
-```
+    ```
 
 Statt feste Werte für `$this->title` und `$this->description`, holen wir uns diese Werte aus Konstanten, die wir später in einer Sprachdatei definieren. Siehe hierfür den Abschnitt [???](#).
 

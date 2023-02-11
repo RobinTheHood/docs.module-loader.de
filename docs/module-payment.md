@@ -6,7 +6,7 @@
 
 ## Einleitung
 
-Einige Informationen zur Entwicklung zu Payment Modulen findest du im modified Forum unter https://www.modified-shop.org/forum/index.php?topic=21701
+Einige Informationen zur Entwicklung zu Payment Modulen findest du im modified Forum unter [www.modified-shop.org/forum/index.php?topic=21701](https://www.modified-shop.org/forum/index.php?topic=21701)
 
 Für einen besseren Überblick schaue dir diese Dokumentation an.
 
@@ -14,9 +14,9 @@ Für einen besseren Überblick schaue dir diese Dokumentation an.
 
 Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul aufgebaut. Es benötigt jedoch zusätzliche Mehtoden, die von modified während des Bestellablaufs aufgerufen werden können.
 
-Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis '/includes/modules/payment/' anlegen und in dieser Datei eine Modul-Klasse hinzufügen.
+Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/payment/` anlegen und in dieser Datei eine Modul-Klasse hinzufügen.
 
-Die Sprachdateien liegen in '/lang/<LANGUAGES>/modules/payment/'.
+Die Sprachdateien liegen in `/lang/<LANGUAGES>/modules/payment/`.
 
 ## Der Bestellablauf
 
@@ -45,7 +45,7 @@ In Schritt `payment` bekommt der Käufer eine Liste mit Zahlungsoptionen angezei
 
 ### 3. checkout_confirmation.php { data-toc-label='checkout_confirmation' }
 
-In Schritt 'confirmation' bekommt der Käufer eine Übersicht mit allen Daten angezeigt, die während des Kaufprozesses erhoben wurden. Wie z. B. Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen. Der Käufer wird zudem aufgefordert, diese Daten zu bestätigen, um den Kauf abzuschließen.
+In Schritt `confirmation` bekommt der Käufer eine Übersicht mit allen Daten angezeigt, die während des Kaufprozesses erhoben wurden. Wie z. B. Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen. Der Käufer wird zudem aufgefordert, diese Daten zu bestätigen, um den Kauf abzuschließen.
 
 1. `update_status()` - überprüft, ob die Zahlungsoption möglich ist
 1. `pre_confirmation_check()`
@@ -120,7 +120,7 @@ public function pre_confirmation_check(): void
 | optional | ✅ |
 | caller   | checkout_confirmation.php |
 
-<h4>Beschreibung</h4>:
+<h4>Beschreibung</h4>
 
 // TODO: Die Method macht ...
 

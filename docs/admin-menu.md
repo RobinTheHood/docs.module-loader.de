@@ -27,7 +27,7 @@ Hier eine List mit allen Standard Menüpunkten, die du dynamisch mit einem Modul
 | `BOX_HEADING_CONFIGURATION`   | **Konfiguration**      |     ✅      |
 | `BOX_HEADING_CONFIGURATION2`  | **Erw. Konfiguration** |     ✅      |
 
-Eine [Liste mit allen Standard Menüpunkten](modified-menu.md) findest im Anhang.
+Eine [Liste mit allen Standard Menüpunkten](modified-menu.md) findest du im Anhang.
 
 Eigenschaften der Menüpunkte
 
@@ -42,8 +42,10 @@ $add_contents[BOX_HEADING_TOOLS][] = [
 ];
 ```
 
-Wie sollte der `boxname` gewählt werden. Namingconventions?
-In welcher Datei sollte der Eintrag liegen und wie sollte die Datei benannt sein? Namingconventions.
+!!! bug "TODO"
+
+    - Wie sollte der `boxname` gewählt werden. Namingconventions?
+    - In welcher Datei sollte der Eintrag liegen und wie sollte die Datei benannt sein? Namingconventions.
 
 Beipsieldatei
 
@@ -78,7 +80,10 @@ $add_contents[BOX_HEADING_CONFIGURATION][] = [
 
 ```
 
-_Möglicherweise ist auch die folgende Version möglich, wenn die Configuration bereits aus der Datenbank geladen wurde:_
+!!! bug "TODO"
+
+    Möglicherweise ist auch die folgende Version möglich, wenn die Configuration bereits aus der Datenbank geladen wurde
+
 
 ```php
 <?php
