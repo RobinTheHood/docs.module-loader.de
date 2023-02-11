@@ -1,4 +1,4 @@
-# Shipping Modul Klasse - Referenz
+# Payment Modul Klasse - Referenz
 
 Erweitert die Modul Klasse um folgende Attribute und Methoden.
 
