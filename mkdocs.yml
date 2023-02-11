@@ -22,6 +22,12 @@ nav:
     - setFunction: configuration-set.md
     - useFunction: configuration-use.md
   - Admin-Menü: admin-menu.md
+  - Referenzen:
+    - references/index.md
+    - Modul Klasse: references/module-class.md
+    - System Modul Klasse: references/module-system.md
+    - Shipping Modul Klasse: references/module-shipping.md
+    - Payment Modul Klasse: references/module-payment.md
   - Appendix:
     - Liste Admin-Menü: modified-menu.md
 
