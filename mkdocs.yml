@@ -16,8 +16,8 @@ nav:
     - System: module-system.md
     - Shipping: module-shipping.md
     - Payment: module-payment.md
-    - OrderTotal: module-order-total.md
-    - ClassExtention: module-class-extention.md
+    - Order Total: module-order-total.md
+  - Klassenerweitungen: module-class-extention.md
   - Configuration:
     - Configuration: configuration.md
     - setFunction: configuration-set.md
