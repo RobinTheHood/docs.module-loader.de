@@ -1,24 +1,51 @@
-# System Modul für modified programmieren
-
-??? note "Textstatus 3"
-
-    Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
+# System Modul Klasse für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System Modul für modified zu programmieren.
 
-Ein System Modul ist der zentrale Anker deines Moduls. Es ist eine PHP Klasse, die hauptsächlich die Installation deines Moduls steuert und stellt den ersten Anlaufpunkt für grundlegende Einstellungen zu deinem Modul dar.
+!!! warning "Achtung"
 
-Alle System Module findest du im Verzeichnis `/admin/includes/modules/admin/`. Sie werden dir im Admininterface unter dem Menüpunkt _Admin > Module > System Module_ aufgelistet. Dort erscheinen diese entweder als _installiert_ oder _deinstalliert_.
+	Ein Modul solltest du immer zusammen mit einem System Modul entwickeln, auch wenn das von modified nicht vorgeschrieben wird. Du könntest zwar Autoincludes unabhängig von einem System Modul programmieren, best practice ist aber, dass dein Modul ein System Modul beinhaltet. Durch dieses kann der Anwender an einem zentralen Ort im Shop alle Module und Erweiterungen steuern und bedienen.
 
-Ein Modul solltest du immer zusammen mit einem System Modul entwickeln, auch wenn das von modified nicht vorgeschrieben wird. Du könntest zwar Autoincludes unabhängig von einem System Modul programmieren, best practice ist aber, dass dein Modul ein System Modul beinhaltet. Durch dieses kann der Anwender an einem zentralen Ort im Shop alle Module und Erweiterungen steuern und bedienen.
 
-Du kannst dir ein System Modul wie eine [Klassenerweiterung](#) vorstellen, die jedoch im Gegensatz zu dieser keine modified Methoden erweitert. Aus deinem Grund könnten wir ein System Module ebenfalls als Klassenerweiterung bezeichnen. Klassenerweiterungen schauen wir uns in späteren Abschnitten an.
+## Konzept
+
+??? note "Textstatus - Entwurf"
+
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+
+Eine System Modul Klasse ist der zentrale Anker deines Moduls. Es ist eine PHP Klasse, die hauptsächlich die Installation deines Moduls steuert. Zudem stellt das System Modul den ersten Anlaufpunkt für grundlegende Einstellungen für den User zu deinem Modul dar.
+
+System Module werden dir im Admininterface unter dem Menüpunkt  *Admin > Module > System Module*  aufgelistet. Dort erscheinen diese entweder als *installiert* oder *deinstalliert*.
+
+Eine System Modul Klasse basiert vom Aufbau auf eine [Modul Klasse](/module-class/), die keine Attribute oder Methoden erweitert.
+
+
+## Aufbau
+
+Eine System Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Lese dir den Abschnitt "[Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der System Modul Klasse ein, die nicht im Abschnitt "[Modul Klasse (abstract)](/module-class/) beschrieben wurden.
+
+Für eine System Modul Klasse benötigen wir mindestens zwei Dateien. Eine Modul Klasse in `/admin/includes/modules/system/` und eine Sprachdatei in `/lang/<LANGUAGES>/modules/system/`. Du kannst wie bei allen Modul Klassen je Sprache eine weitere Datei zum System hinzufügen.
+
+Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blick erkennbar ist, dass die beiden Dateien zusammengehören. In diesem Beispiel haben wir die beiden Dateien `mc_my_first_module.php` benannt. Orientiere dich für das Benennen von Dateien an den Namingconventions aus dem Abschnitt [???](#).
+
+```
+└── admin
+│   └── includes
+│       └── modules
+│           └── system
+│               └── mc_my_first_module.php
+└── lang
+	└── <LANGUAGE>
+		└── modules
+			└── system
+				└── mc_my_first_module.php
+```
 
 ## Wie wird ein System Modul in modified programmiert?
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Wenn du ein System Modul von Hand (ohne das StandardModul aus dem MMLC) erstellen möchtest, kannst du den kompletten Programmcode am Ende dieses Abschnitts kopieren und auf deine Bedürfnisse anpassen.
 
@@ -54,9 +81,9 @@ Was die jeweiligen Aufgaben dieser Elemente sind, werden wir uns im folgenden Ab
 
 ### Die Klasse
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen, in der sie liegen. Alle System Module Dateien liegen im Verzeichnis `/admin/includes/modules/`. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
 
@@ -64,7 +91,7 @@ Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. 
 
 === "Mit StdModule"
 
-    ```php title="/admin/includes/modules/mc_my_first_module.php"
+    ```php title="/admin/includes/modules/stytem/mc_my_first_module.php"
     <?php
 
     declare(strict_types=1);
@@ -79,7 +106,7 @@ Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. 
 
 === "Ohne StdModule"
 
-    ```php title="/admin/includes/modules/mc_my_first_module.php"
+    ```php title="/admin/includes/modules/stytem/mc_my_first_module.php"
     <?php
 
     declare(strict_types=1);
@@ -94,9 +121,9 @@ Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. 
 
 ### Die Attribute
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Die Klasse benötigt 6 Attribute auf die das modified zugreift, um sich Informationen von unserer System Modul Klasse zu holen. Aus diesem Grund müssen wir die folgenden Attribute definieren. Machen wir das nicht, wirft uns PHP je nach Einstellung Notice, Warnings oder Erorrs aus. Das sollten wir vermeiden.
 
@@ -236,9 +263,9 @@ class mc_my_first_module
 
 ### Der Constructor - in einfacher Form (nicht verwenden)
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Als Erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen Beispiels. Dieses Beispiel solltest du in dieser Form aber nicht verwenden. Das Modul ist so nicht mehrsprachig und kann auch nicht über das Admininterface vom Nutzer aktiviert oder deaktiviert werden, da der Wert für `$this->enabled` immer auf `true` steht.
 
@@ -261,9 +288,9 @@ Im Constructor müssen wir jetzt die Attribute mit Werte füllen. Wir könnten f
 
 ### Der Constructor - mehrsprachig und dynamisch
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
 
@@ -312,9 +339,9 @@ public function keys(): array
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Der modified Core ruft diese Methode auf, um sich eine Liste mit allen
 Einstellungen aus der Datenbank aus der Tabelle Configuration zu holen. Diese Werte werden z. B. in der Admin Modul Übersicht und beim Bearbeiten angezeigt. Gibst du keinen Key an, wird dir auch keiner angezeigt und du kannst keinen bearbeiten. Zudem kann der modified Core anhand dieser key abgleichen, ob keys in der Datenbank fehlen. Unabhängig davon welche key hier angegeben werden, lädt modified zu Beginn eines jeden Requests alle Configuration Werte aus der Datenbank als Konstante.
@@ -339,9 +366,9 @@ public function check(): int
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Diese Methode überprüft, ob das Modul installiert ist. Das kann auf unterschiedliche Art und Weise passieren. Wenn das Modul ordnungsgemäß installiert ist, muss die Methode eine Zahl ungleich 0 zurückgeben.
 
@@ -379,9 +406,9 @@ public function install(): void
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Diese Methode wird aufgerufen, wenn der Nutzer im Admin beim Modul auf die Taste "Installieren" klickt. In diesem Moment müssen wir selbst die nötigen Configurationen in der Datenbank anlegen. Wie du das machst, siehst du im folgenden Beispiel:
 
@@ -433,9 +460,9 @@ public function remove(): void
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Lorem ...
 
@@ -462,9 +489,9 @@ public function display(): string
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 ```php
 
@@ -486,9 +513,9 @@ public function custome(): ???
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Sie Beispiel `/admin/includes/modules/system/image_processing_step.php`
 
@@ -502,9 +529,9 @@ public function process(string $filePath): void
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Wird vom modified Core aufgerufen, sobald auf im Bearbeitungsmodus auf die Taste `Save` geklickt wird, bzw. sobald die Action `save`. In diesem Fall wird als Parameter `$filePath` ??? übergeben (siehe `admin/module_export.php:136`) Mit `$_POST['process'] == 'module_processing_do'` kann verhindert werden, dass die Methode `function process(string $filePath): void` durch den Core aufgerufen wird.
 
@@ -512,9 +539,9 @@ Eine alternative die Methode durch den modified Core aufrufen zu lassen ist übe
 
 ## Die vollstänige Beispiel Datei
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Lorem ...
 
@@ -618,9 +645,9 @@ class mc_my_first_module
 - [ ] Configutation ohne das Stdandard-Modul / Textfelder / Dropdowns etc.
 - [ ] Access-Entries für Admin Controller-Datein
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Hier schauen wir uns das gleiche Modul wie in dem Abschnitt [_"System Modul ohne das Stdandard-Modul"_](#) noch einmal an, wie man es mit dem Stdandard-Modul programmieren aus dem MMLC programmieren würden und wie viel weniger Code du benötigst.
 
@@ -646,9 +673,9 @@ Lorem ...
 
 ## Wichtige Sprachdateien zum System Modul
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Jeweils das System Modul aus dem Beispiel mit dem StandardModul und ohne dem StandardModul haben wir so vorbereitet, dass es mit mehreren Sprachen funktioniert. Jetzt müssen wir die passenden Sprachdateien erstellen, damit ein System Modul in den gewünschten Sprachen angezeigt werden kann.
 
@@ -704,9 +731,9 @@ StdModule::registerLanguage($translations, 'MC_MY_FIRST_MODULE', StdModule::TYPE
 
 ## Autoinclude-Dateien nur ausführen bei aktivem Modul
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Wie bereist im Abschnitt [_"Autoinclude System - Allgemeines Beispiel"_](#) beschrieben, können oder sollten Autoinclude zusmmen mit System Module arbeiten. Im Grunde möchte man, dass Autoinclude-Dateien nur einen Effekt hervorrufen, wenn ein zugehöriges System Modul einen aktiven Status hat. Der Shop-Nutzer kann im Adminbereich einstellen, welche System Module installiert und/oder aktiv sind. Es ist wünschenswert, wenn sich zugehörige Autoinclude-Dateien an diesen Wunsch des Shop-Nutzers halten. So kann der Nutzer nach seinen Bedürfnissen Module aktivieren oder deaktivieren.
 
