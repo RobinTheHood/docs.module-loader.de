@@ -4,19 +4,31 @@
 
     Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
-## Einleitung
+## Konzept
 
 Einige Informationen zur Entwicklung zu Payment Modulen findest du im modified Forum unter [www.modified-shop.org/forum/index.php?topic=21701](https://www.modified-shop.org/forum/index.php?topic=21701)
 
 Für einen besseren Überblick schaue dir diese Dokumentation an.
 
-## Allgemeines
+## Aufbau
 
 Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul aufgebaut. Es benötigt jedoch zusätzliche Mehtoden, die von modified während des Bestellablaufs aufgerufen werden können.
 
-Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/payment/` anlegen und in dieser Datei eine Modul-Klasse hinzufügen.
+Um eine Payment Modul Klasse zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/payment/` anlegen. Die Sprachdateien liegen in `/lang/<LANGUAGE>/modules/shipping/`.
 
 Die Sprachdateien liegen in `/lang/<LANGUAGES>/modules/payment/`.
+
+```
+├── includes
+│   └── modules
+│       └── payment
+│           └── mc_my_first_module.php
+└── lang
+	└── <LANGUAGE>
+		└── modules
+			└── payment
+				└── mc_my_first_module.php
+```
 
 Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
 

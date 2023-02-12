@@ -31,7 +31,7 @@ Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blic
     - :white_check_mark: myfirstshippingmodule / myfirstshippingmodule.php
 
 ```
-└── includes
+├── includes
 │   └── modules
 │       └── shipping
 │           └── myfirstshippingmodule.php
@@ -43,6 +43,8 @@ Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blic
 ```
 
 Zusätzlich muss das Modul eine `*_ALLOWED` (`MODULE_SHIPPING_MC_MY_FIRST_MODULE_ALLOWED`) Konstante/Einstellung zur Verfügung stellen, mit der modified entscheidet, ob die Versandart im Checkout angezeigt werden soll. Üblicherweise befinden sich dort die Zonen (bzw. zweistellige Länderkürzel), in der die Versandart angeboten werden soll, wie z. B. `DE,AT`.
+
+Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
 
 ## Shipping Klassen Methoden
 

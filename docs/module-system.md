@@ -29,7 +29,7 @@ Für eine System Modul Klasse benötigen wir mindestens zwei Dateien. Eine Modul
 Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blick erkennbar ist, dass die beiden Dateien zusammengehören. In diesem Beispiel haben wir die beiden Dateien `mc_my_first_module.php` benannt. Orientiere dich für das Benennen von Dateien an den Namingconventions aus dem Abschnitt [???](#).
 
 ```
-└── admin
+├── admin
 │   └── includes
 │       └── modules
 │           └── system
