@@ -3,17 +3,19 @@ title: Modul Klassen
 description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Payment-Modulen und anderen Modulen für das modified Shop System.
 ---
 
-# Modul Klassen
+# Modul Klassen (abstract)
 
 ??? note "Textstatus - Entwurf"
 
     Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
-In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an.
+!!! note "Hinweis"
+
+    In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an. Die Überschrift wurde als *abstract* deklariert, da es keine konkrete Modul Klasse in modifiedt gibt. Sondern nur "Spezifische Modul Klassen" oder "Klassenerweiterungen", die dem Aufbau einer Modul Klasse folgen.
 
 Wir unterscheiden in dieser Dokumentation zwischen "Spezifische Modul Klassen" und "Klassenerweiterungen". Spezifische Modul Klassen fügen dem System eine neue spezifische Funktionalität zum System hinzu. Wie z. B. eine Versandart oder Zahlungsmethode. Mit Klassenerweiterungen, können von einigen PHP-Klassen die Methoden erweitert werden.
 
-Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassenerweiterungen. Hier wird der gemeinsame Aufbau beschrieben, bzw. das Konzept, das alle Modul Klassen gemeinzahm haben. In anderen Abschnitten gehen wir auf die jeweiligen Besonderheiten der jeweiligen Klasse ein.
+Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassenerweiterungen. Hier wird der gemeinsame Aufbau beschrieben, bzw. das Konzept, das alle Modul Klassen gemeinsam haben. In anderen Abschnitten gehen wir auf die jeweiligen Besonderheiten der jeweiligen Klasse ein.
 
 
 ## Konzept
