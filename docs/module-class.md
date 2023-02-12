@@ -34,7 +34,7 @@ Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klas
 
 Alle Modul Klassen bestehen in der Regel aus mindestens zwei Datein. Eine Datei mit einer PHP-Klassen-Definition und einer Sprachdatei.
 
-- PHP-Klassen-Defintion - Eine PHP je nach Modul Klassen Typ in `/includes/modules/<TYPE>/` oder `/system/includes/modules/<TYPE>/`
+- PHP-Klassen-Defintion - Eine PHP je nach Modul Klassen Typ in `/includes/modules/<TYPE>/` oder `/admin/includes/modules/<TYPE>/`
 - Sprachdatei - Eine PHP-Datei je Sprache im Verzeichnis `/lang/<LANGUAGE>/modules/<TYPE>/`.
 
 ### Die Klasse
