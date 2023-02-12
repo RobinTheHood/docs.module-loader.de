@@ -22,7 +22,7 @@ Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassene
 
     Status: 2 von 5 - Erster Entwurf
 
-Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klassen werden vom System für unterschiedliche Aufgaben geladen. Mit ihnen kann man z. B. Verstand und Zahlungsmodule realisieren. Zudem bieten Sie einen Anlaufpunkt für Einstellungen, die ein User im Adminbereich zum jeweiligen Modul tätigen kann.
+Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klassen werden vom System für unterschiedliche Aufgaben geladen. Mit ihnen können z. B. Verstand und Zahlungsmodule realisiert werden. Zudem bieten sie einen Anlaufpunkt für Einstellungen, die ein User im Adminbereich zum jeweiligen Modul tätigen kann.
 
 ## Aufbau
 

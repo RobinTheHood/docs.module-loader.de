@@ -335,7 +335,7 @@ public function display(): array
 
 <h4>Beschreibung</h4>
 
-In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jede Eigenschaft, die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Über die `display()` Methode kann man beliebe Buttons wie den Save Button generieren oder eine andere beliebige HTML-Ausgabe. Die Ausgabe wird nach den Eigenschaften/Keys ausgegeben / gerendert.
+In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jede Eigenschaft, die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Mit der `display()` Methode können beliebe Buttons oder andere beliebige HTML-Ausgaben generiert werden. Sie wird fast immer für die Ausgabe des Save-Buttons verwendet. Die HTML-Ausgabe von `display()` wird in der Reinfolge hinter den Eigenschafte (Keys) dargestellt.
 
 ### custome()
 
