@@ -5,7 +5,9 @@ description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Pay
 
 # Modul Klassen
 
-> Skizze
+??? note "Textstatus 2"
+
+    Status: 2 von 5 - Erster Entwurf
 
 In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an.
 
@@ -16,15 +18,24 @@ Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassene
 
 ## Konzept
 
-> Skizze
+??? note "Textstatus 2"
+
+    Status: 2 von 5 - Erster Entwurf
 
 Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klassen werden vom System für unterschiedliche Aufgaben geladen. Mit ihnen kann man z. B. Verstand und Zahlungsmodule realisieren. Zudem bieten Sie einen Anlaufpunkt für Einstellungen, die ein User im Adminbereich zum jeweiligen Modul tätigen kann.
 
 ## Aufbau
 
-> Skizze
+### Dateien
 
-Lorem ...
+??? note "Textstatus 2"
+
+    Status: 2 von 5 - Erster Entwurf
+
+Alle Modul Klassen bestehen in der Regel aus mindestens zwei Datein. Eine Datei mit einer PHP-Klassen-Definition und einer Sprachdatei.
+
+- PHP-Klassen-Defintion - Eine PHP je nach Modul Klassen Typ in `/includes/modules/<TYPE>/` oder `/system/includes/modules/<TYPE>/`
+- Sprachdatei - Eine PHP-Datei je Sprache im Verzeichnis `/lang/<LANGUAGE>/modules/<TYPE>/`.
 
 ### Die Klasse
 
@@ -32,9 +43,15 @@ Lorem ...
 
     Status: 2 von 5 - Erster Entwurf
 
-Eine Modul Klassen-Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen, in der sie liegen. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
+In dieser Dokumentation zeigen wir dir jeweils zwei Wege, wie du Modul Klassen programmieren kannst.
 
-Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden.
+1. **Ohne StdModul** - Wenn du eine Modul Klasse ohne Hilfsklassen erstellen möchtest, kannst du den Beispielprogrammcode am Ende dieses Abschnitts als Basis verwenden und an deine Bedürfnisse anpassen. Vorteil ... Nachteil ...
+
+2. **Mit StdModul** - Wenn du eine Modul Klasse mit der StdModul Hilfsklasse erstellen möchtest, kannst du den Beispielprogrammcode am Ende dieses Abschnitts als Basis verwenden und an deine Bedürfnisse anpassen. Vorteil ... Nachteil ...
+
+Eine Modul Klassen-Datei besteht aus genau einer PHP-Klasse. Diese PHP-Klasse muss den gleichen Namen (ohne `.php`) haben, wie die Datei, in der sie befindet. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
+
+Das bedeutet für uns, dass wir die PHP-Klasse `mc_my_first_module` nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden.
 
 === "Ohne StdModule"
 
@@ -80,12 +97,13 @@ Eine Modul-Datei besteht meistens aus den folgenden Elementen:
 
 #### Methoden
 
+- `public function __construct()`
 - `public function keys(): array`
 - `public function check(): int`
 - `public function install(): void`
 - `public function remove(): void`
 
-Eine ausführliche Beschreibung, was die jeweiligen Aufgaben dieser Elemente sind, findes du im Abschnitt [Referenzen > Modul Klasse](/references/module-class/).
+Eine ausführliche Beschreibung, was die jeweiligen Aufgaben dieser Elemente sind, findest du im Abschnitt [Referenzen > Modul Klasse](/references/module-class/). Wir gehen hier hauptsächlich auf die Methode `__construct()` ein.
 
 
 ### Der Constructor - in einfacher Form (nicht verwenden)
@@ -153,23 +171,6 @@ $prefix = 'MODULE_' . strtoupper(self::class);
 Die Konstanten `MODULE_MC_MY_FIRST_MODULE_SORT_ORDER` und `MODULE_MC_MY_FIRST_MODULE_STATUS` lädt der modifed Core für uns aus der Datenbanktabelle `configure`, bevor er versucht eine Instanz der Klasse zu erzeugen und der Constructor aufgerufen wird.
 
 Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. Das passiert automatisch vom modified Core, sobald die Funktion `install()` aufgerufen wird, wie wir uns auch gleich noch anschauen werden.
-
-
-
-### Dateien
-
-> Skizze
-
-Alle Modul Klassen bestehen in der Regel aus zwei Datein. Eine Datei mit einer PHP-Klassen Definition und einer Sprachdatei. 
-
-### PHP-Klasse
-
-Lorem ...
-
-### Sprachdatei
-
-Lorem ...
-
 
 ## Beispiel
 
@@ -294,5 +295,3 @@ Lorem ...
         }
     }
     ```
-
-
