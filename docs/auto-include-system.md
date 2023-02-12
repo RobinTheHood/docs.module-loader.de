@@ -6,7 +6,7 @@
 
 Das Autoinclude System wurde geschaffen, damit Modulentwickler das modified Shopsystem ohne Core-Anpassungen erweitern können. Hierzu existieren mittlerweile Hookpoints in den Controller- und Include-Dateien. Diese Hookpoints werden bei modified Autoincludes genannt.
 
-Die Autoincludes laden weiteren Programmcode aus einer Autoinclude-Datei. Diese Datei müssen wir dazu an einen dafür vorgesehenen Ort ablegen. Für das Autoinclude System spielt es zum größten Teil keine Rolle, wie du diese Datei benennst. Zwar ist oft alleine die Dateiendung `.php` ausreichend, allerding solltest du als guter PHP Entwickler Wert darauf legen, einen sinnhaften Dateinamen zu verwenden. Der Abschnitt [_Das Autoinclude System - Namenskonventionen von Autoinclude-Dateien_](#) gibt dir eine gute Grundlage für die Bennung von Autoinclude-Dateien.
+Die Autoincludes laden weiteren Programmcode aus einer Autoinclude-Datei. Diese Datei müssen wir dazu an einen dafür vorgesehenen Ort ablegen. Für das Autoinclude System spielt es zum größten Teil keine Rolle, wie du diese Datei benennst. Zwar ist oft alleine die Dateiendung `.php` ausreichend, allerdings solltest du als guter PHP Entwickler Wert darauf legen, einen sinnhaften Dateinamen zu verwenden. Der Abschnitt [_Das Autoinclude System - Namenskonventionen von Autoinclude-Dateien_](#) gibt dir eine gute Grundlage für die Benennung von Autoinclude-Dateien.
 
 Wie das Autoinclude System genau funktioniert und wie wir es verwenden können, um das modified System zu erweitern, schauen wir uns im folgenden Abschnitt an.
 
@@ -40,7 +40,7 @@ Der Programmcode in Zeile 5 wird bei modified Autoinclude genannt. Dieser Autoin
 
 !!! warning "Achtung"
 
-    Beachte, dass nicht immer `require_once()` verwendet wird, um Code zu laden. Es gibt Autoincludes, bei denen `require()` oder `include()` verwendet werden. Du solltest dir dediei Datei vorher immer ansehen und überprüfen, mit welcher Funktion deine Datei in den Programmcode hinzugefügt wird.
+    Beachte, dass nicht immer `require_once()` verwendet wird, um Code zu laden. Es gibt Autoincludes, bei denen `require()` oder `include()` verwendet werden. Du solltest dir die Datei vorher immer ansehen und überprüfen, mit welcher Funktion deine Datei in den Programmcode hinzugefügt wird.
 
 Um die Zeile 5 in unserem fiktiven Controller Programmcode zu erweitern, benötigen wir eine Datei, die in `/includes/extra/example/` liegt. Diese Datei solltest du nach der Konvention aus Abschnitt [_"???"_](#) benennen. Wir wählen z. B. `mc_my_first_module.php`. Diese Datei soll jetzt dafür sorgen, dass wir die Variable `$modifedVariable` aus der `/example_xyz.php` Datei mit unserem eigenen Wert überschreiben.
 
@@ -60,7 +60,7 @@ Mit unserem Modul bzw. mit unserer Autoinclude-Datei `mc_my_first_module.php` in
 
     Status: 3 von 5 - Skizze
 
-Zubachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `?>` vorkommt, wieso du am Ende von PHP Dateien kein PHP Closing Tag `?>` verwenden solltest, beschreibt der PSR Standard X und folgende Link: [stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag](https://stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag)
+Zu beachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `?>` vorkommt, wieso du am Ende von PHP Dateien kein PHP Closing Tag `?>` verwenden solltest, beschreibt der PSR Standard X und folgende Link: [stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag](https://stackoverflow.com/questions/3219383/why-do-some-scripts-omit-the-closing-php-tag)
 
 ## Konkretes Beispiel anhand von login.php
 
@@ -106,7 +106,7 @@ Der Code in der Datei ist relativ simpel gehalten. Mit nur einer Zeile können w
 
 Wenn in einem Verzeichnis mehrere Autoinclude-Dateien vorhanden sind, werden die Dateien in alphabetischer Reihenfolge geladen.
 
-## Wo liegen die Datein, die per Autoinclude in modified hinzugefügt werden können?
+## Wo liegen die Dateien, die per Autoinclude in modified hinzugefügt werden können?
 
 ??? note "Textstatus - Entwurf"
 
@@ -150,7 +150,7 @@ Leider gibt uns modified keine Namenskonvention vor, an die wir uns halten könn
 
 Autoinclude-Dateinamen sollten alle in `snake_case` geschrieben sein.
 
-Der Vendorprefix ist eine kurze Zeichenkombination, die den Hersteller des Moduls eindeutig bestimmen kannen. Er kann z. B. aus den Anfangsbuchstaben deines Namens bestehen oder aus den Anfangsbuchstaben eines Firmennamens. Wichtig ist, dass du versuchst einen VendorPrefix zu wählen, von dem du glaubst oder ausgehen kann, dass er im modified Umfeld nur von dir verwendet wird. Leider gibt es zurzeit keine Möglichkeit, um herauszufinden, dass du einen VendorPrefix verwendest, der von sonst niemanden verwendet wird. Solltest du Module mit dem MMLC programmieren, können mit diesem nur Module veröffentlicht werden, die einen eindeutigen VendorPrefix verwenden.
+Der Vendorprefix ist eine kurze Zeichenkombination, die den Hersteller des Moduls eindeutig bestimmt. Er kann z. B. aus den Anfangsbuchstaben deines Namens bestehen oder aus den Anfangsbuchstaben eines Firmennamens. Wichtig ist, dass du versuchst einen VendorPrefix zu wählen, von dem du glaubst oder ausgehen kann, dass er im modified Umfeld nur von dir verwendet wird. Leider gibt es zurzeit keine Möglichkeit, um herauszufinden, dass du einen VendorPrefix verwendest, der von sonst niemanden verwendet wird. Solltest du Module mit dem MMLC programmieren, können mit diesem nur Module veröffentlicht werden, die einen eindeutigen VendorPrefix verwenden.
 
 ## Beispiele zur Benennung von Autoinclude-Dateien
 
