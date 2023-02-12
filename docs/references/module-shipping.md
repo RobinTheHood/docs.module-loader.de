@@ -2,6 +2,15 @@
 
 Erweitert die Modul Klasse um folgende Attribute und Methoden.
 
+
+!!! danger "Wichtiger Hinweis"
+
+    Der PHP-Klassen Name und der Dateiname darf bei Shipping Modul Klassen keine Unterschriche `_` beinhalten.
+
+    - :x: my_first_shipping_module / my_first_shipping_module.php
+
+    - :white_check_mark: myfirstshippingmodule / myfirstshippingmodule.php
+
 ## Attibute
 
 keine
