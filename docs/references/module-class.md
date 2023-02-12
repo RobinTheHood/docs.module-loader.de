@@ -133,6 +133,36 @@ public string $extended_description;
 
 ## Methoden
 
+### __construct()
+
+```php
+public function __construct()
+```
+
+<h4>Beschreibung</h4>
+
+??? note "Textstatus 1"
+
+    Status: 1 von 5 - Skizze
+
+Lorem ...
+
+<h4>Beispiel</h4>
+
+```php
+public function __construct()
+{
+    // Der Wert in $prefix ist: MODULE_MC_MY_FIRST_MODULE
+    $prefix = 'MODULE_' . strtoupper(self::class);
+
+    $this->code        = self::class;
+    $this->title       = constant($prefix . '_TITLE');
+    $this->description = constant$prefix . '_DESC');
+    $this->sort_order  = constant$prefix . '_SORT_ORDER');
+    $this->enabled     = defined($prefix . '_STATUS') && 'true' === constant($prefix . '_STATUS');
+}
+```
+
 ### keys()
 
 ```php
