@@ -23,7 +23,7 @@ Die Autoinclude-Dateien werden durch Autoinclude-Stellen in den modified Core ge
 Dieser Text erklärt dir die nötigen Konzepte, wie du Module für modified programmierst. Dazu gehen wir zuerst auf alle Bestandteile ein, aus denen ein Modul aufgebaut werden kann und schauen uns an, wozu sie dienen und wie sie funktionieren. Hier ein Überblick:
 
 - Controller-Dateien
-- Inklude-Dateien
+- Include-Dateien
 - Autoinclude-Dateien
 - System Modul
 - Shipping Modul
@@ -77,7 +77,7 @@ In der Regel besteht ein updatefähiges Modul aus folgenden Elementen:
 -   Optional: Eine oder mehrere Auto-Include-Dateien die in `/includes/extra/` oder `/admin/includes/extra/` liegen.
 -   Optional: Eine oder mehrere Klassenerweiterungen die in `/includes/modules/` oder `/admin/includes/modules/` liegen.
 -   Optional: Eine oder mehrere Controller-Dateien die in `/` oder `/admin/` liegen
--   Optional: Eine oder mehrere Menu-Dateien die in `/admin/includes/extra/menu/` liegen.
+-   Optional: Eine oder mehrere Menü-Dateien die in `/admin/includes/extra/menu/` liegen.
 -   Optional: Eine oder mehrere Template-Dateien die in `/templates/<TEMPLATE>/` liegen.
 
 Um die Programmierung von Modulen für das modified System zu verstehen, solltest du dir folgende Themen in der aufgeführten Reihenfolge ansehen:
