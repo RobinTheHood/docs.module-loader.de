@@ -22,7 +22,7 @@ Eine System Modul Klasse basiert vom Aufbau auf eine [Modul Klasse](/module-clas
 
 ## Aufbau
 
-Eine System Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Lese dir den Abschnitt "[Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der System Modul Klasse ein, die nicht im Abschnitt "[Modul Klasse (abstract)](/module-class/) beschrieben wurden.
+Eine System Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Lese dir den Abschnitt [Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der System Modul Klasse ein, die nicht im Abschnitt [Modul Klasse (abstract)](/module-class/) beschrieben wurden.
 
 Für eine System Modul Klasse benötigen wir mindestens zwei Dateien. Eine Modul Klasse in `/admin/includes/modules/system/` und eine Sprachdatei in `/lang/<LANGUAGES>/modules/system/`. Du kannst wie bei allen Modul Klassen je Sprache eine weitere Datei zum System hinzufügen.
 
@@ -40,6 +40,9 @@ Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blic
 			└── system
 				└── mc_my_first_module.php
 ```
+
+Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
+
 
 ## Wie wird ein System Modul in modified programmiert?
 

@@ -1,4 +1,4 @@
-# Payment Modul für modified programmieren
+# Payment Modul Klasse für modified programmieren
 
 ??? note "Textstatus - Entwurf"
 
@@ -17,6 +17,8 @@ Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul aufgebaut. Es
 Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/payment/` anlegen und in dieser Datei eine Modul-Klasse hinzufügen.
 
 Die Sprachdateien liegen in `/lang/<LANGUAGES>/modules/payment/`.
+
+Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
 
 ## Der Bestellablauf
 

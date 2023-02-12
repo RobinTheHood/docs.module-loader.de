@@ -1,4 +1,4 @@
-# Modul Klasse - Referenz
+# Modul Klasse (abstract) - Referenz
 
 Basic Klasse. Wird von anderen Modul Klassen erweitert.
 

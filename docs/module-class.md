@@ -39,6 +39,8 @@ Alle Modul Klassen bestehen in der Regel aus mindestens zwei Datein. Eine Datei 
 - PHP-Klassen-Defintion - Eine PHP je nach Modul Klassen Typ in `/includes/modules/<TYPE>/` oder `/admin/includes/modules/<TYPE>/`
 - Sprachdatei - Eine PHP-Datei je Sprache im Verzeichnis `/lang/<LANGUAGE>/modules/<TYPE>/`.
 
+Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
+
 ### Die Klasse
 
 ??? note "Textstatus - Entwurf"
