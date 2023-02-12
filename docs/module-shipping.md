@@ -1,18 +1,48 @@
-# Shipping Modul für modified programmieren
+# Shipping Modul Klasse für modified programmieren
+
+In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein Shipping Modul für modified zu programmieren.
+
+## Konzept
 
 ??? note "Textstatus - Entwurf"
 
     Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
-Ein Versand- oder Shipping Modul ist wie ein normales Modul (System Modul) aufgebaut. Es benötigt lediglich die zusätzliche Methode `quote()`. Mit dieser Methode werden die Versandkosten bestimmt.
+Mit einer Shipping Modul Klasse, kannst du dem modified Shopsystem eine neue Versandart / Liefermethode hinzufügen, die der Kunde im Bestellprozess auswählen kann.
 
-Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/shipping/` anlegen. Achtung: Bei Shipping Modulen darf der Klassenname keine Unterstriche `_` enthalten.
+## Aufbau
+
+??? note "Textstatus - Entwurf"
+
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+
+Eine Shipping Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Eine Shipping Modul Klasse fügt jedoch die Methode `qute()` hinzu. Lese dir den Abschnitt "[Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der Shipping Modul Klasse ein, die nicht im Abschnitt "[Modul Klasse (abstract)](/module-class/) beschrieben werden.
+
+Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/shipping/` anlegen. Die Sprachdateien liegen in `/lang/<LANGUAGE>/modules/shipping/`.
+
+Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blick erkennbar ist, dass die beiden Dateien zusammengehören. In diesem Beispiel haben wir die beiden Dateien `myfirstshippingmodule.php` benannt. Orientiere dich für das Benennen von Dateien an den Namingconventions aus dem Abschnitt [???](#).
+
+!!! danger "Wichtiger Hinweis"
+
+    Der PHP-Klassen Name und der Dateiname darf bei Shipping Modul Klassen keine Unterschriche `_` beinhalten.
+
+    - :x: my_first_shipping_module / my_first_shipping_module.php
+
+    - :white_check_mark: myfirstshippingmodule / myfirstshippingmodule.php
+
+```
+└── includes
+│   └── modules
+│       └── shipping
+│           └── myfirstshippingmodule.php
+└── lang
+	└── <LANGUAGE>
+		└── modules
+			└── shipping
+				└── myfirstshippingmodule.php
+```
 
 Zusätzlich muss das Modul eine `*_ALLOWED` (`MODULE_SHIPPING_MC_MY_FIRST_MODULE_ALLOWED`) Konstante/Einstellung zur Verfügung stellen, mit der modified entscheidet, ob die Versandart im Checkout angezeigt werden soll. Üblicherweise befinden sich dort die Zonen (bzw. zweistellige Länderkürzel), in der die Versandart angeboten werden soll, wie z. B. `DE,AT`.
-
-Die Sprachdateien liegen in `/lang/<LANGUAGE>/modules/shipping/`.
-
-Zudem musst du die Methode `quote()` der Klasse hinzufügen.
 
 ## Shipping Klassen Methoden
 
