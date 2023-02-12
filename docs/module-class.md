@@ -1,3 +1,8 @@
+---
+title: Modul Klassen
+description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Payment-Modulen und anderen Modulen für das modified Shop System.
+---
+
 # Modul Klassen
 
 > Skizze
