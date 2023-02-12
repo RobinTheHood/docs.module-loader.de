@@ -2,7 +2,7 @@
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Klassenerweiterung für modified zu programmieren.
 
-### Konzept
+## Konzept
 
 ??? note "Textstatus - Skizze"
 
@@ -21,7 +21,7 @@ Klassenerweiterungen unterscheiden sich nicht von der abstrakten Modul Klasse, d
 Eine Liste mit allen Modul-Klassenerweiterungen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
 
 
-### Arten von Klassenerweiterungen
+## Arten von Klassenerweiterungen
 
 ??? note "Textstatus - Skizze"
 
