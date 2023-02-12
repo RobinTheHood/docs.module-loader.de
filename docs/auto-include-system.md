@@ -1,8 +1,8 @@
 # Das Autoinclude System von modified
 
-??? note "Textstatus 3"
+??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
 
 Das Autoinclude System wurde geschaffen, damit Modulentwickler das modified Shopsystem ohne Core-Anpassungen erweitern können. Hierzu existieren mittlerweile Hookpoints in den Controller- und Include-Dateien. Diese Hookpoints werden bei modified Autoincludes genannt.
 
@@ -12,9 +12,9 @@ Wie das Autoinclude System genau funktioniert und wie wir es verwenden können, 
 
 ## Allgemeines Beispiel
 
-??? note "Textstatus 3"
+??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
 
 Als Erstes schauen wir uns ein allgemeines Beispiel zum Verständnis an, danach werden wir uns mit einem realen Beispiel beschäftigen, in dem wir die Login-Funktion von modified mit einer Autoinclude-Datei erweitern.
 
@@ -56,7 +56,7 @@ $modifiedVariable = 20 // Überschreibe mit unserem Wert.
 
 Mit unserem Modul bzw. mit unserer Autoinclude-Datei `mc_my_first_module.php` in `/includes/extra/example/` konnten wir den Shop so weit erweitern, dass statt der Zahl `10` die Zahl `20` im Browser ausgegeben wird.
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
     Status: 3 von 5 - Skizze
 
@@ -64,9 +64,9 @@ Zubachten ist das `declare(strict_types = 1);` und dass am Ende der Datei kein `
 
 ## Konkretes Beispiel anhand von login.php
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Anhand der `/login.php` wollen wir uns ansehen, wie das _Autoinclude System_ für eine richtige Shop-Funktion funktioniert. Wir wollen `/login.php` so erweitern, dass der Warenkorb des Kunden beim Einloggen nicht wieder hergestellt wird. Dazu schauen wir uns all erstes die Controller-Datei `/login.php` an und überprüfen, an welcher Stelle wir per Autoinclude in das System eingreifen können.
 
@@ -100,17 +100,17 @@ Der Code in der Datei ist relativ simpel gehalten. Mit nur einer Zeile können w
 
 ## Die Reihenfolge - mehrere Autoinclude-Dateien in einem Verzeichnis
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Wenn in einem Verzeichnis mehrere Autoinclude-Dateien vorhanden sind, werden die Dateien in alphabetischer Reihenfolge geladen.
 
 ## Wo liegen die Datein, die per Autoinclude in modified hinzugefügt werden können?
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Alle Dateien liegen unter:
 
@@ -120,9 +120,9 @@ Alle Dateien liegen unter:
 
 ## Eine Liste aller verfügbaren Autoincludes in modified
 
-??? note "Textstatus 3"
+??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
 
 Da sich die Anzahl der Autoincludes von Version zu Version des modified Systems ändert und immer mal wieder neue hinzukommen, listet dir dieser Text nicht alle möglichen Autoincludes auf. An dieser Stelle möchten wir dir jeodoch erklären, wie du selbst herausfinden kannst, welche Autoincludes dir zur Verfügung stehen.
 
@@ -132,9 +132,9 @@ Im Wiki von modified gibt es mittlerweile ebenfalls einen Eintrag, der versucht 
 
 ## Namenskonventionen von Autoinclude-Dateien
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Es ist immer sinnvoll, feste Namenskonventionen zu verwenden. Diese solltest du auch auf Autoinclude-Datein anwenden. Das hilft Namenskollisionen mit Bezeichnern aus dem Core und anderen Modulen zu vermeiden und erleichtert das Wiederfinden und Zuordnen von Dateien, da im System verteilt wurden.
 
@@ -144,7 +144,7 @@ Leider gibt uns modified keine Namenskonvention vor, an die wir uns halten könn
 
 ## Erklärung der Namenskonvention
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
     Status: 3 von 5 - Skizze
 
@@ -154,9 +154,9 @@ Der Vendorprefix ist eine kurze Zeichenkombination, die den Hersteller des Modul
 
 ## Beispiele zur Benennung von Autoinclude-Dateien
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 In diesem Abschnitt schauen wir uns zwei Beispiele an, wie du Autoinclude-Dateien benennen solltest. Wie bereits geschrieben, setzt sich der Dateiname (Filename) aus folgenden Elementen zusammen, dem Vendorprefix und Modulnamen in `snake_case`.
 

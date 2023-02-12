@@ -1,8 +1,8 @@
 # Klassenerweiterung für modified programmieren
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Lorem ...
 

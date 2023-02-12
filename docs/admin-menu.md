@@ -1,16 +1,16 @@
 # Erweiterung der Menüpunkte
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 In modified kannst du einige Menüpunkte erweitern.
 
 ### Menüpunkte
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Hier eine List mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst:
 
@@ -51,9 +51,9 @@ Beipsieldatei
 
 ### Menü erweitern mit Configure Groups
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Lorem ...
 

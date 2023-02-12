@@ -5,9 +5,9 @@ description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Pay
 
 # Modul Klassen
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an.
 
@@ -18,9 +18,9 @@ Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassene
 
 ## Konzept
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klassen werden vom System für unterschiedliche Aufgaben geladen. Mit ihnen können z. B. Verstand und Zahlungsmodule realisiert werden. Zudem bieten sie einen Anlaufpunkt für Einstellungen, die ein User im Adminbereich zum jeweiligen Modul tätigen kann.
 
@@ -28,9 +28,9 @@ Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klas
 
 ### Dateien
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Alle Modul Klassen bestehen in der Regel aus mindestens zwei Datein. Eine Datei mit einer PHP-Klassen-Definition und einer Sprachdatei.
 
@@ -39,9 +39,9 @@ Alle Modul Klassen bestehen in der Regel aus mindestens zwei Datein. Eine Datei 
 
 ### Die Klasse
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 In dieser Dokumentation zeigen wir dir jeweils zwei Wege, wie du Modul Klassen programmieren kannst.
 
@@ -108,9 +108,9 @@ Eine ausführliche Beschreibung, was die jeweiligen Aufgaben dieser Elemente sin
 
 ### Der Constructor - in einfacher Form (nicht verwenden)
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Als Erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen Beispiels. Dieses Beispiel solltest du in dieser Form aber nicht verwenden. Das Modul ist so nicht mehrsprachig und kann auch nicht über das Admininterface vom Nutzer aktiviert oder deaktiviert werden, da der Wert für `$this->enabled` immer auf `true` steht.
 
@@ -129,9 +129,9 @@ public function __construct()
 
 ### Der Constructor - mehrsprachig und dynamisch
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
 

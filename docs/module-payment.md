@@ -1,8 +1,8 @@
 # Payment Modul für modified programmieren
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 ## Einleitung
 

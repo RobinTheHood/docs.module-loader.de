@@ -1,8 +1,8 @@
 # Wie funktionieren setFunctions
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 In diesem Abschnitt schauen wir uns an, was es mit der `setFunction` auf sich hat. Mit der `setFunction` können wir eine Funktion oder Methode bestimmen, die modified aufrufen soll, wenn die Anzeige für die Bearbeitung eines Konfigurationswertes in der Eingabemaske der Konfiguration gerendert werden soll. Du kannst dir das wie folgt vorstellen. Du befindest dich im Admin unter *Module > System Module* und klickst dort bei einem Modul auf bearbeiten. Jetzt werden dir alle Werte angezeigt, die du zu diesem Modul bearbeiten kannst. Bei manchen Werten reicht ein einfaches Texteingabefeld aus. Bei anderen Werten möchten wir z. B. ein DropDownMenü oder sogar etwas noch Spezielleres anzeigen. Hier kommt jetzt die `setFunction` ins Spiel.
 
@@ -94,9 +94,9 @@ Hier ein paar Beispiele für `setFunction`:
 
 ## Liste der möglichen setFunctions
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 modified bringt von Haus aus einige `setFunction` mit. Das ist ganz praktisch und erspart dir einiges an Programmierarbeit. Die meisten Funktionen, die unter `/admin/includes/functions/` mit dem Präfix `xtc_cfg_` anfangen, kannst du als `setFunction` verwenden. Hier einige Beispiele:
 

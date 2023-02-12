@@ -141,9 +141,9 @@ public function __construct()
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Lorem ...
 
@@ -171,9 +171,9 @@ public function keys(): array
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Der modified Core ruft diese Methode auf, um sich eine Liste mit allen
 Einstellungen aus der Datenbank aus der Tabelle Configuration zu holen. Diese Werte werden z. B. in der Admin Modul Übersicht und beim Bearbeiten angezeigt. Gibst du keinen Key an, wird dir auch keiner angezeigt und du kannst keinen bearbeiten. Zudem kann der modified Core anhand dieser key abgleichen, ob keys in der Datenbank fehlen. Unabhängig davon welche key hier angegeben werden, lädt modified zu Beginn eines jeden Requests alle Configuration Werte aus der Datenbank als Konstante.
@@ -198,9 +198,9 @@ public function check(): int
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Diese Methode überprüft, ob das Modul installiert ist. Das kann auf unterschiedliche Art und Weise passieren. Wenn das Modul ordnungsgemäß installiert ist, muss die Methode eine Zahl ungleich 0 zurückgeben.
 
@@ -238,9 +238,9 @@ public function install(): void
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Diese Methode wird aufgerufen, wenn der Nutzer im Admin beim Modul auf die Taste "Installieren" klickt. In diesem Moment müssen wir selbst die nötigen Configurationen in der Datenbank anlegen. Wie du das machst, siehst du im folgenden Beispiel:
 
@@ -292,9 +292,9 @@ public function remove(): void
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Lorem ...
 
@@ -321,9 +321,9 @@ public function display(): string
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 ```php
 
@@ -345,9 +345,9 @@ public function custome(): ???
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Sie Beispiel `/admin/includes/modules/system/image_processing_step.php`
 
@@ -361,9 +361,9 @@ public function process(string $filePath): void
 
 <h4>Beschreibung</h4>
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 Wird vom modified Core aufgerufen, sobald auf im Bearbeitungsmodus auf die Taste `Save` geklickt wird, bzw. sobald die Action `save`. In diesem Fall wird als Parameter `$filePath` ??? übergeben (siehe `admin/module_export.php:136`) Mit `$_POST['process'] == 'module_processing_do'` kann verhindert werden, dass die Methode `function process(string $filePath): void` durch den Core aufgerufen wird.
 

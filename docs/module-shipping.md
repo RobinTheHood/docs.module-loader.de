@@ -1,8 +1,8 @@
 # Shipping Modul für modified programmieren
 
-??? note "Textstatus 2"
+??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 Ein Versand- oder Shipping Modul ist wie ein normales Modul (System Modul) aufgebaut. Es benötigt lediglich die zusätzliche Methode `quote()`. Mit dieser Methode werden die Versandkosten bestimmt.
 

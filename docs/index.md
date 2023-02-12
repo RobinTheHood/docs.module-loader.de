@@ -22,29 +22,30 @@ Wenn du Hilfe bei der Programmierung benötigst oder dir anschauen möchtest, wi
 
 Zurzeit befinden sich in dieser Anleitung noch viele Annotations, die Auskunft darüber geben, in welchem Zustand sich ein Textabschnitt befindet. Hier eine Liste:
 
-??? note "Textstatus 1"
+??? note "Textstatus - Skizze"
 
-    Status: 1 von 5 - Skizze
-
-
-??? note "Textstatus 2"
-
-    Status: 2 von 5 - Erster Entwurf
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
 
-??? note "Textstatus 3"
+??? note "Textstatus - Entwurf"
 
-    Status: 3 von 5 - Dieser Abschnitt könnte besser geschrieben werden.
-
-
-??? note "Textstatus 4"
-
-    Status: 4 von 5 - Dieser Abschnitt kann vorerst so bleiben.
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
 
 
-??? note "Textstatus 5"
+??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 5 von 5 - Fertig.
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
+
+
+??? note "Textstatus - Ok"
+
+    Status: 4 von 5 - Ok: Dieser Abschnitt kann vorerst so bleiben.
+
+
+??? note "Textstatus - Fertig"
+
+    Status: 5 von 5 - Fertig: Dieser Abschnitt ist erst einmal fertig.
+
 
 ## Vorwort
 
