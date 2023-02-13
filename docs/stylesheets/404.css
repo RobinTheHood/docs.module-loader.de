@@ -1,7 +1,48 @@
 @media (min-width: 1219px) {
-    header {
-        rotate: -4deg;
-        margin-top: 6em;
+    header.md-header {
+        animation: header_drop 4s 1s ease forwards;
+    }
+    @keyframes header_drop {
+        /** Initial slip */
+        2% {
+            rotate: -1deg;
+        }
+        10% {
+            top: 0;
+            rotate: -1deg;
+        }
+
+        /** Falling slowly */
+        20% {
+            top: 0;
+            rotate: -1deg;
+        }
+        80% {
+            top: 4px;
+            rotate: -1.04deg;
+        }
+        84% {
+            top: 4px;
+            rotate: -1.04deg;
+        }
+
+        /** Drop */
+        86% {
+            top: 4px;
+            rotate: -1.04deg;
+        }
+        88% {
+            top: 2.2rem;
+            rotate: -2.2deg;
+        }
+        90% {
+            top: 1.8rem;
+            rotate: -1.8deg;
+        }
+        100% {
+            top: 2rem;
+            rotate: -2deg;
+        }
     }
 
     nav.md-nav--primary {
