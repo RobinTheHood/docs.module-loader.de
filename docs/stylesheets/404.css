@@ -1,6 +1,9 @@
 @media (min-width: 1219px) {
     header.md-header {
         animation: header_drop 4s 1s ease forwards;
+
+        width: 100.8%;
+        margin-left: -0.4%;
     }
     @keyframes header_drop {
         /** Initial slip */
