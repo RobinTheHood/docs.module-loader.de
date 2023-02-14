@@ -144,14 +144,14 @@ Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schau
     ```php title="mc_my_first_module.php"
     public function __construct()
     {
-        // Der Wert in $prefix ist: MODULE_MC_MY_FIRST_MODULE
-        $prefix = 'MODULE_' . strtoupper(self::class);
+        // Der Wert in $this->prefix ist: MODULE_MC_MY_FIRST_MODULE
+        $this->prefix = 'MODULE_' . strtoupper(self::class);
 
         $this->code        = self::class;
-        $this->title       = constant($prefix . '_TITLE');
-        $this->description = constant$prefix . '_DESC');
-        $this->sort_order  = constant$prefix . '_SORT_ORDER');
-        $this->enabled     = defined($prefix . '_STATUS') && 'true' === constant($prefix . '_STATUS');
+        $this->title       = constant($this->prefix . '_TITLE');
+        $this->description = constant($this->prefix . '_DESC');
+        $this->sort_order  = constant($this->prefix . '_SORT_ORDER');
+        $this->enabled     = defined($this->prefix . '_STATUS') && 'true' === constant($this->prefix . '_STATUS');
     }
     ```
 
@@ -189,7 +189,7 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
 
     class mc_my_first_module
     {
-        /** @var string $name **/
+        /** @var string $prefix **/
         public $prefix;
 
         /** @var string $code **/
@@ -212,11 +212,13 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
 
         public function __construct()
         {
-            $this->prefix      = strtoupper(self::class);
+            // Der Wert in $prefix ist: MODULE_MC_MY_FIRST_MODULE
+            $this->prefix = 'MODULE_' . strtoupper(self::class);
+
             $this->code        = self::class;
-            $this->title       = $this->name . '_TITLE';
-            $this->description = $this->name . '_DESC';
-            $this->sort_order  = $this->name . '_SORT_ORDER';
+            $this->title       = constant($this->prefix . '_TITLE');
+            $this->description = constant($this->prefix . '_DESC');
+            $this->sort_order  = constant($this->prefix . '_SORT_ORDER');
             $this->enabled     = defined($this->prefix . '_STATUS') && 'true' === constant($this->prefix . '_STATUS');
         }
 
@@ -258,14 +260,14 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
             string $setFunction = '',
             string $useFunction = ''
         ): void {
-            $key = $this->prefix() . '_' . $key;
+            $key = $this->prefix . '_' . $key;
             $setFunction = str_replace("'", "\\'", $setFunction);
             xtc_db_query("INSERT INTO `" . TABLE_CONFIGURATION . "` (`configuration_key`, `configuration_value`, `configuration_group_id`, `sort_order`, `set_function`, `use_function`, `date_added`) VALUES ('$key', '$value', '$groupId', '$sortOrder', '$setFunction', '$useFunction', NOW())");
         }
 
         protected function deleteConfiguration(string $key): void
         {
-            $key = $this->prefix() . '_' . $key;
+            $key = $this->prefix . '_' . $key;
             xtc_db_query("DELETE FROM " . TABLE_CONFIGURATION . " WHERE configuration_key = '$key'");
         }
     }

@@ -157,8 +157,8 @@ public function __construct()
 
     $this->code        = self::class;
     $this->title       = constant($prefix . '_TITLE');
-    $this->description = constant$prefix . '_DESC');
-    $this->sort_order  = constant$prefix . '_SORT_ORDER');
+    $this->description = constant($prefix . '_DESC');
+    $this->sort_order  = constant($prefix . '_SORT_ORDER');
     $this->enabled     = defined($prefix . '_STATUS') && 'true' === constant($prefix . '_STATUS');
 }
 ```
