@@ -3,6 +3,8 @@
 Erweitert die Modul Klasse um folgende Attribute und Methoden.
 
 
+## Meta
+
 !!! danger "Wichtiger Hinweis"
 
     Der PHP-Klassen Name und der Dateiname darf bei Shipping Modul Klassen keine Unterschriche `_` beinhalten.
@@ -10,6 +12,15 @@ Erweitert die Modul Klasse um folgende Attribute und Methoden.
     - :x: my_first_shipping_module / my_first_shipping_module.php
 
     - :white_check_mark: myfirstshippingmodule / myfirstshippingmodule.php
+
+| | |
+|-------------| - |
+| Class directory | `/includes/modules/shipping/` |
+| Lang directory | `/lang/<LANGUAGE>/modules/shipping/` | 
+| Class name | [`snake_case`](#) oder [`PascalCase`](#) ohne `_` | 
+| File name | `<CLASS_NAME>.php` | 
+| Configuration-Prefix | `MODULE_` oder `MODULE_SHIPPING_` in [`SCREAM_CASE`](#) | 
+| Configuration | `<CONFIGURATION_PREFIX><CLASS_NAME>` in [`SCREAM_CASE`](#) | 
 
 ## Attibute
 
