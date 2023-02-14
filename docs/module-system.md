@@ -508,10 +508,10 @@ public function display(): array
 
 In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jede Eigenschaft, die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Über die `display()` Methode kann man beliebe Buttons wie den Save Button generieren oder eine andere beliebige HTML-Ausgabe. Die Ausgabe wird nach den Eigenschaften/Keys ausgegeben / gerendert.
 
-### custome()
+### custom()
 
 ```php
-public function custome(): ???
+public function custom(): ???
 ```
 
 <h4>Beschreibung</h4>
