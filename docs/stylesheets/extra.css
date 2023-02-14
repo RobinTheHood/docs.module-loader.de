@@ -11,3 +11,7 @@
 html {
     hyphens: auto;
 }
+
+code {
+    hyphens: none;
+}
