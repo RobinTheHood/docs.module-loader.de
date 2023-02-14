@@ -115,3 +115,7 @@ public function quote(string $method = '', string $module = ''): array
     return $shippingQuoteArray;
 }
 ```
+
+## Beispiel
+
+Beispieldateien findest du unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions/blob/master/new_files/includes/modules/shipping/).

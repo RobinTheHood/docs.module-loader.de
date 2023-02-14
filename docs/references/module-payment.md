@@ -439,3 +439,7 @@ Es sieht so aus, als würde diese Methode niemals vom modified Core aufgerufen w
 <h4>Zeitpunkt der Verwendung</h4>
 
 Diese Methode wird nicht vom modified Core aufgerufen.
+
+## Beispiel
+
+Beispieldateien findest du unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions/blob/master/new_files/includes/modules/payment/).
