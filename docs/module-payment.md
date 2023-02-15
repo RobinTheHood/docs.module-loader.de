@@ -7,7 +7,7 @@ description: Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul 
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 ## Konzept
 
@@ -119,7 +119,7 @@ Die Methode wird zu Beginn der `checkout_confirmation.php` aufgerufen.
 public function update_status(): void
 {
     global $order;
-    
+
     if ($order->billing['country']['id'] === 1) {
         $this->enabled = true;
     } else {
@@ -202,19 +202,19 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 public function selection(): array
 {
     // ...
-    
+
     $selectionFieldArray = [
         'title' => '// TODO: ...',
         'field' => '<input type="text" name="iban">'
     ];
-        
+
     $selectionArray = [
         'code' => 'mc_my_first_payment_module',
         'module' => 'Bezahlen mit MyPayment',
         'description' => '// TODO: ...',
         'fields' => [$selectionFieldArray]
     ];
-        
+
     return $selectionArray;
 }
 ```
@@ -277,7 +277,7 @@ public function process_button(): string
 
 <h4>Beschreibung</h4>
 
-Oft wird diese Methode dazu verwendet, um mithilfe von hidden Inputfeldern Informationen per `POST` request weiterzugeben. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Zudem kann mit dieser Methode weiterer Content auf der Seite angezeigt werden. 
+Oft wird diese Methode dazu verwendet, um mithilfe von hidden Inputfeldern Informationen per `POST` request weiterzugeben. In der Methode wird von vielen Modulen auf `$order` per `global` Statement zugegriffen. Zudem kann mit dieser Methode weiterer Content auf der Seite angezeigt werden.
 
 Als Ergebnis gibt die Methode ein Eingabeformular als HTML (string) zurück. Z. B. Felder für Vor- und Nachname, IBAN, Kreditkartennummer etc.
 
@@ -293,14 +293,14 @@ Die Methode wird in `checkout_confirmation.php` aufgerufen.
 public function process_button(): string
 {
     global $order;
-    
+
     $prefix = 'mc_my_first_payment_module_';
-    
-    $htmlStr = 
+
+    $htmlStr =
         xtc_draw_hidden_field($prefix . 'firstname', 'Max') .
         xtc_draw_hidden_field($prefix . 'lastname', 'Mustermann') .
         xtc_draw_hidden_field($prefix . 'iban', 'DE...');
-    
+
     return $htmlStr;
 }
 ```
@@ -530,7 +530,7 @@ class mc_my_first_payment_module extends StdModule
 
         $this->checkForUpdate(true);
     }
-    
+
     /**
      * Diese Methode wird vom System aufgerufen, um zu kontrollieren, ob die Zahlungsart
      * (weiterhin) zur Verfügung steht. Z. B. können Bedingungen, wie Warenwert, Land, Kundenstatus etc.
@@ -551,10 +551,10 @@ class mc_my_first_payment_module extends StdModule
 
     /**
      * ...
-     * 
+     *
      * Einige Module geben als Rückgabewert boolean true oder false zurück. Das ist jedoch nicht nötig, da vom
      * modified Core kein Rückgabewert von der Methode erwartet oder verarbeitet wird.
-     *  
+     *
      * @return void
      */
     public function pre_confirmation_check(): void
@@ -563,32 +563,32 @@ class mc_my_first_payment_module extends StdModule
 
     /**
      * ???
-     * 
+     *
      * @return array ConfirmationArray
      */
     public function confirmation(): array
     {
         // ...
-        
+
         $confirmationFieldArray = [
             'title' => string,
             'field' => string
         ]
-            
-        
+
+
         $confirmationArray = [
             'title' => string,
             'fields' => [
                 $confirmationFieldArray
             ]
         ];
-        
+
         return $confirmationArray;
     }
 
     /**
      * ???
-     * 
+     *
      * @return string
      */
     public function process_button(): string
@@ -616,7 +616,7 @@ class mc_my_first_payment_module extends StdModule
 
     /**
      * ???
-     * 
+     *
      * @return void
      */
     public function before_send_order(): void
@@ -625,7 +625,7 @@ class mc_my_first_payment_module extends StdModule
 
     /**
      * ???
-     * 
+     *
      * @return void
      */
     public function after_process(): void
@@ -634,7 +634,7 @@ class mc_my_first_payment_module extends StdModule
 
     /**
      * ???
-     * 
+     *
      * @return array SuccessArray
      */
     public function success(): array

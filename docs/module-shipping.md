@@ -11,7 +11,7 @@ In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein Shippin
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Mit einer Shipping Modul Klasse, kannst du dem modified Shopsystem eine neue Versandart / Liefermethode hinzufügen, die der Kunde im Bestellprozess auswählen kann.
 
@@ -19,7 +19,7 @@ Mit einer Shipping Modul Klasse, kannst du dem modified Shopsystem eine neue Ver
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Eine Shipping Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Eine Shipping Modul Klasse fügt jedoch die Methode `qute()` hinzu. Lese dir den Abschnitt [Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der Shipping Modul Klasse ein, die nicht im Abschnitt [Modul Klasse (abstract)](/module-class/) beschrieben werden.
 
@@ -107,13 +107,13 @@ In der Methode `quote()` werden typischerweise auf die globalen Variablen `$tota
  * werden soll. Wenn leer, alle zur Auswahl stehenden Methoden
  * zurückgeben.
  * @param string $module ??? lorem
- * 
+ *
  * @return array Siehe Beispiel in quote()
  */
 public function quote(string $method = '', string $module = ''): array
 {
     // [...]
-    
+
     $shippingQuoteMethodArray1 = [
         'id'    => 'standard', // keine Unterstriche möglich!
         'title' => 'Standard Versand',
@@ -128,17 +128,17 @@ public function quote(string $method = '', string $module = ''): array
 
     $shippingQuoteArray = [
         'id'      => 'myfirstshippingmodule', // keine Unterstriche möglich!
-        
+
         'module'  => sprintf(
             'My First Module (%s kg)', round($shipping_weight, 2)
         ),
-        
+
         'methods' => [
             $shippingQuoteMethodArray1,
             $shippingQuoteMethodArray2
         ]
     ];
-    
+
     return $shippingQuoteArray;
 }
 ```
