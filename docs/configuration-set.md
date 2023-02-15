@@ -30,9 +30,9 @@ Was du vielleicht bereits gesehen hast, ist der Parameter `...`, den es so in PH
 
 In der Tabelle `configuration` in der Datenbank ist die `setFunction` zusammen mit dem `$configurationValue` und dem `$configurationKey` je Zeile gespeichert. Hier ein Beispiel:
 
-| `configuration_key` | `configuration_value` | `set_function` |
-|--|--|--|
-| `MODULE_COLOR` | `red` | `globalFuncSelectColor(`
+| `configuration_key` | `configuration_value` | `set_function`           |
+| ------------------- | --------------------- | ------------------------ |
+| `MODULE_COLOR`      | `red`                 | `globalFuncSelectColor(` |
 
 In der Datenbank steht als `setFunction` der Wert `global_func_select_color(`. Wenn modified die Konfiguration rendern möchte, hängt es an die Funktion, die Werte aus `configuration_value` und `configuration_key` an die Funktion, bevor modified die Funktion aufruft. modified macht Folgendes:
 
@@ -50,10 +50,9 @@ Wie man sieht, wurden hier die Werte `red` als `$configurationValue` und  `MODUL
 
 Jetzt wo wir verstanden haben, wie modifid die `setFunction` aufruft, können wir uns ansehen, was es mit den `...` in der Signatur auf sich hat. Da wir die `setFunction` als String in die Datenbank speichern, können wir selbst noch beliebig viele Werte an die `setFunction` anhängen. Hier ein Beispiel mit einem weiteren Wert `'hex'`:
 
-| `configuration_key` | `configuration_value` | `set_function` |
-|--|--| -- |
-| `MODULE_COLOR` | `green` | `selectColor('hex',`
-
+| `configuration_key` | `configuration_value` | `set_function`       |
+| ------------------- | --------------------- | -------------------- |
+| `MODULE_COLOR`      | `green`               | `selectColor('hex',` |
 
 In unserem Code kann oder muss es jetzt eine Funktion im globalen Scope mit dem Name `selectColor` geben, die drei Parameter entgegennehmen kann, da modified die Funktion wie folgt anrufen wird:
 
@@ -90,12 +89,12 @@ function selectColor(string $outputAs, string $value, string $key = ''): string
 
 Hier ein paar Beispiele für `setFunction`:
 
-| Signatur | set_function |
-| -- | -- |
-| `public static selectColor(string $value, string $key = ''): string` | `MyClass::selectColor(` |
-| `public static selectColor(string $value, string $key = ''): string` | `self::selectColor(` |
-| `function selectColor(string $value, string $key = ''): string` | `selectColor(` |
-| `function selectColor(string $outputAs, string $value, string $key = ''): string` | `selectColor('hex',` |
+| Signatur                                                                          | set_function            |
+| --------------------------------------------------------------------------------- | ----------------------- |
+| `public static selectColor(string $value, string $key = ''): string`              | `MyClass::selectColor(` |
+| `public static selectColor(string $value, string $key = ''): string`              | `self::selectColor(`    |
+| `function selectColor(string $value, string $key = ''): string`                   | `selectColor(`          |
+| `function selectColor(string $outputAs, string $value, string $key = ''): string` | `selectColor('hex',`    |
 
 ## Liste der möglichen setFunctions
 
