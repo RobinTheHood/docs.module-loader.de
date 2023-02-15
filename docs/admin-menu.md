@@ -17,7 +17,7 @@ In modified kannst du einige Menüpunkte erweitern.
 
     Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
-Hier eine List mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst:
+Hier ist eine Liste mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst:
 
 | Konstante                     | Menüpfad               | Erweiterbar |
 | ----------------------------- | ---------------------- | :---------: |
