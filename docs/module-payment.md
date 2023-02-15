@@ -1,3 +1,8 @@
+---
+title: Payment Modul Klasse für modified programmieren
+description: Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul aufgebaut. Es benötigt jedoch zusätzliche Mehtoden, die von modified während des Bestellablaufs aufgerufen werden können.
+---
+
 # Payment Modul Klasse für modified programmieren
 
 ??? note "Textstatus - Entwurf"

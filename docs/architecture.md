@@ -1,3 +1,8 @@
+---
+title: Die Architektur von modified
+description: Es ist hilfreich den Aufbau und die Organisation des modified Systems zu verstehen, damit du einfacher Module für dieses programmieren kannst. Aus diesem Grund erfährst du in diesem Abschnitt einige Hintergründe zum modified System.
+---
+
 # Die Architektur von modified
 
 Es ist hilfreich den Aufbau und die Organisation des modified Systems zu verstehen, damit du einfacher Module für dieses programmieren kannst. Aus diesem Grund erfährst du in diesem Abschnitt einige Hintergründe zum modified System.

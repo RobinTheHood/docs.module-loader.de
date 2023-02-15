@@ -1,3 +1,8 @@
+---
+title: Wie funktioniert die useFunction?
+description: Die useFunction wird eingesetzt, um einen Wert aus der Configuration zu formatieren. Wenn wir beispielsweise eine OrderStatusId in einem ConfigurationFeld speichern, wird uns in der Modulübersicht ebenfalls die Id angezeigt.
+---
+
 # Wie funktioniert die useFunction?
 
 ??? note "Textstatus - Entwurf"

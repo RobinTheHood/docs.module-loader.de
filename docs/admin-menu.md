@@ -1,3 +1,8 @@
+---
+title: Erweiterung der Menüpunkte
+description: In modified kannst du einige Menüpunkte erweitern. Hier ist eine Liste mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst.
+---
+
 # Erweiterung der Menüpunkte
 
 ??? note "Textstatus - Skizze"

@@ -1,3 +1,8 @@
+---
+title: Klassenerweiterung für modified programmieren
+description: In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Klassenerweiterung für modified zu programmieren.
+---
+
 # Klassenerweiterung für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Klassenerweiterung für modified zu programmieren.

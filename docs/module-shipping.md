@@ -1,3 +1,8 @@
+---
+title: Shipping Modul Klasse für modified programmieren
+description: In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein Shipping Modul für modified zu programmieren.
+---
+
 # Shipping Modul Klasse für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein Shipping Modul für modified zu programmieren.

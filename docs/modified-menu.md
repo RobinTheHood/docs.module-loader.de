@@ -1,3 +1,8 @@
+---
+title: modified Menüpunkte
+description: Hier befindet sich eine Liste mit allen Standard Menüpunkten.
+---
+
 # modified Menüpunkte
 
 Hier eine Liste mit allen Standard Menüpunkten:

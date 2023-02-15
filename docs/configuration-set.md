@@ -1,3 +1,8 @@
+---
+title: Wie funktionieren setFunctions
+description: In diesem Abschnitt schauen wir uns an, was es mit der `setFunction` auf sich hat. Mit der `setFunction` können wir eine Funktion oder Methode bestimmen, die modified aufrufen soll, wenn die Anzeige für die Bearbeitung eines Konfigurationswertes in der Eingabemaske der Konfiguration gerendert werden soll.
+---
+
 # Wie funktionieren setFunctions
 
 ??? note "Textstatus - Skizze"

@@ -1,3 +1,8 @@
+---
+title: Das Autoinclude System von modified
+description: Das Autoinclude System wurde geschaffen, damit Modulentwickler das modified Shopsystem ohne Core-Anpassungen erweitern können. Hierzu existieren mittlerweile Hookpoints in den Controller- und Include-Dateien. Diese Hookpoints werden bei modified Autoincludes genannt.
+---
+
 # Das Autoinclude System von modified
 
 ??? note "Textstatus - Verbesserungsbedarf"

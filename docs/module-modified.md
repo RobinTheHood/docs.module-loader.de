@@ -1,3 +1,8 @@
+---
+title: Was ist ein Modul im modified Kontext?
+description: Ein Modul für modified kannst du dir als Ansammlung von hauptsächlich Include-Dateien vorstellen, die du in die unterschiedlichen Verzeichnisse des modified Systems verteilen musst.
+---
+
 # Was ist ein Modul im modified Kontext?
 
 ??? note "Textstatus - Verbesserungsbedarf"

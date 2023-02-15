@@ -1,3 +1,8 @@
+---
+title: System Modul Klasse für modified programmieren
+description: In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System Modul für modified zu programmieren.
+---
+
 # System Modul Klasse für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System Modul für modified zu programmieren.
