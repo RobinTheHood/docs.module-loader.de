@@ -89,12 +89,10 @@ $add_contents[BOX_HEADING_CONFIGURATION][] = [
 
     Möglicherweise ist auch die folgende Version möglich, wenn die Configuration bereits aus der Datenbank geladen wurde
 
-
 ```php
 <?php
 
 declare(strict_types=1);
-
 
 if (!defined(MODULE_MC_MY_FIRST_MODULE_CONFIGURATION_GROUP_ID)) {
     return;
@@ -107,5 +105,4 @@ $add_contents[BOX_HEADING_CONFIGURATION][] = [
     'parameters' => '',
     'ssl' => ''
 ];
-
 ```
