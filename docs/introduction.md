@@ -37,7 +37,7 @@ An dieser Stelle kann zudem erwähnt werden, dass die offizielle Schreibweise vo
 
 modified ist eine unter der GNU General Public License (GPL v2) lizenzierte E-Commerce Online Shopsoftware, mit der Einzelpersonen oder Firmen einen Online-Shop auf ihrem eigenen Server oder bei einem Hostingprovider im Internet betreiben können.
 
-Der Programmcode von modified wird auf der offiziellen Webseite [www.modified-shop.org/download](www.modified-shop.org/download) kostenlos veröffentlicht und von einem Entwicklerteam in einem SVN Repository entwickelt. Ein Großteil der aktuellen Entwicklung findet dort von den Geschäftsführern Gerhard Waldemair und Torsten Riemer der modified UG (haftungsbeschränkt) & Co. KG statt.
+Der Programmcode von modified wird auf der offiziellen Webseite [www.modified-shop.org/download](https://www.modified-shop.org/download) kostenlos veröffentlicht und von einem Entwicklerteam in einem SVN Repository entwickelt. Ein Großteil der aktuellen Entwicklung findet dort von den Geschäftsführern Gerhard Waldemair und Torsten Riemer der modified UG (haftungsbeschränkt) & Co. KG statt.
 
 ## Wie du dich am Projekt modified beteiligen kannst
 

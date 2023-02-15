@@ -66,7 +66,7 @@ Ein Modul wird als _updatefähiges Modul_ bezeichnet, wenn es bei einem Update d
 
 [comment]: <> (TODO: add links to sections)
 
-Grundsätzlich gibt es zwei Möglichkeiten, wie du updatefähige Module in modified aufbauen kannst. In den meisten Fällen wirst du diese beiden Möglichkeiten vermischen. Du kannst das "Autoinclude System" verwenden, das wir dir im Abschnitt [???](#) vorstellen oder einige modified-PHP-Klassen erweitern, was wir in Abschnitt [???](x) besprechen werden. Zudem solltest du dein Modul immer über eine System Modul-Klasse verwalten bzw. ins System einbinden, was Thema in Abschnitt [???](#) sein wird.
+Grundsätzlich gibt es zwei Möglichkeiten, wie du updatefähige Module in modified aufbauen kannst. In den meisten Fällen wirst du diese beiden Möglichkeiten vermischen. Du kannst das "Autoinclude System" verwenden, das wir dir im Abschnitt [???](#) vorstellen oder einige modified-PHP-Klassen erweitern, was wir in Abschnitt [???](#) besprechen werden. Zudem solltest du dein Modul immer über eine System Modul-Klasse verwalten bzw. ins System einbinden, was Thema in Abschnitt [???](#) sein wird.
 
 In all diesen Fällen, verteilst du deine PHP-Dateien in den Verzeichnissen von modifed. Es gibt kein Verzeichnis, indem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Ordner '/modules', das vom modified System geladen wird). Das modified System sucht in ausgewählte Verzeichnisse nach deinen Dateien und lädt den Code in den Core.
 
