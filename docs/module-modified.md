@@ -34,7 +34,7 @@ Dieser Text erklärt dir die nötigen Konzepte, wie du Module für modified prog
 Da dir dieser Text nicht jedes Detail erklären kann, kannst du dir zusätzlich ansehen, wie Probleme in anderen Modulen gelöst werden. Leider schwankt die Qualität von Modul zu Modul. Aus diesem Grund führen wir hier eine Liste mit ausgewählten Modulen für dich, an denen du dich orientieren solltest. Der Quellcode der aufgeführten Module lässt sich direkt im Browser ansehen. Zudem erweitern wir die Liste kontinuierlich:
 
 -   [robinthehood/attribute-price-update](https://github.com/RobinTheHood/attribute-price-update)
--   [grandeljay/modified-spanish-language](https://github.com/grandeljay/modified-spanish-language) ([und viele mehr](https://github.com/grandeljay?tab=repositories&q=modified-shop&type=public))
+-   [grandeljay/modified-spanish-language](https://github.com/grandeljay/modified-spanish-language) ([und viele mehr](https://github.com/grandeljay?tab=repositories&q=modified-shop&type=source&language=php))
 
 ## Nicht updatefähige Module
 
