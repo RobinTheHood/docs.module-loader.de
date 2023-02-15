@@ -20,7 +20,7 @@ Eine `setFunction` muss über den global Scope erreichbar. Das Interface oder di
  * @param: ... (optional) beliebige Parameter
  * @param: string $configurationValue
  * @param: string $configurationKey
- * 
+ *
  * @return: string HTML Z.B. ein DropDown Menü
  */
 function mySetFunction(..., string $configurationValue, string $configurationKey = ''): string
@@ -46,7 +46,7 @@ echo eval("globalFuncSelectColor(" . "'red', 'MODULE_COLOR')");
 echo globalFuncSelectColor('red', 'MODULE_COLOR');
 ```
 
-Wie man sieht, wurden hier die Werte `red` als `$configurationValue` und  `MODULE_COLOR` als `$configurationKey` jeweils als string an die Funktion `globalFuncSelectColor()` übergeben.
+Wie man sieht, wurden hier die Werte `red` als `$configurationValue` und `MODULE_COLOR` als `$configurationKey` jeweils als string an die Funktion `globalFuncSelectColor()` übergeben.
 
 Jetzt wo wir verstanden haben, wie modifid die `setFunction` aufruft, können wir uns ansehen, was es mit den `...` in der Signatur auf sich hat. Da wir die `setFunction` als String in die Datenbank speichern, können wir selbst noch beliebig viele Werte an die `setFunction` anhängen. Hier ein Beispiel mit einem weiteren Wert `'hex'`:
 
@@ -73,7 +73,7 @@ Eine passende Funktion `globalFuncSelectColor` könnte wie folgt aussehen:
  * @param: string $outputAs
  * @param: string $configurationValue
  * @param: string $configurationKey
- * 
+ *
  * @return: string HTML Z.B. ein DropDown Menü
  */
 function selectColor(string $outputAs, string $value, string $key = ''): string
