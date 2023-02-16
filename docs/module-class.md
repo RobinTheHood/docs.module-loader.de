@@ -302,7 +302,7 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
     }
     ```
 
-## Namenskonventionen für Modul Klasen - Beispiele
+## Namenskonventionen für Modul Klassen - Beispiele
 
 ??? note "Textstatus - Entwurf"
 
