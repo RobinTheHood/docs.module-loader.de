@@ -301,3 +301,74 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
         }
     }
     ```
+
+## Namenskonventionen für Modul Klasen - Beispiele
+
+### Module Klassen
+
+- Der File-Name gibt vor, wie der Klassenname ist.
+- Der Klassenname gibt vor wie der Languagefile-Name ist
+- Der Klassenname und Typ gibt vor wie der Name der Konfigurations-Konstanten ist
+- Achtung: Bei Shipping Moduel Klassen gibt es eine Ausnahme. Diese drüfen kein `_` haben
+
+
+#### snake_case
+
+| Type     | File                  | Lang File             | Class             | Const                           |
+|----------|-----------------------|-----------------------|-------------------|---------------------------------|
+| system   | system_my_module.php  | system_my_module.php  | system_my_module  | MODULE_SYSTEM_MY_MODULE_STATUS  |
+| export   | export_my_module.php  | export_my_module.php  | export_my_module  | MODULE_EXPORT_MY_MODULE_STATUS  |
+| shipping | shippingmymodule.php  | shippingmymodule.php  | shippingmymodule  | MODULE_SHIPPING_MYMODULE_STATUS |
+| payment  | payment_my_module.php | payment_my_module.php | payment_my_module | MODULE_PAYMENT_MY_MODULE_STATUS |
+
+#### PascalCase
+
+| Type     | File                  | Lang File             | Class             | Const                            |
+|----------|-----------------------|-----------------------|-------------------|----------------------------------|
+| system   | SystemMyModule.php    | SystemMyModule.php    | SystemMyModule    | MODULE_SYSTEM_MY_MODULE_STATUS   |
+| export   | ExportMyModule.php    | ExportMyModule.php    | ExportMyModule    | MODULE_EXPORT_MY_MODULE_STATUS   |
+| shipping | ShippingMyModule.php  | ShippingMyModule.php  | ShippingMyModule  | MODULE_SHIPPING_MY_MODULE_STATUS |
+| payment  | PaymentMyModule.php   | PaymentMyModule.php   | PaymentMyModule   | MODULE_PAYMENT_MY_MODULE_STATUS  |
+
+
+### Klassenerweierungen
+
+- Der File-Name gibt vor, wie der Klassenname ist.
+- Der Klassenname gibt vor wie der Languagefile-Name ist
+- Der Klassenname und Typ gibt vor wie der Name der Konfigurations-Konstanten ist
+
+#### snake_case
+
+| Type          | File                        | Lang File                   | Class                   | Const                                 |
+|---------------|-----------------------------|-----------------------------|-------------------------|---------------------------------------|
+| categories    | categories_my_module.php    | categories_my_module.php    | categories_my_module    | MODULE_CATEGORIES_MY_MODULE_STATUS    |
+| checkout      | checkout_my_module.php      | checkout_my_module.php      | checkout_my_module      | MODULE_CHECKOUT_MY_MODULE_STATUS      |
+| main          | main_my_module.php          | main_my_module.php          | main_my_module          | MODULE_MAIN_MY_MODULE_STATUS          |
+| order         | order_my_module.php         | order_my_module.php         | order_my_module         | MODULE_ORDER_MY_MODULE_STATUS         |
+| product       | product_my_module.php       | product_my_module.php       | product_my_module       | MODULE_PRODUCT_MY_MODULE_STATUS       |
+| shopping_cart | shopping_cart_my_module.php | shopping_cart_my_module.php | shopping_cart_my_module | MODULE_SHOPPING_CART_MY_MODULE_STATUS |
+| xtcPrice      | xtcprice_my_module.php      | xtcprice_my_module.php      | xtcPrice_my_module      | MODULE_XTCPRICE_MY_MODULE_STATUS      |
+
+#### PascalCase
+
+| Type          | File                     | Lang File                | Class                | Const                                 |
+|---------------|--------------------------|--------------------------|----------------------|---------------------------------------|
+| categories    | CategoriesMyModule.php   | CategoriesMyModule.php   | CategoriesMyModule   | MODULE_CATEGORIES_MY_MODULE_STATUS    |
+| checkout      | checkoutMyModule.php     | checkoutMyModule.php     | checkoutMyModule     | MODULE_CHECKOUT_MY_MODULE_STATUS      |
+| main          | MainMyModule.php         | MainMyModule.php         | MainMyModule         | MODULE_MAIN_MY_MODULE_STATUS          |
+| order         | OrderMyModule.php        | OrderMyModule.php        | OrderMyModule        | MODULE_ORDER_MY_MODULE_STATUS         |
+| product       | ProductMyModule.php      | ProductMyModule.php      | ProductMyModule      | MODULE_PRODUCT_MY_MODULE_STATUS       |
+| shopping_cart | ShoppingCartMyModule.php | ShoppingCartMyModule.php | ShoppingCartMyModule | MODULE_SHOPPING_CART_MY_MODULE_STATUS |
+| xtcPrice      | XtcpriceMyModule.php     | XtcpriceMyModule.php     | XtcpriceMyModule     | MODULE_XTCPRICE_MY_MODULE_STATUS      |
+
+### Autoinclude
+
+| Type     | File          |
+|----------|---------------|
+| autoload | my_module.php |
+
+### Template
+
+| Type     | File          |
+|----------|---------------|
+| template | my_module.php |
