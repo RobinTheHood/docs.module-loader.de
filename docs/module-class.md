@@ -7,7 +7,7 @@ description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Pay
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 !!! note "Hinweis"
 
@@ -22,7 +22,7 @@ Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassene
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klassen werden vom System für unterschiedliche Aufgaben geladen. Mit ihnen können z. B. Verstand und Zahlungsmodule realisiert werden. Zudem bieten sie einen Anlaufpunkt für Einstellungen, die ein User im Adminbereich zum jeweiligen Modul tätigen kann.
 
@@ -32,7 +32,7 @@ Mit Modul Klassen lässt sich das modified Shop System erweitern. Die Modul Klas
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Alle Modul Klassen bestehen in der Regel aus mindestens zwei Datein. Eine Datei mit einer PHP-Klassen-Definition und einer Sprachdatei.
 
@@ -45,7 +45,7 @@ Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, 
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 In dieser Dokumentation zeigen wir dir jeweils zwei Wege, wie du Modul Klassen programmieren kannst.
 
@@ -114,7 +114,7 @@ Eine ausführliche Beschreibung, was die jeweiligen Aufgaben dieser Elemente sin
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Als Erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen Beispiels. Dieses Beispiel solltest du in dieser Form aber nicht verwenden. Das Modul ist so nicht mehrsprachig und kann auch nicht über das Admininterface vom Nutzer aktiviert oder deaktiviert werden, da der Wert für `$this->enabled` immer auf `true` steht.
 
@@ -135,7 +135,7 @@ public function __construct()
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
 
@@ -272,7 +272,7 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
         }
     }
     ```
-    
+
 === "Mit StdModule"
 
     ```php title="mc_my_first_module.php"
@@ -281,20 +281,20 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
     declare(strict_types=1);
 
     use RobinTheHood\ModifiedStdModule\Classes\StdModule;
-    
+
     class mc_my_first_module extends StdModule
     {
-    
+
         public function __construct()
         {
             parrent::__construct('MC_MY_FIRST_MODULE');
         }
-        
+
         public function install(): void
         {
             parent::install();
         }
-        
+
         public function uninstall(): void
         {
             parent::uninstall();

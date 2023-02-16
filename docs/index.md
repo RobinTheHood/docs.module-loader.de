@@ -1,3 +1,8 @@
+---
+title: Vorwort
+description: Dieser Text ist keine offiziele Dokumentation des modified Projekts. Er soll jedoch Entwicklern dabei helfen, Module für die modified Shop Software zu programmieren.
+---
+
 # Einstieg in die Modulentwicklung für modified Shops
 
 !!! note "Hinweis"

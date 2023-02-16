@@ -1,3 +1,8 @@
+---
+title: Export Modul Klasse für modified programmieren
+description: In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Export Modul Klasse für modified zu programmieren.
+---
+
 # Export Modul Klasse für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Export Modul Klasse für modified zu programmieren.

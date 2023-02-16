@@ -1,3 +1,8 @@
+---
+title: Wie funktionieren setFunctions
+description: In diesem Abschnitt schauen wir uns an, was es mit der `setFunction` auf sich hat. Mit der `setFunction` können wir eine Funktion oder Methode bestimmen, die modified aufrufen soll, wenn die Anzeige für die Bearbeitung eines Konfigurationswertes in der Eingabemaske der Konfiguration gerendert werden soll.
+---
+
 # Wie funktionieren setFunctions
 
 ??? note "Textstatus - Skizze"
@@ -15,7 +20,7 @@ Eine `setFunction` muss über den global Scope erreichbar. Das Interface oder di
  * @param: ... (optional) beliebige Parameter
  * @param: string $configurationValue
  * @param: string $configurationKey
- * 
+ *
  * @return: string HTML Z.B. ein DropDown Menü
  */
 function mySetFunction(..., string $configurationValue, string $configurationKey = ''): string
@@ -25,9 +30,9 @@ Was du vielleicht bereits gesehen hast, ist der Parameter `...`, den es so in PH
 
 In der Tabelle `configuration` in der Datenbank ist die `setFunction` zusammen mit dem `$configurationValue` und dem `$configurationKey` je Zeile gespeichert. Hier ein Beispiel:
 
-| `configuration_key` | `configuration_value` | `set_function` |
-|--|--|--|
-| `MODULE_COLOR` | `red` | `globalFuncSelectColor(`
+| `configuration_key` | `configuration_value` | `set_function`           |
+| ------------------- | --------------------- | ------------------------ |
+| `MODULE_COLOR`      | `red`                 | `globalFuncSelectColor(` |
 
 In der Datenbank steht als `setFunction` der Wert `global_func_select_color(`. Wenn modified die Konfiguration rendern möchte, hängt es an die Funktion, die Werte aus `configuration_value` und `configuration_key` an die Funktion, bevor modified die Funktion aufruft. modified macht Folgendes:
 
@@ -41,14 +46,13 @@ echo eval("globalFuncSelectColor(" . "'red', 'MODULE_COLOR')");
 echo globalFuncSelectColor('red', 'MODULE_COLOR');
 ```
 
-Wie man sieht, wurden hier die Werte `red` als `$configurationValue` und  `MODULE_COLOR` als `$configurationKey` jeweils als string an die Funktion `globalFuncSelectColor()` übergeben.
+Wie man sieht, wurden hier die Werte `red` als `$configurationValue` und `MODULE_COLOR` als `$configurationKey` jeweils als string an die Funktion `globalFuncSelectColor()` übergeben.
 
 Jetzt wo wir verstanden haben, wie modifid die `setFunction` aufruft, können wir uns ansehen, was es mit den `...` in der Signatur auf sich hat. Da wir die `setFunction` als String in die Datenbank speichern, können wir selbst noch beliebig viele Werte an die `setFunction` anhängen. Hier ein Beispiel mit einem weiteren Wert `'hex'`:
 
-| `configuration_key` | `configuration_value` | `set_function` |
-|--|--| -- |
-| `MODULE_COLOR` | `green` | `selectColor('hex',`
-
+| `configuration_key` | `configuration_value` | `set_function`       |
+| ------------------- | --------------------- | -------------------- |
+| `MODULE_COLOR`      | `green`               | `selectColor('hex',` |
 
 In unserem Code kann oder muss es jetzt eine Funktion im globalen Scope mit dem Name `selectColor` geben, die drei Parameter entgegennehmen kann, da modified die Funktion wie folgt anrufen wird:
 
@@ -69,7 +73,7 @@ Eine passende Funktion `globalFuncSelectColor` könnte wie folgt aussehen:
  * @param: string $outputAs
  * @param: string $configurationValue
  * @param: string $configurationKey
- * 
+ *
  * @return: string HTML Z.B. ein DropDown Menü
  */
 function selectColor(string $outputAs, string $value, string $key = ''): string
@@ -85,12 +89,12 @@ function selectColor(string $outputAs, string $value, string $key = ''): string
 
 Hier ein paar Beispiele für `setFunction`:
 
-| Signatur | set_function |
-| -- | -- |
-| `public static selectColor(string $value, string $key = ''): string` | `MyClass::selectColor(` |
-| `public static selectColor(string $value, string $key = ''): string` | `self::selectColor(` |
-| `function selectColor(string $value, string $key = ''): string` | `selectColor(` |
-| `function selectColor(string $outputAs, string $value, string $key = ''): string` | `selectColor('hex',` |
+| Signatur                                                                          | set_function            |
+| --------------------------------------------------------------------------------- | ----------------------- |
+| `public static selectColor(string $value, string $key = ''): string`              | `MyClass::selectColor(` |
+| `public static selectColor(string $value, string $key = ''): string`              | `self::selectColor(`    |
+| `function selectColor(string $value, string $key = ''): string`                   | `selectColor(`          |
+| `function selectColor(string $outputAs, string $value, string $key = ''): string` | `selectColor('hex',`    |
 
 ## Liste der möglichen setFunctions
 

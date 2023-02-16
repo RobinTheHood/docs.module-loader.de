@@ -1,3 +1,8 @@
+---
+title: Configuration
+description: Konfigurationsgruppen in modified.
+---
+
 # Configuration
 
 ## Configuration Group

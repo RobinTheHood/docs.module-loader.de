@@ -1,3 +1,8 @@
+---
+title: Versionen und Updates von modified
+description: Das Entwicklerteam gibt aktuell ca. einmal im Jahr ein größeres Update heraus. Den aktuellen Stand in Prozent bis zur Fertigstellung der nächsten Version kannst du im Bugtracker (trac.modified-shop.org/roadmap) verfolgen.
+---
+
 # Versionen und Updates von modified
 
 Das Entwicklerteam gibt aktuell ca. einmal im Jahr ein größeres Update heraus. Den aktuellen Stand in Prozent bis zur Fertigstellung der nächsten Version kannst du im [Bugtracker (trac.modified-shop.org/roadmap)](https://trac.modified-shop.org/roadmap) verfolgen. Anders als die bekannte Semver Convention sind die Versionsnummern 4-stellig. Das Schema folgt :octicons-tag-24: `A.B.C.D`, jedoch ohne offizielle Major.Minor.Fix Semantik. Eine Angabe der modified Version erfolgt immer 4-stellig.

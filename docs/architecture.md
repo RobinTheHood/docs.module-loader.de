@@ -1,3 +1,8 @@
+---
+title: Die Architektur von modified
+description: Es ist hilfreich den Aufbau und die Organisation des modified Systems zu verstehen, damit du einfacher Module für dieses programmieren kannst. Aus diesem Grund erfährst du in diesem Abschnitt einige Hintergründe zum modified System.
+---
+
 # Die Architektur von modified
 
 Es ist hilfreich den Aufbau und die Organisation des modified Systems zu verstehen, damit du einfacher Module für dieses programmieren kannst. Aus diesem Grund erfährst du in diesem Abschnitt einige Hintergründe zum modified System.
@@ -44,7 +49,7 @@ Im Verzeichnis `/admin/` befinden sich alle Controller-Dateien, die zur Adminobe
 
 Solange kein Modul über eine `.htaccess` die URLs auf eine individuelle Entrypoint- oder Endpoint-Datei umleitet, bilden die Namen der Controller-Dateien gleichzeitig die Routen des modified Systems. Eine Art `Router.php` oder `Dispatcher.php` gibt es nicht.
 
-Die Controller-Dateien laden größtenteils weitere Include-Dateien nach (siehe Abschnitt [*Include-Dateien“](#)), haben jedoch auch selbst eine eigene Programmlogik. Oft ist diese Logik als einfaches Skript programmiert und nicht in einer Klasse oder Funktion gekapselt. Die meisten Controller-Dateien enden mit einer Ausgabe an den Client bzw. Browser. Die Ausgabe wird durch die Template Engine Smarty generiert.
+Die Controller-Dateien laden größtenteils weitere Include-Dateien nach (siehe Abschnitt [Include-Dateien](#)), haben jedoch auch selbst eine eigene Programmlogik. Oft ist diese Logik als einfaches Skript programmiert und nicht in einer Klasse oder Funktion gekapselt. Die meisten Controller-Dateien enden mit einer Ausgabe an den Client bzw. Browser. Die Ausgabe wird durch die Template Engine Smarty generiert.
 
 Die Templates und Template-Dateien liegen im Verzeichnis `/templates/`. Viele Controller-Dateien im `/admin/` Verzeichnis generieren ihren HTML-Code allerdings selbst. Hier wird oft nicht auf Smarty zurückgegriffen. Das macht es schwieriger, Designänderungen oder Ergänzungen am Admininterface mit einem Modul vorzunehmen.
 

@@ -1,8 +1,13 @@
+---
+title: Was ist ein Modul im modified Kontext?
+description: Ein Modul für modified kannst du dir als Ansammlung von hauptsächlich Include-Dateien vorstellen, die du in die unterschiedlichen Verzeichnisse des modified Systems verteilen musst.
+---
+
 # Was ist ein Modul im modified Kontext?
 
 ??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
 
 Anders als bei anderen Modulkonzepten besteht ein Modul im modified Kontext nicht aus einem Verzeichnis, in dem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Verzeichnis '/modules', das vom modified System geladen werden könnte). Solltest du den MMLC verwenden, kann der dir diese Funktion jedoch simulieren.
 
@@ -18,7 +23,7 @@ Die Autoinclude-Dateien werden durch Autoinclude-Stellen in den modified Core ge
 
 ??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
 
 Dieser Text erklärt dir die nötigen Konzepte, wie du Module für modified programmierst. Dazu gehen wir zuerst auf alle Bestandteile ein, aus denen ein Modul aufgebaut werden kann und schauen uns an, wozu sie dienen und wie sie funktionieren. Hier ein Überblick:
 
@@ -40,7 +45,7 @@ Da dir dieser Text nicht jedes Detail erklären kann, kannst du dir zusätzlich 
 
 ??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
 
 Im modified Umfeld wird von einem _nicht updatefähigen Modul_ gesprochen, wenn ein Modul nicht nur Dateien in Verzeichnissen ergänzt, sondern eine mitgelieferte Installationsanleitung verlangt, dass du Core-Dateien per Hand veränderst. Also, wenn du bestehenden Programmcode per Hand hinzufügen oder ändern sollst. Wenn du ein Update deines modified System machst, werden diese manuellen Änderungen an den Core-Dateien oft überschrieben oder gelöscht, da das modified System keine Kenntnis über deine Änderungen hat.
 
@@ -54,7 +59,7 @@ Ein nicht updatefähiges Modul verhindert also, dass du dein modified System feh
 
 ??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
 
 Ein Modul wird als _updatefähiges Modul_ bezeichnet, wenn es bei einem Update des modified Systems nicht (in Teilen) gelöscht wird und dein Shopsystem weiterhin ordnungsgemäß funktioniert. Programmcode darf nicht in den Core eingebaut werden. Es ist als das Gegenteil zum _nicht updatefähigen Modul_ zu sehen.
 
@@ -62,7 +67,7 @@ Ein Modul wird als _updatefähiges Modul_ bezeichnet, wenn es bei einem Update d
 
 ??? note "Textstatus - Verbesserungsbedarf"
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden. 
+    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
 
 [comment]: <> (TODO: add links to sections)
 

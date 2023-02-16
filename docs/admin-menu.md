@@ -1,3 +1,8 @@
+---
+title: Erweiterung der Menüpunkte
+description: In modified kannst du einige Menüpunkte erweitern. Hier ist eine Liste mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst.
+---
+
 # Erweiterung der Menüpunkte
 
 ??? note "Textstatus - Skizze"
@@ -12,7 +17,7 @@ In modified kannst du einige Menüpunkte erweitern.
 
     Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
-Hier eine List mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst:
+Hier ist eine Liste mit allen Standard Menüpunkten, die du dynamisch mit einem Modul erweitern kannst:
 
 | Konstante                     | Menüpfad               | Erweiterbar |
 | ----------------------------- | ---------------------- | :---------: |
@@ -84,12 +89,10 @@ $add_contents[BOX_HEADING_CONFIGURATION][] = [
 
     Möglicherweise ist auch die folgende Version möglich, wenn die Configuration bereits aus der Datenbank geladen wurde
 
-
 ```php
 <?php
 
 declare(strict_types=1);
-
 
 if (!defined(MODULE_MC_MY_FIRST_MODULE_CONFIGURATION_GROUP_ID)) {
     return;
@@ -102,5 +105,4 @@ $add_contents[BOX_HEADING_CONFIGURATION][] = [
     'parameters' => '',
     'ssl' => ''
 ];
-
 ```

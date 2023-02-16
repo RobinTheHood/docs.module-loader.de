@@ -1,3 +1,8 @@
+---
+title: System Modul Klasse für modified programmieren
+description: In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System Modul für modified zu programmieren.
+---
+
 # System Modul Klasse für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System Modul für modified zu programmieren.
@@ -11,7 +16,7 @@ In diesem Abschnitt erklären wir dir alles, was du wissen musst, um ein System 
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Eine System Modul Klasse ist der zentrale Anker deines Moduls. Es ist eine PHP Klasse, die hauptsächlich die Installation deines Moduls steuert. Zudem stellt das System Modul den ersten Anlaufpunkt für grundlegende Einstellungen für den User zu deinem Modul dar.
 
@@ -48,7 +53,7 @@ Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, 
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Wenn du ein System Modul von Hand (ohne das StandardModul aus dem MMLC) erstellen möchtest, kannst du den kompletten Programmcode am Ende dieses Abschnitts kopieren und auf deine Bedürfnisse anpassen.
 
@@ -86,7 +91,7 @@ Was die jeweiligen Aufgaben dieser Elemente sind, werden wir uns im folgenden Ab
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen, in der sie liegen. Alle System Module Dateien liegen im Verzeichnis `/admin/includes/modules/`. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
 
@@ -126,7 +131,7 @@ Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. 
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Die Klasse benötigt 6 Attribute auf die das modified zugreift, um sich Informationen von unserer System Modul Klasse zu holen. Aus diesem Grund müssen wir die folgenden Attribute definieren. Machen wir das nicht, wirft uns PHP je nach Einstellung Notice, Warnings oder Erorrs aus. Das sollten wir vermeiden.
 
@@ -268,7 +273,7 @@ class mc_my_first_module
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Als Erstes erklären wir dir die Aufgabe des Contructors anhand eines einfachen Beispiels. Dieses Beispiel solltest du in dieser Form aber nicht verwenden. Das Modul ist so nicht mehrsprachig und kann auch nicht über das Admininterface vom Nutzer aktiviert oder deaktiviert werden, da der Wert für `$this->enabled` immer auf `true` steht.
 
@@ -293,7 +298,7 @@ Im Constructor müssen wir jetzt die Attribute mit Werte füllen. Wir könnten f
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schauen wir uns jetzt an, wie wir dieses besser machen könnten.
 
@@ -344,7 +349,7 @@ public function keys(): array
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Der modified Core ruft diese Methode auf, um sich eine Liste mit allen
 Einstellungen aus der Datenbank aus der Tabelle Configuration zu holen. Diese Werte werden z. B. in der Admin Modul Übersicht und beim Bearbeiten angezeigt. Gibst du keinen Key an, wird dir auch keiner angezeigt und du kannst keinen bearbeiten. Zudem kann der modified Core anhand dieser key abgleichen, ob keys in der Datenbank fehlen. Unabhängig davon welche key hier angegeben werden, lädt modified zu Beginn eines jeden Requests alle Configuration Werte aus der Datenbank als Konstante.
@@ -371,7 +376,7 @@ public function check(): int
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Diese Methode überprüft, ob das Modul installiert ist. Das kann auf unterschiedliche Art und Weise passieren. Wenn das Modul ordnungsgemäß installiert ist, muss die Methode eine Zahl ungleich 0 zurückgeben.
 
@@ -411,7 +416,7 @@ public function install(): void
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Diese Methode wird aufgerufen, wenn der Nutzer im Admin beim Modul auf die Taste "Installieren" klickt. In diesem Moment müssen wir selbst die nötigen Configurationen in der Datenbank anlegen. Wie du das machst, siehst du im folgenden Beispiel:
 
@@ -678,7 +683,7 @@ Lorem ...
 
 ??? note "Textstatus - Entwurf"
 
-    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen. 
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
 Jeweils das System Modul aus dem Beispiel mit dem StandardModul und ohne dem StandardModul haben wir so vorbereitet, dass es mit mehreren Sprachen funktioniert. Jetzt müssen wir die passenden Sprachdateien erstellen, damit ein System Modul in den gewünschten Sprachen angezeigt werden kann.
 

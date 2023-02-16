@@ -1,3 +1,8 @@
+---
+title: Order Total Modul (Zusammenfassung) für modified programmieren
+description: In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Order Total Modul Klasse (Zusammenfassung) für modified zu programmieren.
+---
+
 # Order Total Modul (Zusammenfassung) für modified programmieren
 
 In diesem Abschnitt erklären wir dir alles, was du wissen musst, um eine Order Total Modul Klasse (Zusammenfassung) für modified zu programmieren.
