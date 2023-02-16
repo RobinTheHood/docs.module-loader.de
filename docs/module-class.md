@@ -11,7 +11,7 @@ description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Pay
 
 !!! note "Hinweis"
 
-    In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an. Die Überschrift wurde als *abstract* deklariert, da es keine konkrete Modul Klasse in modifiedt gibt. Sondern nur "Spezifische Modul Klassen" oder "Klassenerweiterungen", die dem Aufbau einer Modul Klasse folgen.
+    In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an. Die Überschrift wurde als *abstract* deklariert, da es keine konkrete Modul Klasse in modified gibt. Sondern nur "Spezifische Modul Klassen" oder "Klassenerweiterungen", die dem Aufbau einer Modul Klasse folgen.
 
 Wir unterscheiden in dieser Dokumentation zwischen "Spezifische Modul Klassen" und "Klassenerweiterungen". Spezifische Modul Klassen fügen dem System eine neue spezifische Funktionalität zum System hinzu. Wie z. B. eine Versandart oder Zahlungsmethode. Mit Klassenerweiterungen, können von einigen PHP-Klassen die Methoden erweitert werden.
 
@@ -304,71 +304,83 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
 
 ## Namenskonventionen für Modul Klasen - Beispiele
 
-### Module Klassen
+??? note "Textstatus - Entwurf"
 
-- Der File-Name gibt vor, wie der Klassenname ist.
-- Der Klassenname gibt vor wie der Languagefile-Name ist
-- Der Klassenname und Typ gibt vor wie der Name der Konfigurations-Konstanten ist
-- Achtung: Bei Shipping Moduel Klassen gibt es eine Ausnahme. Diese drüfen kein `_` haben
+    Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
+
+### Modul Klassen
+
+- Der Dateiname gibt vor, wie der Klassenname ist.
+- Der Klassenname gibt vor, wie der Sprachdateiname ist.
+- Der Klassenname und Typ geben vor, wie der Name der Konfigurations-Konstante ist.
+- Achtung: Bei Shipping Modul Klassen gibt es eine Ausnahme. Diese drüfen kein `_` im Namen haben.
 
 
 #### snake_case
 
 | Type     | File                  | Lang File             | Class             | Const                           |
 |----------|-----------------------|-----------------------|-------------------|---------------------------------|
-| system   | system_my_module.php  | system_my_module.php  | system_my_module  | MODULE_SYSTEM_MY_MODULE_STATUS  |
-| export   | export_my_module.php  | export_my_module.php  | export_my_module  | MODULE_EXPORT_MY_MODULE_STATUS  |
-| shipping | shippingmymodule.php  | shippingmymodule.php  | shippingmymodule  | MODULE_SHIPPING_MYMODULE_STATUS |
-| payment  | payment_my_module.php | payment_my_module.php | payment_my_module | MODULE_PAYMENT_MY_MODULE_STATUS |
+| system   | system_mc_my_first_module.php  | system_mc_my_first_module.php  | system_mc_my_first_module  | MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS  |
+| export   | export_mc_my_first_module.php  | export_mc_my_first_module.php  | export_mc_my_first_module  | MODULE_EXPORT_MC_MY_FIRST_MODULE_STATUS  |
+| shipping | shippingmcmyfirstmodule.php  | shippingmcmyfirstmodule.php  | shippingmcmyfirstmodule  | MODULE_SHIPPING_MCMYFIRSTMODULE_STATUS |
+| payment  | payment_mc_my_first_module.php | payment_mc_my_first_module.php | payment_mc_my_first_module | MODULE_PAYMENT_MC_MY_FIRST_MODULE_STATUS |
 
 #### PascalCase
 
+!!! note "Hinweis"
+
+    Technisch ist es möglich, dass Klassen- und Dateinamen auch in `PascalCase` geschrieben werden. Wir empfehlen zurzeit die Schreibweise in `snake_case`.
+
 | Type     | File                  | Lang File             | Class             | Const                            |
 |----------|-----------------------|-----------------------|-------------------|----------------------------------|
-| system   | SystemMyModule.php    | SystemMyModule.php    | SystemMyModule    | MODULE_SYSTEM_MY_MODULE_STATUS   |
-| export   | ExportMyModule.php    | ExportMyModule.php    | ExportMyModule    | MODULE_EXPORT_MY_MODULE_STATUS   |
-| shipping | ShippingMyModule.php  | ShippingMyModule.php  | ShippingMyModule  | MODULE_SHIPPING_MY_MODULE_STATUS |
-| payment  | PaymentMyModule.php   | PaymentMyModule.php   | PaymentMyModule   | MODULE_PAYMENT_MY_MODULE_STATUS  |
+| system   | SystemMcMyFirstModule.php    | SystemMcMyFirstModule.php    | SystemMcMyFirstModule    | MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS   |
+| export   | ExportMcMyFirstModule.php    | ExportMcMyFirstModule.php    | ExportMcMyFirstModule    | MODULE_EXPORT_MC_MY_FIRST_MODULE_STATUS   |
+| shipping | ShippingMcMyFirstModule.php  | ShippingMcMyFirstModule.php  | ShippingMcMyFirstModule  | MODULE_SHIPPING_MC_MY_FIRST_MODULE_STATUS |
+| payment  | PaymentMcMyFirstModule.php   | PaymentMcMyFirstModule.php   | PaymentMcMyFirstModule   | MODULE_PAYMENT_MC_MY_FIRST_MODULE_STATUS  |
 
 
 ### Klassenerweierungen
 
-- Der File-Name gibt vor, wie der Klassenname ist.
-- Der Klassenname gibt vor wie der Languagefile-Name ist
-- Der Klassenname und Typ gibt vor wie der Name der Konfigurations-Konstanten ist
+- Der Dateiname gibt vor, wie der Klassenname ist.
+- Der Klassenname gibt vor, wie der Sprachdateiname ist.
+- Der Klassenname und Typ geben vor, wie der Name der Konfigurations-Konstante ist.
 
 #### snake_case
 
 | Type          | File                        | Lang File                   | Class                   | Const                                 |
 |---------------|-----------------------------|-----------------------------|-------------------------|---------------------------------------|
-| categories    | categories_my_module.php    | categories_my_module.php    | categories_my_module    | MODULE_CATEGORIES_MY_MODULE_STATUS    |
-| checkout      | checkout_my_module.php      | checkout_my_module.php      | checkout_my_module      | MODULE_CHECKOUT_MY_MODULE_STATUS      |
-| main          | main_my_module.php          | main_my_module.php          | main_my_module          | MODULE_MAIN_MY_MODULE_STATUS          |
-| order         | order_my_module.php         | order_my_module.php         | order_my_module         | MODULE_ORDER_MY_MODULE_STATUS         |
-| product       | product_my_module.php       | product_my_module.php       | product_my_module       | MODULE_PRODUCT_MY_MODULE_STATUS       |
-| shopping_cart | shopping_cart_my_module.php | shopping_cart_my_module.php | shopping_cart_my_module | MODULE_SHOPPING_CART_MY_MODULE_STATUS |
-| xtcPrice      | xtcprice_my_module.php      | xtcprice_my_module.php      | xtcPrice_my_module      | MODULE_XTCPRICE_MY_MODULE_STATUS      |
+| categories    | categories_mc_my_first_module.php    | categories_mc_my_first_module.php    | categories_mc_my_first_module    | MODULE_CATEGORIES_MC_MY_FIRST_MODULE_STATUS    |
+| checkout      | checkout_mc_my_first_module.php      | checkout_mc_my_first_module.php      | checkout_mc_my_first_module      | MODULE_CHECKOUT_MC_MY_FIRST_MODULE_STATUS      |
+| main          | main_mc_my_first_module.php          | main_mc_my_first_module.php          | main_mc_my_first_module          | MODULE_MAIN_MC_MY_FIRST_MODULE_STATUS          |
+| order         | order_mc_my_first_module.php         | order_mc_my_first_module.php         | order_mc_my_first_module         | MODULE_ORDER_MC_MY_FIRST_MODULE_STATUS         |
+| product       | product_mc_my_first_module.php       | product_mc_my_first_module.php       | product_mc_my_first_module       | MODULE_PRODUCT_MC_MY_FIRST_MODULE_STATUS       |
+| shopping_cart | shopping_cart_mc_my_first_module.php | shopping_cart_mc_my_first_module.php | shopping_cart_mc_my_first_module | MODULE_SHOPPING_CART_MC_MY_FIRST_MODULE_STATUS |
+| xtcPrice      | xtcprice_mc_my_first_module.php      | xtcprice_mc_my_first_module.php      | xtcPrice_mc_my_first_module      | MODULE_XTCPRICE_MC_MY_FIRST_MODULE_STATUS      |
 
 #### PascalCase
 
+!!! note "Hinweis"
+
+    Technisch ist es möglich, dass Klassen- und Dateinamen auch in `PascalCase` geschrieben werden. Wir empfehlen zurzeit die Schreibweise in `snake_case`.
+
 | Type          | File                     | Lang File                | Class                | Const                                 |
 |---------------|--------------------------|--------------------------|----------------------|---------------------------------------|
-| categories    | CategoriesMyModule.php   | CategoriesMyModule.php   | CategoriesMyModule   | MODULE_CATEGORIES_MY_MODULE_STATUS    |
-| checkout      | checkoutMyModule.php     | checkoutMyModule.php     | checkoutMyModule     | MODULE_CHECKOUT_MY_MODULE_STATUS      |
-| main          | MainMyModule.php         | MainMyModule.php         | MainMyModule         | MODULE_MAIN_MY_MODULE_STATUS          |
-| order         | OrderMyModule.php        | OrderMyModule.php        | OrderMyModule        | MODULE_ORDER_MY_MODULE_STATUS         |
-| product       | ProductMyModule.php      | ProductMyModule.php      | ProductMyModule      | MODULE_PRODUCT_MY_MODULE_STATUS       |
-| shopping_cart | ShoppingCartMyModule.php | ShoppingCartMyModule.php | ShoppingCartMyModule | MODULE_SHOPPING_CART_MY_MODULE_STATUS |
-| xtcPrice      | XtcpriceMyModule.php     | XtcpriceMyModule.php     | XtcpriceMyModule     | MODULE_XTCPRICE_MY_MODULE_STATUS      |
+| categories    | CategoriesMcMyFirstModule.php   | CategoriesMcMyFirstModule.php   | CategoriesMcMyFirstModule   | MODULE_CATEGORIES_MC_MY_FIRST_MODULE_STATUS    |
+| checkout      | checkoutMcMyFirstModule.php     | checkoutMcMyFirstModule.php     | checkoutMcMyFirstModule     | MODULE_CHECKOUT_MC_MY_FIRST_MODULE_STATUS      |
+| main          | MainMcMyFirstModule.php         | MainMcMyFirstModule.php         | MainMcMyFirstModule         | MODULE_MAIN_MC_MY_FIRST_MODULE_STATUS          |
+| order         | OrderMcMyFirstModule.php        | OrderMcMyFirstModule.php        | OrderMcMyFirstModule        | MODULE_ORDER_MC_MY_FIRST_MODULE_STATUS         |
+| product       | ProductMcMyFirstModule.php      | ProductMcMyFirstModule.php      | ProductMcMyFirstModule      | MODULE_PRODUCT_MC_MY_FIRST_MODULE_STATUS       |
+| shopping_cart | ShoppingCartMcMyFirstModule.php | ShoppingCartMcMyFirstModule.php | ShoppingCartMcMyFirstModule | MODULE_SHOPPING_CART_MC_MY_FIRST_MODULE_STATUS |
+| xtcPrice      | XtcpriceMcMyFirstModule.php     | XtcpriceMcMyFirstModule.php     | XtcpriceMcMyFirstModule     | MODULE_XTCPRICE_MC_MY_FIRST_MODULE_STATUS      |
 
 ### Autoinclude
 
 | Type     | File          |
 |----------|---------------|
-| autoload | my_module.php |
+| autoload | mc_my_first_module.php |
 
 ### Template
 
 | Type     | File          |
 |----------|---------------|
-| template | my_module.php |
+| template | mc_my_first_module.php |
