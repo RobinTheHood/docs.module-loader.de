@@ -1,6 +1,6 @@
-# System Modul Klasse - Referenz
+# System - Kontrekte Modul Klasse - Referenz
 
-Erweitert die Modul Klasse um folgende Attribute und Methoden.
+Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende Attribute und Methoden.
 
 ## Meta
 

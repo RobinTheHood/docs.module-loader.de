@@ -1,6 +1,6 @@
-# Modul Klasse (abstract) - Referenz
+# Abstrakte Modul Klasse - Referenz
 
-Basic Klasse. Wird von anderen Modul Klassen erweitert.
+Basic Klasse. Wird von konkreten Modul Klassen und Klassenerweiterungen erweitert.
 
 ## Attribute
 

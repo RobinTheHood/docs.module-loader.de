@@ -25,13 +25,23 @@ nav:
     - useFunction: configuration-use.md
   - Admin-Menü: admin-menu.md
   - Referenzen:
-    - references/index.md
-    - Modul Klasse: references/module-class.md
-    - System Modul Klasse: references/module-system.md
-    - Shipping Modul Klasse: references/module-shipping.md
-    - Payment Modul Klasse: references/module-payment.md
-    - Export Modul Klasse: references/module-export.md
-    - OrderTotal Modul Klasse: references/module-order-total.md
+    - Modul Klassen:
+      - references/module-classes/index.md
+      - Abstrakte Modul Klasse: references/module-classes/module-class-abstract.md
+      - Konkrete Klassen:
+        - System: references/module-classes/concrete/system.md
+        - Shipping: references/module-classes/concrete/shipping.md
+        - Payment: references/module-classes/concrete/payment.md
+        - Export: references/module-classes/concrete/export.md
+        - OrderTotal: references/module-classes/concrete/order-total.md
+      - Klassenerweiterungen:
+        - Categories: references/module-classes/extentions/categories.md
+        - Checkout: references/module-classes/extentions/checkout.md
+        - Main: references/module-classes/extentions/main.md
+        - Order: references/module-classes/extentions/order.md
+        - Product: references/module-classes/extentions/product.md
+        - ShoppingCart: references/module-classes/extentions/shopping-cart.md
+        - XtcPrice: references/module-classes/extentions/xtc-price.md
   - Appendix:
     - Liste Admin-Menü: modified-menu.md
 
