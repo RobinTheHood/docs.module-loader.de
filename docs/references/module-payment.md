@@ -14,7 +14,7 @@ Erweitert die Modul Klasse um folgende Attribute und Methoden.
 | configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)    |
 
 
-## Attibute
+## Attribute
 
 keine
 

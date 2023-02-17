@@ -13,7 +13,7 @@ Erweitert die Modul Klasse um folgende Attribute und Methoden.
 | configuration type   | `MODULE_` oder `MODULE_SYSTEM_` in [`SCREAM_CASE`](#)     |
 | configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)  |
 
-## Attibute
+## Attribute
 
 keine
 
