@@ -10,7 +10,7 @@ Erweitert die Modul Klasse um folgende Attribute und Methoden.
 | lang directory       | `/lang/<LANGUAGE>/modules/system/`                        |
 | class name           | `system_`[`snake_case`](#) oder `System`[`PascalCase`](#) |
 | file name            | `<CLASS_NAME>.php`                                        |
-| configuration type   | `MODULE_` oder `MODULE_SYSTEM_` in [`SCREAM_CASE`](#)     |
+| configuration type   | `MODULE_SYSTEM_` in [`SCREAM_CASE`](#)     |
 | configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)  |
 
 ## Attribute
