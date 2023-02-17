@@ -1,4 +1,6 @@
-# Modul Klassen
+# Referenzen
+
+## Modul Klassen
 
 - [Abstrakte Modul Klasse](module-class-abstract.md)
 
@@ -19,3 +21,4 @@
 - [Product](extentions/product.md)
 - [ShoppingCart](extentions/shopping-cart.md)
 - [XtcPrice](extentions/xtc-price.md)
+

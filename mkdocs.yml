@@ -25,6 +25,7 @@ nav:
     - useFunction: configuration-use.md
   - Admin-Menü: admin-menu.md
   - Referenzen:
+    - references/index.md
     - Modul Klassen:
       - references/module-classes/index.md
       - Abstrakte Modul Klasse: references/module-classes/module-class-abstract.md
