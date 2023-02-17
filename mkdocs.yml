@@ -30,6 +30,8 @@ nav:
     - System Modul Klasse: references/module-system.md
     - Shipping Modul Klasse: references/module-shipping.md
     - Payment Modul Klasse: references/module-payment.md
+    - Export Modul Klasse: references/module-export.md
+    - OrderTotal Modul Klasse: references/module-order-total.md
   - Appendix:
     - Liste Admin-Menü: modified-menu.md
 
