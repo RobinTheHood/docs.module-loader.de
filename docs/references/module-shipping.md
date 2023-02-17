@@ -115,6 +115,6 @@ public function quote(string $method = '', string $module = ''): array
 }
 ```
 
-## Beispiel
+## Beispiele
 
 Beispieldateien findest du unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions/blob/master/new_files/includes/modules/shipping/).

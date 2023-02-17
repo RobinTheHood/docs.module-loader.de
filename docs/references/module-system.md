@@ -21,7 +21,6 @@ keine
 
 keine
 
-## Beispiel
+## Beispiele
 
 Beispieldateien findest du unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions/blob/master/new_files/admin/includes/modules/system/).
-

@@ -446,6 +446,6 @@ Es sieht so aus, als würde diese Methode niemals vom modified Core aufgerufen w
 
 Diese Methode wird nicht vom modified Core aufgerufen.
 
-## Beispiel
+## Beispiele
 
 Beispieldateien findest du unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions/blob/master/new_files/includes/modules/payment/).
