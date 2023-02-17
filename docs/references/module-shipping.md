@@ -13,14 +13,14 @@ Erweitert die Modul Klasse um folgende Attribute und Methoden.
 
     - :white_check_mark: myfirstshippingmodule / myfirstshippingmodule.php
 
-| | |
-|-------------| - |
-| Class directory | `/includes/modules/shipping/` |
-| Lang directory | `/lang/<LANGUAGE>/modules/shipping/` | 
-| Class name | [`snake_case`](#) oder [`PascalCase`](#) ohne `_` | 
-| File name | `<CLASS_NAME>.php` | 
-| Configuration-Prefix | `MODULE_` oder `MODULE_SHIPPING_` in [`SCREAM_CASE`](#) | 
-| Configuration | `<CONFIGURATION_PREFIX><CLASS_NAME>` in [`SCREAM_CASE`](#) | 
+| name                 | value                                                                 |
+|----------------------|-----------------------------------------------------------------------|
+| class directory      | `/includes/modules/shipping/`                                         |
+| lang directory       | `/lang/<LANGUAGE>/modules/shipping/`                                  |
+| class name           | `shipping`[`snake_case`](#) oder `Shipping`[`PascalCase`](#) ohne `_` |
+| file name            | `<CLASS_NAME>.php`                                                    |
+| configuration type   | `MODULE_SHIPPING_` in [`SCREAM_CASE`](#)                              |
+| configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)              |
 
 ## Attibute
 
@@ -46,31 +46,30 @@ Die Methode `quote()` muss ein Array zurückliefern. Wir nennen dieses Array in 
 
 In der Methode `quote()` werden typischerweise auf die globalen Variablen `$total_weight`, `$shipping_weight`, `$shipping_quoted` und `$shipping_num_boxes` zugegriffen.
 
-| Variable | Beschreibung |
-|----------|--------------|
-| `$order` | Die Bestelldaten |
-| `$shipping_weight` | Gesamtgewicht der Bestellung |
-| `$shipping_quoted` | ??? |
+| Variable              | Beschreibung                                                                             |
+|-----------------------|------------------------------------------------------------------------------------------|
+| `$order`              | Die Bestelldaten                                                                         |
+| `$shipping_weight`    | Gesamtgewicht der Bestellung                                                             |
+| `$shipping_quoted`    | ???                                                                                      |
 | `$shipping_num_boxes` | ???. Vermutlich die Anzahl der Pakete, wie das berechnet/definiert wird ist noch unklar. |
 
 <h4>Objekte und Arraystrukturen</h4>
 
 **`ShippingQuoteArray (array)`**
 
-| Key | Typ | Beschreibung | Beispiel |
-|-----|-----|--------------|----------|
-| `id` | string  | Eindeutiger Bezeichner der Versandart. Nur Buchstaben, keine `_` erlaubt. | myfirstshippingmodule |
-| `module` | string | Anzeigeinformation für den Nutzer | Versand mit MyShipping |
-| `methods` | array | Array aus mind einem `ShippingQuoteMethodArray` | |
+| Key       | Typ    | Beschreibung                                                              | Beispiel               |
+|-----------|--------|---------------------------------------------------------------------------|------------------------|
+| `id`      | string | Eindeutiger Bezeichner der Versandart. Nur Buchstaben, keine `_` erlaubt. | myfirstshippingmodule  |
+| `module`  | string | Anzeigeinformation für den Nutzer                                         | Versand mit MyShipping |
+| `methods` | array  | Array aus mind einem `ShippingQuoteMethodArray`                           |                        |
 
 **`ShippingQuoteMethodArray (array)`**
 
-| Key | Typ | Beschreibung | Beispiel |
-|-----|-----|--------------|----------|
-| `id` | string | Eindeutiger Bezeichnet der Versandart. Nur Buchstaben, keine `_` erlaubt. | express |
-|`title` | string | Anzeige Information für den Nutzer | Express Versand für 9,90 € |
-| `cost` | float | Versandkosten | 9.90 |
-
+| Key     | Typ    | Beschreibung                                                              | Beispiel                   |
+|---------|--------|---------------------------------------------------------------------------|----------------------------|
+| `id`    | string | Eindeutiger Bezeichnet der Versandart. Nur Buchstaben, keine `_` erlaubt. | express                    |
+| `title` | string | Anzeige Information für den Nutzer                                        | Express Versand für 9,90 € |
+| `cost`  | float  | Versandkosten                                                             | 9.90                       |
 
 <h4>Beispiel</h4>
 

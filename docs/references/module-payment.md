@@ -4,14 +4,15 @@ Erweitert die Modul Klasse um folgende Attribute und Methoden.
 
 ## Meta
 
-| | |
-|-------------| - |
-| Class directory | `/includes/modules/payment/` | 
-| Lang directory | `/lang/<LANGUAGE>/modules/payment/` | 
-| Class name | [`snake_case`](#) oder [`PascalCase`](#) | 
-| File name | `<CLASS_NAME>.php` | 
-| Configuration-Prefix | `MODULE_` oder `MODULE_PAYMENT_` in [`SCREAM_CASE`](#) | 
-| Configuration | `<CONFIGURATION_PREFIX><CLASS_NAME>` in [`SCREAM_CASE`](#) | 
+| name                 | value                                                       |
+|----------------------|-------------------------------------------------------------|
+| class directory      | `/includes/modules/payment/`                                |
+| lang directory       | `/lang/<LANGUAGE>/modules/payment/`                         |
+| class name           | `payment_`[`snake_case`](#) oder `Payment`[`PascalCase`](#) |
+| file name            | `<CLASS_NAME>.php`                                          |
+| configuration type   | `MODULE_PAYMENT_` in [`SCREAM_CASE`](#)                     |
+| configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)    |
+
 
 ## Attibute
 
@@ -107,19 +108,21 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 
 **`SelectionArray (array)`**
 
-| Key  | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `code`        | string  | Eindeutiger Bezeichner der Versandart in snake_case | mc_my_first_payment_module |
-| `module`      | string  | Anzeigeinformation für den Nutzer | Bezahlen mit MyPayment |
-| `description` | string  | // TODO: ... | // TODO: ... |
-| `fields`      | array   | Array aus mind. einem `SelectionFieldArray` | // TODO: ... |
+| Key           | Typ    | Beschreibung                                        | Beispiel                   |
+|---------------|--------|-----------------------------------------------------|----------------------------|
+| `code`        | string | Eindeutiger Bezeichner der Versandart in snake_case | mc_my_first_payment_module |
+| `module`      | string | Anzeigeinformation für den Nutzer                   | Bezahlen mit MyPayment     |
+| `description` | string | // TODO: ...                                        | // TODO: ...               |
+| `fields`      | array  | Array aus mind. einem `SelectionFieldArray`         | // TODO: ...               |
+
 
 **`SelectionFieldArray (array)`**
 
-| Key | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `title` | string  | // TODO: ... | // TODO: ... |
-| `field` | string  | Html Eingabefeld | // TODO: ... |
+| Key     | Typ    | Beschreibung     | Beispiel     |
+|---------|--------|------------------|--------------|
+| `title` | string | // TODO: ...     | // TODO: ... |
+| `field` | string | Html Eingabefeld | // TODO: ... |
+
 
 <h4>Beispiel</h4>
 
@@ -168,17 +171,18 @@ Die Methode wird in `checkout_confirmation.php` aufgerufen.
 
 **`ConfirmationArray (array)`**
 
-| Key  | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `title`  | string  | // TODO: ... | // TODO: ... |
-| `fields` | array   | Array aus mind. einem `ConfirmationFieldArray` | |
+| Key      | Typ    | Beschreibung                                   | Beispiel     |
+|----------|--------|------------------------------------------------|--------------|
+| `title`  | string | // TODO: ...                                   | // TODO: ... |
+| `fields` | array  | Array aus mind. einem `ConfirmationFieldArray` |              |
 
 **`ConfirmationFieldArray (array)`**
 
-| Key | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `title` | string  | // TODO: ... | // TODO: ... |
-| `field` | string  | // TODO: ... | // TODO: ... |
+| Key     | Typ    | Beschreibung | Beispiel     |
+|---------|--------|--------------|--------------|
+| `title` | string | // TODO: ... | // TODO: ... |
+| `field` | string | // TODO: ... | // TODO: ... |
+
 
 <h4>Beispiel</h4>
 
@@ -300,9 +304,9 @@ Die Methode wird in `checkout_process.php` aufgerufen.
 public function after_process(): void
 ```
 
-| Option   | Value |
-|----------|-------|
-| optional | ✅ |
+| Option   | Value                |
+|----------|----------------------|
+| optional | ✅                   |
 | caller   | checkout_process.php |
 
 <h4>Beschreibung</h4>
@@ -319,9 +323,9 @@ Die Methode wird in `checkout_process.php` aufgerufen.
 public function success(): SuccsessArray
 ```
 
-| Option   | Value |
-|----------|-------|
-| optional | ✅ |
+| Option   | Value                |
+|----------|----------------------|
+| optional | ✅                   |
 | caller   | checkout_success.php |
 
 <h4>Beschreibung</h4>
@@ -336,18 +340,19 @@ Die Methode wird in `checkout_success.php` aufgerufen.
 
 **`SuccsessArray (array)`**
 
-| Key  | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `title`  | string  | Anzeigeinformation für den Nutzer | Bezahlen mit MyPayment |
-| `class`  | string  | Eindeutiger Bezeichner der Versandart in snake_case | mc_my_first_payment_module |
-| `fields` | array   | Array aus mind. einem `SuccsessFieldArray` | ... |
+| Key      | Typ    | Beschreibung                                        | Beispiel                   |
+|----------|--------|-----------------------------------------------------|----------------------------|
+| `title`  | string | Anzeigeinformation für den Nutzer                   | Bezahlen mit MyPayment     |
+| `class`  | string | Eindeutiger Bezeichner der Versandart in snake_case | mc_my_first_payment_module |
+| `fields` | array  | Array aus mind. einem `SuccsessFieldArray`          | ...                        |
+
 
 **`SuccsessFieldArray (array)`**
 
-| Key | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `title` | string  | // TODO: ... | // TODO: ... |
-| `field` | string  | // TODO: ... | // TODO: ... |
+| Key     | Typ    | Beschreibung | Beispiel     |
+|---------|--------|--------------|--------------|
+| `title` | string | // TODO: ... | // TODO: ... |
+| `field` | string | // TODO: ... | // TODO: ... |
 
 ### get_error()
 
@@ -372,10 +377,11 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 
 **`ErrorArray (array)`**
 
-| Key | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `title` | string  | Titel der Fehlermeldung | // TODO: ... |
-| `error` | string  | Fehlermeldung | // TODO: ... |
+| Key     | Typ    | Beschreibung            | Beispiel     |
+|---------|--------|-------------------------|--------------|
+| `title` | string | Titel der Fehlermeldung | // TODO: ... |
+| `error` | string | Fehlermeldung           | // TODO: ... |
+
 
 ### iframeAction()
 
