@@ -4,15 +4,15 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
 ## Meta
 
-| name                 | value                                                       |
-|----------------------|-------------------------------------------------------------|
-| class directory      | `/includes/modules/payment/`                                |
-| lang directory       | `/lang/<LANGUAGE>/modules/payment/`                         |
-| class name           | `payment_`[`snake_case`](#) oder `Payment`[`PascalCase`](#) |
-| file name            | `<CLASS_NAME>.php`                                          |
-| configuration type   | `MODULE_PAYMENT_` in [`SCREAM_CASE`](#)                     |
-| configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)    |
-
+| name                 | value                                               | example                    |
+|----------------------|-----------------------------------------------------|----------------------------|
+| class directory      | `/includes/modules/payment/`                        |                            |
+| lang directory       | `/lang/<LANGUAGE>/modules/payment/`                 |                            |
+| name                 | [`snake_case`](#)                                   | `my_module`                |
+| class name           | `payment_<NAME>` in [`snake_case`](#)               | `payment_my_module`        |
+| file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `payment_my_module.php`    |
+| configuration type   | `MODULE_PAYMENT` in [`SCREAM_CASE`](#)              |                            |
+| configuration prefix | `<CONFIGURATION_TYPE>_<NAME>` in [`SCREAM_CASE`](#) | `MODULE_PAYMENT_MY_MODULE` |
 
 ## Attribute
 

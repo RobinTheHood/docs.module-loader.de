@@ -4,14 +4,15 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
 ## Meta
 
-| name                 | value                                                     |
-|----------------------|-----------------------------------------------------------|
-| class directory      | `/admin/includes/modules/system/`                         |
-| lang directory       | `/lang/<LANGUAGE>/modules/system/`                        |
-| class name           | `system_`[`snake_case`](#) oder `System`[`PascalCase`](#) |
-| file name            | `<CLASS_NAME>.php`                                        |
-| configuration type   | `MODULE_SYSTEM_` in [`SCREAM_CASE`](#)     |
-| configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)  |
+| name                 | value                                               | example                   |
+|----------------------|-----------------------------------------------------|---------------------------|
+| class directory      | `/admin/includes/modules/system/`                   |                           |
+| lang directory       | `/lang/<LANGUAGE>/modules/system/`                  |                           |
+| name                 | [`snake_case`](#)                                   | `my_module`               |
+| class name           | `system_<NAME>` in [`snake_case`](#)                | `system_my_module`        |
+| file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `system_my_module.php`    |
+| configuration type   | `MODULE_SYSTEM` in [`SCREAM_CASE`](#)               |                           |
+| configuration prefix | `<CONFIGURATION_TYPE>_<NAME>` in [`SCREAM_CASE`](#) | `MODULE_SYSTEM_MY_MODULE` |
 
 ## Attribute
 

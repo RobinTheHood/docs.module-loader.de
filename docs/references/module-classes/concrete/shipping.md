@@ -12,14 +12,15 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
     - :white_check_mark: myfirstshippingmodule / myfirstshippingmodule.php
 
-| name                 | value                                                                 |
-|----------------------|-----------------------------------------------------------------------|
-| class directory      | `/includes/modules/shipping/`                                         |
-| lang directory       | `/lang/<LANGUAGE>/modules/shipping/`                                  |
-| class name           | `shipping`[`snake_case`](#) oder `Shipping`[`PascalCase`](#) ohne `_` |
-| file name            | `<CLASS_NAME>.php`                                                    |
-| configuration type   | `MODULE_SHIPPING_` in [`SCREAM_CASE`](#)                              |
-| configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)              |
+| name                 | value                                               | example                    |
+|----------------------|-----------------------------------------------------|----------------------------|
+| class directory      | `/includes/modules/shipping/`                       |                            |
+| lang directory       | `/lang/<LANGUAGE>/modules/shipping/`                |                            |
+| name                 | [`snake_case`](#) ohne `_`                          | `mymodule`                 |
+| class name           | `shipping<NAME>` in [`snake_case`](#) ohne `_`      | `shippingmymodule`         |
+| file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `shippingmymodule.php`     |
+| configuration type   | `MODULE_SHIPPING` in [`SCREAM_CASE`](#)             |                            |
+| configuration prefix | `<CONFIGURATION_TYPE>_<NAME>` in [`SCREAM_CASE`](#) | `MODULE_SHIPPING_MYMODULE` |
 
 ## Attribute
 

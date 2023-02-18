@@ -4,14 +4,19 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
 ## Meta
 
-| name                 | value                                                              |
-|----------------------|--------------------------------------------------------------------|
-| class directory      | `/includes/modules/order_total/`                                   |
-| lang directory       | `/lang/<LANGUAGE>/modules/order_total/`                            |
-| class name           | `order_total_`[`snake_case`](#) oder `OrderTotal`[`PascalCase`](#) |
-| file name            | `<CLASS_NAME>.php`                                                 |
-| configuration type   | `MODULE_ORDER_TOTAL_` in [`SCREAM_CASE`](#)                        |
-| configuration prefix | `<CONFIGURATION_TYPE><CLASS_NAME>` in [`SCREAM_CASE`](#)           |
+!!! danger "Wichtiger Hinweis"
+
+    Datei- und Klassennamen unterscheiden sich vom configuration type. Datei- und Klassennamen beginnen mit `ot_`, der configuration type ist `MODULE_ORDER_TOTAL`.
+
+| name                 | value                                               | example                        |
+|----------------------|-----------------------------------------------------|--------------------------------|
+| class directory      | `/includes/modules/order_total/`                    |                                |
+| lang directory       | `/lang/<LANGUAGE>/modules/order_total/`             |                                |
+| name                 | [`snake_case`](#)                                   | `my_module`                    |
+| class name           | `ot_<NAME>` in [`snake_case`](#)                    | `ot_my_module`                 |
+| file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `ot_my_module.php`             |
+| configuration type   | `MODULE_ORDER_TOTAL` in [`SCREAM_CASE`](#)          |                                |
+| configuration prefix | `<CONFIGURATION_TYPE>_<NAME>` in [`SCREAM_CASE`](#) | `MODULE_ORDER_TOTAL_MY_MODULE` |
 
 ## Attribute
 
