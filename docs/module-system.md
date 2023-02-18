@@ -22,12 +22,11 @@ Eine System Modul Klasse ist der zentrale Anker deines Moduls. Es ist eine PHP K
 
 System Module werden dir im Admininterface unter dem Menüpunkt  *Admin > Module > System Module*  aufgelistet. Dort erscheinen diese entweder als *installiert* oder *deinstalliert*.
 
-Eine System Modul Klasse basiert vom Aufbau auf eine [Modul Klasse](/module-class/), die keine Attribute oder Methoden erweitert.
-
+Eine System Modul Klasse basiert vom Aufbau auf eine [Abstracte Modul Klasse](/module-class-abstract/), die keine Attribute oder Methoden erweitert.
 
 ## Aufbau
 
-Eine System Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Lese dir den Abschnitt [Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der System Modul Klasse ein, die nicht im Abschnitt [Modul Klasse (abstract)](/module-class/) beschrieben wurden.
+Eine System Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschreiben. Lese dir den Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der System Modul Klasse ein, die nicht im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschrieben wurden.
 
 Für eine System Modul Klasse benötigen wir mindestens zwei Dateien. Eine Modul Klasse in `/admin/includes/modules/system/` und eine Sprachdatei in `/lang/<LANGUAGES>/modules/system/`. Du kannst wie bei allen Modul Klassen je Sprache eine weitere Datei zum System hinzufügen.
 

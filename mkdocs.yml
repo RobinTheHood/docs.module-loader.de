@@ -11,14 +11,15 @@ nav:
     - Versionen: modified-versions.md
   - Module : module-modified.md
   - Autoinclude System: auto-include-system.md
-  - Klassen:
-    - Modul: module-class.md
-    - System: module-system.md
-    - Shipping: module-shipping.md
-    - Payment: module-payment.md
-    - Export: module-export.md
-    - Order Total: module-order-total.md
-  - Klassenerweitungen: module-class-extention.md
+  - Modul Klassen:
+    - Abstrakte Modul Classe: module-class-abstract.md
+    - Konkrete Klassen:
+      - System: module-system.md
+      - Shipping: module-shipping.md
+      - Payment: module-payment.md
+      - Export: module-export.md
+      - Order Total: module-order-total.md
+    - Klassenerweitungen: module-class-extention.md
   - Configuration:
     - Configuration: configuration.md
     - setFunction: configuration-set.md

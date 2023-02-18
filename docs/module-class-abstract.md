@@ -1,9 +1,9 @@
 ---
-title: Modul Klassen
+title: Abstrakte Modul Klassen
 description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Payment-Modulen und anderen Modulen für das modified Shop System.
 ---
 
-# Modul Klassen (abstract)
+# Abstrakte Modul Klasse
 
 ??? note "Textstatus - Entwurf"
 
@@ -11,12 +11,31 @@ description: Aufbau und Programmierung von System-Modulen, Shipping-Modulen, Pay
 
 !!! note "Hinweis"
 
-    In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an. Die Überschrift wurde als *abstract* deklariert, da es keine konkrete Modul Klasse in modified gibt. Sondern nur "Spezifische Modul Klassen" oder "Klassenerweiterungen", die dem Aufbau einer Modul Klasse folgen.
+    In diesem Abschnitt schauen wir uns das Konzept der Modul Klasse im modified Shop System an. Es gibt "Konkrete Modul Klassen" oder "Klassenerweiterungen". Diese Klassen folgen alle dem gleichen Grundaufbau, den wir als abstrakte Modul Klasse in dieser Dokumentation bezeichnen. 
 
-Wir unterscheiden in dieser Dokumentation zwischen "Spezifische Modul Klassen" und "Klassenerweiterungen". Spezifische Modul Klassen fügen dem System eine neue spezifische Funktionalität zum System hinzu. Wie z. B. eine Versandart oder Zahlungsmethode. Mit Klassenerweiterungen, können von einigen PHP-Klassen die Methoden erweitert werden.
+Wir unterscheiden in dieser Dokumentation zwischen "Konkrete Modul Klassen" und "Klassenerweiterungen". Konkrete Modul Klassen fügen dem System eine neue spezifische Funktionalität zum System hinzu. Wie z. B. eine Versandart oder Zahlungsmethode. Mit Klassenerweiterungen, können einige PHP-Klassen in modified wie mit Hookpoints erweitert werden.
 
-Es gibt eine ganze Reihe an Modul Klassen, wie System, Shipping und die Klassenerweiterungen. Hier wird der gemeinsame Aufbau beschrieben, bzw. das Konzept, das alle Modul Klassen gemeinsam haben. In anderen Abschnitten gehen wir auf die jeweiligen Besonderheiten der jeweiligen Klasse ein.
+## Übersicht aller Modul Klassen
 
+Es gibt eine ganze Reihe an konkreten Modul Klassen und Klassenerweiterungen. Hier wird der gemeinsame Aufbau beschrieben, bzw. das Konzept, das alle Modul Klassen gemeinsam haben. In anderen Abschnitten gehen wir auf die jeweiligen Besonderheiten der jeweiligen Klasse ein.
+
+### Konkrete Modul Klassen
+
+- [System](#)
+- [Shipping](#)
+- [Payment](#)
+- [Export](#)
+- [OrderTotal](#)
+
+### Klassenerweiterungen
+
+- [Categories](#)
+- [Checkout](#)
+- [Main](#)
+- [Order](#)
+- [Product](#)
+- [ShoppingCart](#)
+- [XtcPrice](#)
 
 ## Konzept
 

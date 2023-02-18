@@ -21,7 +21,7 @@ Lorem ...
 
     Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
 
-Eine Export Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Modul Klasse (abstract)](/module-class/) beschreiben. Lese dir den Abschnitt [Modul Klasse (abstract)](/module-class/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der Export Modul Klasse ein, die nicht im Abschnitt [Modul Klasse (abstract)](/module-class/) beschrieben wurden.
+Eine Export Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschreiben. Lese dir den Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der Export Modul Klasse ein, die nicht im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschrieben wurden.
 
 Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
 
