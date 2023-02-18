@@ -343,6 +343,7 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
 | export   | export_mc_my_first_module.php  | export_mc_my_first_module.php  | export_mc_my_first_module  | MODULE_EXPORT_MC_MY_FIRST_MODULE_STATUS  |
 | shipping | shippingmcmyfirstmodule.php  | shippingmcmyfirstmodule.php  | shippingmcmyfirstmodule  | MODULE_SHIPPING_MCMYFIRSTMODULE_STATUS |
 | payment  | payment_mc_my_first_module.php | payment_mc_my_first_module.php | payment_mc_my_first_module | MODULE_PAYMENT_MC_MY_FIRST_MODULE_STATUS |
+| order_total | ot_mc_my_first_module.php | ot_mc_my_first_module.php | ot_mc_my_first_module | MODULE_ORDER_TOTAL_MC_MY_FIRST_MODULE_STATUS |
 
 #### PascalCase
 
@@ -356,6 +357,7 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
 | export   | ExportMcMyFirstModule.php    | ExportMcMyFirstModule.php    | ExportMcMyFirstModule    | MODULE_EXPORT_MC_MY_FIRST_MODULE_STATUS   |
 | shipping | ShippingMcMyFirstModule.php  | ShippingMcMyFirstModule.php  | ShippingMcMyFirstModule  | MODULE_SHIPPING_MC_MY_FIRST_MODULE_STATUS |
 | payment  | PaymentMcMyFirstModule.php   | PaymentMcMyFirstModule.php   | PaymentMcMyFirstModule   | MODULE_PAYMENT_MC_MY_FIRST_MODULE_STATUS  |
+| order_total |  🚫   | 🚫 | 🚫  | 🚫 |
 
 
 ### Klassenerweierungen
