@@ -2,23 +2,22 @@
 
 ## Modul Klassen
 
-- [Abstrakte Modul Klasse](module-class-abstract.md)
+- [Abstrakte Modul Klasse](module-classes/module-class-abstract.md)
 
 ### Konkrete Modul Klassen
 
-- [System](concrete/system.md)
-- [Shipping](concrete/shipping.md)
-- [Payment](concrete/payment.md)
-- [Export](concrete/export.md)
-- [OrderTotal](concrete/order-total.md)
+- [System](module-classes/concrete/system.md)
+- [Shipping](module-classes/concrete/shipping.md)
+- [Payment](module-classes/concrete/payment.md)
+- [Export](module-classes/concrete/export.md)
+- [OrderTotal](module-classes/concrete/order-total.md)
 
 ### Klassenerweiterungen
 
-- [Categories](extentions/categories.md)
-- [Checkout](extentions/checkout.md)
-- [Main](extentions/main.md)
-- [Order](extentions/order.md)
-- [Product](extentions/product.md)
-- [ShoppingCart](extentions/shopping-cart.md)
-- [XtcPrice](extentions/xtc-price.md)
-
+- [Categories](module-classes/extentions/categories.md)
+- [Checkout](module-classes/extentions/checkout.md)
+- [Main](module-classes/extentions/main.md)
+- [Order](module-classes/extentions/order.md)
+- [Product](module-classes/extentions/product.md)
+- [ShoppingCart](module-classes/extentions/shopping-cart.md)
+- [XtcPrice](module-classes/extentions/xtc-price.md)
