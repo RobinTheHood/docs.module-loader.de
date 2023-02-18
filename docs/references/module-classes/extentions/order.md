@@ -4,9 +4,15 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
 ## Meta
 
-??? note "Textstatus - Skizze"
-
-    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
+| name                 | value                                               | example                  |
+|----------------------|-----------------------------------------------------|--------------------------|
+| class directory      | `/includes/modules/order/`                          |                          |
+| lang directory       | `/lang/<LANGUAGE>/modules/order/`                   |                          |
+| name                 | [`snake_case`](#)                                   | `my_module`              |
+| class name           | `order_<NAME>` in [`snake_case`](#)                 | `order_my_module`        |
+| file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `order_my_module.php`    |
+| configuration type   | `MODULE_ORDER` in [`SCREAM_CASE`](#)                |                          |
+| configuration prefix | `<CONFIGURATION_TYPE>_<NAME>` in [`SCREAM_CASE`](#) | `MODULE_ORDER_MY_MODULE` |
 
 ## Attribute
 
