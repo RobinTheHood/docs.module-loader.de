@@ -31,19 +31,19 @@ Eine System Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klass
 
 Für eine System Modul Klasse benötigen wir mindestens zwei Dateien. Eine Modul Klasse in `/admin/includes/modules/system/` und eine Sprachdatei in `/lang/<LANGUAGES>/modules/system/`. Du kannst wie bei allen Modul Klassen je Sprache eine weitere Datei zum System hinzufügen.
 
-Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blick erkennbar ist, dass die beiden Dateien zusammengehören. In diesem Beispiel haben wir die beiden Dateien `mc_my_first_module.php` benannt. Orientiere dich für das Benennen von Dateien an den Namingconventions aus dem Abschnitt [???](#).
+Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blick erkennbar ist, dass die beiden Dateien zusammengehören. In diesem Beispiel haben wir die beiden Dateien `system_mc_my_first_module.php` benannt. Orientiere dich für das Benennen von Dateien an den Namingconventions aus dem Abschnitt [???](#).
 
 ```
 ├── admin
 │   └── includes
 │       └── modules
 │           └── system
-│               └── mc_my_first_module.php
+│               └── system_mc_my_first_module.php
 └── lang
 	└── <LANGUAGE>
 		└── modules
 			└── system
-				└── mc_my_first_module.php
+				└── system_mc_my_first_module.php
 ```
 
 Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
@@ -93,20 +93,20 @@ Was die jeweiligen Aufgaben dieser Elemente sind, werden wir uns im folgenden Ab
 
     Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
-Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen, in der sie liegen. Alle System Module Dateien liegen im Verzeichnis `/admin/includes/modules/`. Als Beispiel nehmen wir eine Datei mit dem Namen `mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
+Eine System Modul Datei besteht aus genau einer Klasse. Diese Klasse muss den gleichen Namen (ohne `.php`) wie die Datei heißen, in der sie liegen. Alle System Module Dateien liegen im Verzeichnis `/admin/includes/modules/`. Als Beispiel nehmen wir eine Datei mit dem Namen `system_mc_my_first_module.php`. An welche Namenskonventionen du dich halten sollten, kannst du im Abschnitt [???](#) lesen.
 
-Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden. Uns wird dann im Adminbereich unter Module > System Module die Klasse nicht angezeigt. Auch würden abhängige Autoinclude-Dateien nicht funktionieren. Hier ein Beispiel:
+Das bedeutet für uns, dass wir die Klasse `system_mc_my_first_module` nennen müssen. Wenn wir uns nicht an diese Konvention halten, lädt der Klassenloader im modified Core die Datei nicht in den Speicher und wir können die Klasse nicht verwenden. Uns wird dann im Adminbereich unter Module > System Module die Klasse nicht angezeigt. Auch würden abhängige Autoinclude-Dateien nicht funktionieren. Hier ein Beispiel:
 
 === "Mit StdModule"
 
-    ```php title="/admin/includes/modules/stytem/mc_my_first_module.php"
+    ```php title="/admin/includes/modules/stytem/system_mc_my_first_module.php"
     <?php
 
     declare(strict_types=1);
 
     use RobinTheHood\ModifiedStdModule\Classes\StdModule;
 
-    class mc_my_first_module extends StdModul
+    class system_mc_my_first_module extends StdModul
     {
         ...
     }
@@ -114,14 +114,14 @@ Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. 
 
 === "Ohne StdModule"
 
-    ```php title="/admin/includes/modules/stytem/mc_my_first_module.php"
+    ```php title="/admin/includes/modules/stytem/system_mc_my_first_module.php"
     <?php
 
     declare(strict_types=1);
 
     defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
 
-    class mc_my_first_module
+    class system_mc_my_first_module
     {
         ...
     }
@@ -136,7 +136,7 @@ Das bedeutet für uns, dass wir die Klasse `mc_my_first_module` nennen müssen. 
 Die Klasse benötigt 6 Attribute auf die das modified zugreift, um sich Informationen von unserer System Modul Klasse zu holen. Aus diesem Grund müssen wir die folgenden Attribute definieren. Machen wir das nicht, wirft uns PHP je nach Einstellung Notice, Warnings oder Erorrs aus. Das sollten wir vermeiden.
 
 ```php
-class mc_my_first_module
+class system_mc_my_first_module
 {
     /**
      * Eine Bezeichnung oder Id, mit der das Modul bzw.
@@ -145,7 +145,7 @@ class mc_my_first_module
      * Im Grunde kann hier der Klassennamen verwendet werden,
      * da diese auch nur einmal vorkommen darf.
      *
-     * Beispielwert: 'mc_my_first_module'
+     * Beispielwert: 'system_mc_my_first_module'
      *
      * @var string $code
      */
@@ -283,10 +283,10 @@ Im Constructor müssen wir jetzt die Attribute mit Werte füllen. Wir könnten f
 
 === "Ohne StdModule"
 
-    ```php title="mc_my_first_module.php"
+    ```php title="system_mc_my_first_module.php"
     public function __construct()
     {
-        $this->code        = 'mc_my_first_module';
+        $this->code        = 'system_mc_my_first_module';
         $this->title       = 'Mein ersten Modul von My Company';
         $this->description = 'Das ist mein ersten Modul. Es ...';
         $this->sort_order  = 0;
@@ -304,19 +304,19 @@ Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schau
 
 === "Mit StdModule"
 
-    ```php title="mc_my_first_module.php"
+    ```php title="system_mc_my_first_module.php"
     public function __construct()
     {
-        parrent::__construct('MC_MY_FIRST_MODULE');
+        parrent::__construct('MODULE_SYSTEM_MC_MY_FIRST_MODULE');
     }
     ```
 
 === "Ohne StdModule"
 
-    ```php title="mc_my_first_module.php"
+    ```php title="system_mc_my_first_module.php"
     public function __construct()
     {
-        // Der Wert in $prefix ist: MODULE_MC_MY_FIRST_MODULE
+        // Der Wert in $prefix ist: MODULE_SYSTEM_MC_MY_FIRST_MODULE
         $prefix = 'MODULE_' . strtoupper(self::class);
 
         $this->code        = self::class;
@@ -329,13 +329,13 @@ Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schau
 
 Statt feste Werte für `$this->title` und `$this->description`, holen wir uns diese Werte aus Konstanten, die wir später in einer Sprachdatei definieren. Siehe hierfür den Abschnitt [???](#).
 
-Den vorderen Teil der Konstanten `MODULE_MC_MY_FIRST_MODULE` lassen wir uns bequem automatisch erzeugen und speichern in der Variablen `$prefix` zwischen.
+Den vorderen Teil der Konstanten `MODULE_SYSTEM_MC_MY_FIRST_MODULE` lassen wir uns bequem automatisch erzeugen und speichern in der Variablen `$prefix` zwischen.
 
 ```php
 $prefix = 'MODULE_' . strtoupper(self::class);
 ```
 
-Die Konstanten `MODULE_MC_MY_FIRST_MODULE_SORT_ORDER` und `MODULE_MC_MY_FIRST_MODULE_STATUS` lädt der modifed Core für uns aus der Datenbanktabelle `configure`, bevor er versucht eine Instanz der Klasse zu erzeugen und der Constructor aufgerufen wird.
+Die Konstanten `MODULE_SYSTEM_MC_MY_FIRST_MODULE_SORT_ORDER` und `MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS` lädt der modifed Core für uns aus der Datenbanktabelle `configure`, bevor er versucht eine Instanz der Klasse zu erzeugen und der Constructor aufgerufen wird.
 
 Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. Das passiert automatisch vom modified Core, sobald die Funktion `install()` aufgerufen wird, wie wir uns auch gleich noch anschauen werden.
 
@@ -360,8 +360,8 @@ Einstellungen aus der Datenbank aus der Tabelle Configuration zu holen. Diese We
 public function keys(): array
 {
     return [
-        'MODULE_MC_MY_FIRST_MODULE_ATTRIBUTE_1',
-        'MODULE_MC_MY_FIRST_MODULE_ATTRIBUTE_2'
+        'MODULE_SYSTEM_MC_MY_FIRST_MODULE_ATTRIBUTE_1',
+        'MODULE_SYSTEM_MC_MY_FIRST_MODULE_ATTRIBUTE_2'
     ];
 }
 ```
@@ -380,22 +380,22 @@ public function check(): int
 
 Diese Methode überprüft, ob das Modul installiert ist. Das kann auf unterschiedliche Art und Weise passieren. Wenn das Modul ordnungsgemäß installiert ist, muss die Methode eine Zahl ungleich 0 zurückgeben.
 
-In diesem Beispiel kontrollieren wir, ob in der Datenbanktabelle `configuration` in der Spalte `configuration_key` ein Eintrag mit dem Wert `MODULE_MC_MY_FIRST_MODULE_STATUS` vorhanden ist.
+In diesem Beispiel kontrollieren wir, ob in der Datenbanktabelle `configuration` in der Spalte `configuration_key` ein Eintrag mit dem Wert `MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS` vorhanden ist.
 
-Du kannst dir theoretisch einen eigenen Weg ausdenken, um zu überprüfen, ob dein Modul korrekt installiert ist. Z. B. ob ein anderer Wert vorhanden ist, oder ob bestimmte Dateien vorhanden sind. Die meisten System Module machen das jedoch immer auf dem hier gezeigten Weg über die Konstante `MODULE_MC_MY_FIRST_MODULE_STATUS`:
+Du kannst dir theoretisch einen eigenen Weg ausdenken, um zu überprüfen, ob dein Modul korrekt installiert ist. Z. B. ob ein anderer Wert vorhanden ist, oder ob bestimmte Dateien vorhanden sind. Die meisten System Module machen das jedoch immer auf dem hier gezeigten Weg über die Konstante `MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS`:
 
 <h4>Beispiel</h4>
 
 ```php
 public function check(): int
 {
-    // Der Wert in $prefix ist: MODULE_MC_MY_FIRST_MODULE
+    // Der Wert in $prefix ist: MODULE_SYSTEM_MC_MY_FIRST_MODULE
     $prefix = 'MODULE_' . strtoupper(self::class);
 
-    // Der Wert in $key ist: MODULE_MC_MY_FIRST_MODULE_STATUS
+    // Der Wert in $key ist: MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS
     $key = $prefix . '_STATUS';
 
-    // SQL-Abfrage, ob MODULE_MC_MY_FIRST_MODULE_STATUS vorhanden ist
+    // SQL-Abfrage, ob MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS vorhanden ist
     $sql = "SELECT configuration_value FROM " . TABLE_CONFIGURATION . " WHERE configuration_key = '$key'"
 
     $query = xtc_db_query($sql);
@@ -429,10 +429,10 @@ Diese Methode wird aufgerufen, wenn der Nutzer im Admin beim Modul auf die Taste
 ```php
 public function install(): void
 {
-    // MODULE_MC_MY_FIRST_MODULE
+    // MODULE_SYSTEM_MC_MY_FIRST_MODULE
     $prefix = 'MODULE_' . strtoupper(self::class);
 
-    // MODULE_MC_MY_FIRST_MODULE_STATUS
+    // MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS
     $key = $prefix . '_STATUS';
 
     $value = 'true';
@@ -479,10 +479,10 @@ Lorem ...
 ```php
 public function remove(): void
 {
-    // MODULE_MC_MY_FIRST_MODULE
+    // MODULE_SYSTEM_MC_MY_FIRST_MODULE
     $prefix = 'MODULE_' . strtoupper(self::class);
 
-    // MODULE_MC_MY_FIRST_MODULE_STATUS
+    // MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS
     $key = $prefix . '_STATUS';
 
     xtc_db_query("DELETE FROM " . TABLE_CONFIGURATION . " WHERE configuration_key = '$key'");
@@ -560,7 +560,7 @@ declare(strict_types=1);
 
 defined('_VALID_XTC') or die('Direct Access to this location is not allowed.');
 
-class mc_my_first_module
+class system_mc_my_first_module
 {
     /** @var string $name **/
     public $prefix;
@@ -666,11 +666,11 @@ declare(strict_types = 1);
 
 use RobinTheHood\ModifiedStdModule\Classes\StdModule;
 
-class mc_my_first_module extends StdModul
+class system_mc_my_first_module extends StdModul
 {
     public function __construct()
     {
-        $this->init('MODULE_MC_MY_FIRST_MODULE');
+        $this->init('MODULE_SYSTEM_MC_MY_FIRST_MODULE');
     }
 }
 ```
@@ -687,18 +687,16 @@ Lorem ...
 
 Jeweils das System Modul aus dem Beispiel mit dem StandardModul und ohne dem StandardModul haben wir so vorbereitet, dass es mit mehreren Sprachen funktioniert. Jetzt müssen wir die passenden Sprachdateien erstellen, damit ein System Modul in den gewünschten Sprachen angezeigt werden kann.
 
-Die Sprachdateien zu einem System Modul liegen in `/lang/<LANGUAGE>/modules/system/`. Wobei `<LANGUAGE>` der Name einer Sprache (auf englisch mit kleinem ersten Buchstabe) entspricht. Die Datei solltest du wieder nach unserer Namenskonvention aus Abschnitt XXX benennen. In diesem Fall wäre das `mc_my_first_module.php`.
+Die Sprachdateien zu einem System Modul liegen in `/lang/<LANGUAGE>/modules/system/`. Wobei `<LANGUAGE>` der Name einer Sprache (auf englisch mit kleinem ersten Buchstabe) entspricht. Die Datei solltest du wieder nach unserer Namenskonvention aus Abschnitt XXX benennen. In diesem Fall wäre das `system_mc_my_first_module.php`.
 
 Wie wir das Modul in deutscher Sprache bereitstellen möchten, können wir eine PHP-Datei erstellen, die wie folgt aussieht:
 
-```php
+```php title="/lang/german/modules/system/system_mc_my_first_module.php"
 <?php
-
-// File: /lang/german/modules/system/mc_my_first_module.php
 
 declare(strict_types = 1);
 
-$moduleType = 'MODULE';
+$moduleType = 'MODULE_SYSTEM';
 $moduleName = 'MC_MY_FIRST_MODULE';
 $prefix = $moduleType . '_' . $moduleName  . '_';
 
@@ -714,10 +712,8 @@ Wenn du das Standard-Modul über den MMLC verwendest, kannst du deinen Code auch
 
     Die Möglichkeit die Sprachdatei mit dem Stdandard Modul umzusetzen gibt es noch nicht, soll aber trotzdem hier schon einmal aufgeführt werden.
 
-```php
+```php title="/lang/german/modules/system/system_mc_my_first_module.php"
 <?php
-
-// File: /lang/german/modules/system/mc_my_first_module.php
 
 declare(strict_types = 1);
 
@@ -730,9 +726,9 @@ $translations = [
     'STATUS_DESC'      => 'Hier kannst das Modul deaktiveren ...',
 ];
 
-StdModule::registerLanguage($translations, mc_my_first_module::class);
+StdModule::registerLanguage($translations, system_mc_my_first_module::class);
 
-StdModule::registerLanguage($translations, mc_my_first_module::class, StdModule::TYPE_SYSTEM);
+StdModule::registerLanguage($translations, system_mc_my_first_module::class, StdModule::TYPE_SYSTEM);
 
 StdModule::registerLanguage($translations, 'MC_MY_FIRST_MODULE', StdModule::TYPE_SYSTEM);
 ```
@@ -750,7 +746,7 @@ Das funktioniert auch bei Menü Datei-Erweiterungen siehe Abschnitt ???.
 Das Ganze lässt sich glücklicherweise leicht bewerkstelligen, dazu müssen wir unsere Autoinclude-Datei nur um folgenden Code erweitern:
 
 ```php
-if (!defined('MODULE_MC_MY_FIRST_MODULE_STATUS') || MODULE_MC_MY_FIRST_MODULE_STATUS != 'true') {
+if (!defined('MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS') || MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS != 'true') {
     return;
 }
 ```
@@ -762,7 +758,7 @@ Der Anfang eine Autoinclude-Datei zu unserem Modul würde dann wie folgt aussehe
 
 declare(strict_types = 1);
 
-if (!defined('MODULE_MC_MY_FIRST_MODULE_STATUS') || MODULE_MC_MY_FIRST_MODULE_STATUS != 'true') {
+if (!defined('MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS') || MODULE_SYSTEM_MC_MY_FIRST_MODULE_STATUS != 'true') {
     return;
 }
 
