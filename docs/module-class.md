@@ -160,7 +160,7 @@ Um die Unzulänglichkeiten aus dem ersten Constructor Beispiel zu umgehen, schau
     ```php title="mc_my_first_module.php"
     public function __construct()
     {
-        parrent::__construct('MC_MY_FIRST_MODULE');
+        parent::__construct('MC_MY_FIRST_MODULE');
     }
     ```
 
@@ -287,7 +287,7 @@ Wie wir die Konstanten in die Datenbank bekommen, schauen wir uns auch noch an. 
 
         public function __construct()
         {
-            parrent::__construct('MC_MY_FIRST_MODULE');
+            parent::__construct('MC_MY_FIRST_MODULE');
         }
 
         public function install(): void
