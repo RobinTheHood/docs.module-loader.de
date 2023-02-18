@@ -8,6 +8,10 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
     Datei- und Klassennamen unterscheiden sich vom configuration type. Datei- und Klassennamen beginnen mit `ot_`, der configuration type ist `MODULE_ORDER_TOTAL`.
 
+    - :x: order_total_my_module / order_total_my_module.php
+
+    - :white_check_mark: ot_my_module / ot_my_module.php
+
 | name                 | value                                               | example                        |
 |----------------------|-----------------------------------------------------|--------------------------------|
 | class directory      | `/includes/modules/order_total/`                    |                                |
