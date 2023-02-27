@@ -16,7 +16,15 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
 ## Attribute
 
-keine
+### $form_action_url
+
+```php
+public string $form_action_url
+```
+
+<h4>Beschreibung</h4>
+
+Lorem ...
 
 ## Methoden
 
