@@ -473,6 +473,27 @@ Diese Methode wird vom System aufgerufen, eine URL zu generieren. Diese URL wird
 
 Die Methode wird in `checkout_payment_iframe.php` aufgerufen.
 
+### javascript_validation()
+
+```php
+public function javascript_validation(): string
+```
+
+| Option   | Value |
+|----------|-------|
+| optional | ✅ |
+| caller   | checkout_shipping.php, checkout_payment.php |
+
+<h4>Beschreibung</h4>
+
+Diese Methode wird vom System aufgerufen, um Javascript in den Header zu laden.
+
+// TODO: Die Method macht ...
+
+<h4>Zeitpunkt der Verwendung</h4>
+
+Die Methode wird in `checkout_shipping.php` und `checkout_payment.php` aufgerufen.
+
 ### create_paypal_link()
 
 ```php
