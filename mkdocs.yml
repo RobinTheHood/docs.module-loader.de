@@ -9,17 +9,18 @@ nav:
   - Architektur:
     - Architektur: architecture.md
     - Versionen: modified-versions.md
-  - Module : module-modified.md
-  - Autoinclude System: auto-include-system.md
-  - Modul Klassen:
-    - Abstrakte Modul Classe: module-class-abstract.md
-    - Konkrete Klassen:
-      - System: module-system.md
-      - Shipping: module-shipping.md
-      - Payment: module-payment.md
-      - Export: module-export.md
-      - Order Total: module-order-total.md
-    - Klassenerweitungen: module-class-extention.md
+  - Module:
+    - Einleitung: module-modified.md
+    - Klassen:
+      - Abstrakt: module-class-abstract.md
+      - Konkret:
+        - System: module-system.md
+        - Shipping: module-shipping.md
+        - Payment: module-payment.md
+        - Export: module-export.md
+        - Order Total: module-order-total.md
+      - Erweiterungen: module-class-extention.md
+    - Autoinclude System: auto-include-system.md
   - Configuration:
     - Configuration: configuration.md
     - setFunction: configuration-set.md
@@ -109,11 +110,11 @@ markdown_extensions:
   - pymdownx.snippets
   - pymdownx.superfences
   - pymdownx.tabbed:
-      alternate_style: true 
+      alternate_style: true
 
   - toc:
       permalink: true
-  
+
 
 extra:
   generator: false
