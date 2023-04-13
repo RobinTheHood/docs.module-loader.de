@@ -21,7 +21,7 @@ Mit einer Shipping Modul Klasse, kannst du dem modified Shopsystem eine neue Ver
 
     Status: 2 von 5 - Erster Entwurf: Erste Ausformulierung einiger Informationen.
 
-Eine Shipping Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschreiben. Eine Shipping Modul Klasse fügt jedoch die Methode `qute()` hinzu. Lese dir den Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der Shipping Modul Klasse ein, die nicht im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschrieben werden.
+Eine Shipping Modul Klasse unterscheidet sich nicht von der abstrakten Modul Klasse, die wir im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschreiben. Eine Shipping Modul Klasse fügt jedoch die Methode `quote()` hinzu. Lese dir den Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) durch, um den Aufbau zu verstehen. In diesem Abschnitt gehen wir auf einige konkrete Aspekte der Shipping Modul Klasse ein, die nicht im Abschnitt [Abstrakte Modul Klasse](/module-class-abstract/) beschrieben werden.
 
 Um ein Shipping Modul zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/shipping/` anlegen. Die Sprachdateien liegen in `/lang/<LANGUAGE>/modules/shipping/`.
 
