@@ -49,7 +49,13 @@ Du solltest beiden Dateien gleich benennen, damit für jeden auf den ersten Blic
 
 Zusätzlich muss das Modul eine `*_ALLOWED` (`MODULE_SHIPPING_MC_MY_FIRST_MODULE_ALLOWED`) Konstante/Einstellung zur Verfügung stellen, mit der modified entscheidet, ob die Versandart im Checkout angezeigt werden soll. Üblicherweise befinden sich dort die Zonen (bzw. zweistellige Länderkürzel), in der die Versandart angeboten werden soll, wie z. B. `DE,AT`.
 
-Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
+Weiterhin, sollte dein Versandmodul auch eine property names `quotes` zur Verfügung stllen, auf die modified während des Checkouts zugreift, um festzustellen welche der angebotenen Versandarten am günstigsten ist:
+```php
+public array $quotes = array();
+```
+Der array sollte dann den Rückgabewert von deiner `quote()` Methode enthalten.
+
+Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions).
 
 ## Shipping Klassen Methoden
 
