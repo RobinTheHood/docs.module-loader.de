@@ -12,7 +12,7 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 | class name           | `payment_<NAME>` in [`snake_case`](#)               | `payment_my_module`        |
 | file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `payment_my_module.php`    |
 | configuration type   | `MODULE_PAYMENT` in [`SCREAM_CASE`](#)              |                            |
-| configuration prefix | `<CONFIGURATION_TYPE>_<NAME>` in [`SCREAM_CASE`](#) | `MODULE_PAYMENT_MY_MODULE` |
+| configuration prefix | `<CONFIGURATION_TYPE>_<CLASS_NAME>` in [`SCREAM_CASE`](#) | `MODULE_PAYMENT_PAYMENT_MY_MODULE` |
 
 ## Attribute
 
@@ -118,9 +118,9 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 
 | Key           | Typ    | Beschreibung                                        | Beispiel                   |
 |---------------|--------|-----------------------------------------------------|----------------------------|
-| `code`        | string | Eindeutiger Bezeichner der Versandart in snake_case | mc_my_first_payment_module |
-| `module`      | string | Anzeigeinformation für den Nutzer                   | Bezahlen mit MyPayment     |
-| `description` | string | // TODO: ...                                        | // TODO: ...               |
+| `code`        | string | Eindeutiger Bezeichner der Zahlart in snake_case    | mc_my_first_payment_module |
+| `module`      | string | Anzeigename auf `checkout_payment.php`              | Bezahlen mit MyPayment     |
+| `description` | string | Anzeigebeschreibung auf `checkout_payment.php`      | Einfach bezahlen mit ...   |
 | `fields`      | array  | Array aus mind. einem `SelectionFieldArray`         | // TODO: ...               |
 
 

@@ -182,12 +182,12 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 
 **`SelectionArray (array)`**
 
-| Key  | Typ | Beschreibung | Beispiel |
-| - | - | - | - |
-| `code`        | string  | Eindeutiger Bezeichner der Versandart in snake_case | mc_my_first_payment_module |
-| `module`      | string  | Anzeigeinformation für den Nutzer | Bezahlen mit MyPayment |
-| `description` | string  | // TODO: ... | // TODO: ... |
-| `fields`      | array   | Array aus mind. einem `SelectionFieldArray` | // TODO: ... |
+| Key           | Typ    | Beschreibung                                        | Beispiel                   |
+|---------------|--------|-----------------------------------------------------|----------------------------|
+| `code`        | string | Eindeutiger Bezeichner der Zahlart in snake_case    | mc_my_first_payment_module |
+| `module`      | string | Anzeigename auf `checkout_payment.php`              | Bezahlen mit MyPayment     |
+| `description` | string | Anzeigebeschreibung auf `checkout_payment.php`      | Einfach bezahlen mit ...   |
+| `fields`      | array  | Array aus mind. einem `SelectionFieldArray`         | // TODO: ...               |
 
 **`SelectionFieldArray (array)`**
 
