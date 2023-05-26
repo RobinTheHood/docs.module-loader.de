@@ -118,7 +118,7 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 
 | Key           | Typ    | Beschreibung                                        | Beispiel                   |
 |---------------|--------|-----------------------------------------------------|----------------------------|
-| `code`        | string | Eindeutiger Bezeichner der Zahlart in snake_case    | mc_my_first_payment_module |
+| `id`          | string | Eindeutiger Bezeichner der Zahlart in snake_case    | mc_my_first_payment_module |
 | `module`      | string | Anzeigename auf `checkout_payment.php`              | Bezahlen mit MyPayment     |
 | `description` | string | Anzeigebeschreibung auf `checkout_payment.php`      | Einfach bezahlen mit ...   |
 | `fields`      | array  | Array aus mind. einem `SelectionFieldArray`         | // TODO: ...               |
@@ -138,23 +138,24 @@ Die Methode wird in `checkout_payment.php` aufgerufen.
 public function selection(): array
 {
     // ...
-    
+
     $selectionFieldArray = [
         'title' => '// TODO: ...',
         'field' => '<input type="text" name="iban">'
     ];
-        
+
     $selectionArray = [
-        'code' => 'mc_my_first_payment_module',
+        'id' => 'mc_my_first_payment_module',
         'module' => 'Bezahlen mit MyPayment',
-        'description' => '// TODO: ...',
+        'description' => 'Einfach bezahlen mit MyPayment',
         'fields' => [$selectionFieldArray]
     ];
-        
+
     return $selectionArray;
 }
 ```
 
+![Payment Module Class Method Selection - modifed Shop](/assets/images/modified_payment_method_selection_01.png)
 
 ### confirmation()
 
