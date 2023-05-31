@@ -21,10 +21,36 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 ```php
 public string $form_action_url
 ```
+<h4>Beschreibung</h4>
+
+Mit diesem Attribut kann festgelegt wedern, auf welche Seite das Form Element auf `checkout_confirmation.php`
+weiterleitet, wenn auf den "Kaufen" Button geklickt wird. Ist dieses Attribut nicht vorhanden, wird standardmäßig auf
+`checkout_process.php` weitergleitet, wo die Bestellung erstellt wird. Soll der Shop den POST-Request auf eine andere
+Seite leiten, kann hier die Url eingetragen werden. Siehe auch `$tmpOrders`.
+
+### $tmpOrders
+
+```php
+public bool $tmpOrders
+```
 
 <h4>Beschreibung</h4>
 
-Lorem ...
+Mit diesem Attribut kann festgelegt werden, ob in `checkout_process.php` eine temporäre Bestellung erstellt werden soll.
+Ist `$tmpOrders` auf `true` gesetzt, wird in `checkout_process.php` eine Bestellung erstellt, der Kunde wird jedoch
+nicht darüber per E-Mail informiert. Zudem bekommt die Bestellung den Bestellstatus aus `$tmpStatus`. Ist `$tmpStatus`
+Attribut nicht gesetzt, bekommt die Bestellung standardmäßig den Status 0 "Nicht bestätigt". Wenn `$tmpOrders` auf
+`true` gesetzt ist, leitet der Shop in `checkout_confirmation.php` nicht mehr nach `$form_action_url` weiter.
+
+### $tmpStatus
+
+```php
+public int $tmpStatus
+```
+
+<h4>Beschreibung</h4>
+
+Mit `$tmpStatus` kann festgelegt werden, welcher StatusId eine temporäre Bestellung soll. Siehe auch `$tmpOrders`.
 
 ## Methoden
 
