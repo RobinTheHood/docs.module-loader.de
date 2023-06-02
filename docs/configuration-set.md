@@ -110,3 +110,20 @@ modified bringt von Haus aus einige `setFunction` mit. Das ist ganz praktisch un
 -   ...
 
 Es gibt noch viele weitere `setFunction`. Um diese zu finden, kannst du das gesamte modified Projekt im Quellcode nach `function xtc_cfg_` durchsuchen.
+
+## Key Value Paare z.B. für Sprachen
+
+??? note "Textstatus - Skizze"
+
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
+
+Der Shop kann automatisch Key-Value paare Speichern, wenn man bei einem Modul im Backend auf im Edit Modus auf Speichern klickt.
+Dazu muss der Name des Input Felds wie folgt aussehen
+
+```html
+<input name="configuration[..._TITLE][DE]" value= ...>
+<input name="configuration[..._TITLE][EN]" value= ...>
+...
+```
+
+In diesem Fall wir in der Configuration ..._TITLE in der Datenbank folgender String gespeichert DE::value1||EN::value2 ... Die Key Value paare werden durch || Zeichen in der Configuration getrennt.
