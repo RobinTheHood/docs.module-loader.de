@@ -103,7 +103,7 @@ public array $keys_dispnone;
  * Hier fehlt die Beschreibung ...
  *
  * Mögliche Werte:
- * - form_edit : Beschreibung ...
+ * - form_edit : URL im POST Form. Seite an dem der POST Request gesendet werden soll, wenn man im Edit Modus auf Upate klickt.
  * - form_restore : Beschreibung ...
  * - restore : Beschreibung ...
  * - form_backup : Beschreibung ...
@@ -337,6 +337,31 @@ public function display(): array
 
 In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jede Eigenschaft, die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Mit der `display()` Methode können beliebe Buttons oder andere beliebige HTML-Ausgaben generiert werden. Sie wird fast immer für die Ausgabe des Save-Buttons verwendet. Die HTML-Ausgabe von `display()` wird in der Reinfolge hinter den Eigenschafte (Keys) dargestellt.
 
+### display_end()
+
+```php
+public function display_end(): string
+```
+
+<h4>Beschreibung</h4>
+
+??? note "Textstatus - Skizze"
+
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
+
+```php
+
+/**
+ * @return string[] in Form von ['text' => 'HTML']
+ */
+public function display_end(): array
+```
+
+<h4>Beschreibung</h4>
+
+In der Bearbeitungsansicht eines Moduls generiert der modified Core die Eingabefelder für jede Eigenschaft, die mit `function keys(): array` zurückgeben wird. Weitere Eingabefelder oder Buttons wie Speichern oder Abbruch sind nicht vorhanden. Mit der `display()` Methode können beliebe Buttons oder andere beliebige HTML-Ausgaben generiert werden. Sie wird fast immer für die Ausgabe des Save-Buttons verwendet. Die HTML-Ausgabe von `display()` wird in der Reinfolge hinter den Eigenschafte (Keys) dargestellt.
+
+
 ### custom()
 
 ```php
@@ -364,6 +389,8 @@ public function process(string $filePath): void
 ??? note "Textstatus - Skizze"
 
     Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
+
+- Nicht bei Payment Modul-Klassen. Wahrscheinlich sogar nur bei Export und System Modulen. Muss noch geprüft werden.
 
 Wird vom modified Core aufgerufen, sobald auf im Bearbeitungsmodus auf die Taste `Save` geklickt wird, bzw. sobald die Action `save`. In diesem Fall wird als Parameter `$filePath` ??? übergeben (siehe `admin/module_export.php:136`) Mit `$_POST['process'] == 'module_processing_do'` kann verhindert werden, dass die Methode `function process(string $filePath): void` durch den Core aufgerufen wird.
 
