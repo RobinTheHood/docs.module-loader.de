@@ -308,6 +308,7 @@ public function payment_action(): void
 
 <h4>Beschreibung</h4>
 
+Die Methode wird nur aufgerufen, wenn eine temporäre Bestellung erzeugt wird. Siehe auch `$tmpOrder`.
 // TODO: Die Method macht ...
 
 <h4>Zeitpunkt der Verwendung</h4>
