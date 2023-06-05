@@ -16,7 +16,7 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
     modified verwendet keine Namespaces. Unterschiedliche Modulklassen zum selben Modul können dadurch nicht den gleichen Klassennamen erhalten. Um Namenskollisionen und PHP-Fehler zu vermeiden, empfehlen wir den Namespace-Prefix `payment` bei Payment-Klassen zu verwenden. Das hat zur Folge, dass `..._PAYMENT_PAYMENT_...` doppelt im Configuration-Name erscheint, was aber kein Nachteil ist.
 
-### Vezeichnis
+### Verzeichnis
 
 | name            | value                               |
 |-----------------|-------------------------------------|
