@@ -150,3 +150,31 @@ public function quote(string $method = '', string $module = ''): array
     return $shippingQuoteArray;
 }
 ```
+
+??? note "Textstatus - Skizze"
+
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
+
+### ignore_cheapest()
+
+```php
+public function ignore_cheapest(): bool
+```
+
+### display_free()
+
+```php
+public function display_free(): bool
+```
+
+### address()
+
+```php
+public function address(): array
+```
+
+### session()
+
+```php
+public function session($method, $module, $quote): void
+```
