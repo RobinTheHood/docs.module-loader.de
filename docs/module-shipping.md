@@ -84,7 +84,8 @@ In der Methode `quote()` werden typischerweise auf die globalen Variablen `$tota
 | Variable | Beschreibung |
 |----------|--------------|
 | `$order` | Die Bestelldaten |
-| `$shipping_weight` | Gesamtgewicht der Bestellung |
+| `$total_weight` | Gesamtgewicht der Bestellung, inklusive Paketleergewicht (`SHIPPING_BOX_WEIGHT`) |
+| `$shipping_weight` | Gesamtgewicht der Bestellung, exclusive Paketleergewicht (`SHIPPING_BOX_WEIGHT`) |
 | `$shipping_quoted` | ??? |
 | `$shipping_num_boxes` | ???. Vermutlich die Anzahl der Pakete, wie das berechnet/definiert wird ist noch unklar. |
 
