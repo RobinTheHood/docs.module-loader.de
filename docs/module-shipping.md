@@ -158,6 +158,8 @@ public function quote(string $method = '', string $module = ''): array
 
 ### ignore_cheapest()
 
+Wählt diese Versandart **nicht** automatisch aus wenn sie die günstigste ist und _Günstigste Versandart vorauswählen_ (`CHECK_CHEAPEST_SHIPPING_MODUL`) aktiviert ist.
+
 ```php
 public function ignore_cheapest(): bool
 ```
