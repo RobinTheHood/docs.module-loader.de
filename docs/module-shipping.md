@@ -64,7 +64,7 @@ In diesem Abschnitt gehen wir auf alle Methoden im Detail ein.
 ### quote()
 
 ```php
-public function quote(string $method = '', string $module = ''): ShippingQuoteArray
+public function quote(string $method = '', string $module = ''): ?ShippingQuoteArray
 ```
 
 | Option   | Value |
@@ -75,7 +75,9 @@ public function quote(string $method = '', string $module = ''): ShippingQuoteAr
 
 #### Beschreibung
 
-Die Methode `quote()` muss ein Array zurückliefern. Wir nennen dieses Array in diesem Text `ShippingQuoteArray`. Mit diesem Array wird dem Shop mitgeteilt, wie hoch die Versandkosten für die aktuelle Bestellung (die sich im Bestellablauf befindet) ausfallen werden. Zudem können in dem Array `ShippingQuoteArray` mehrere Versandoption definiert werden. Diese nennen sich im modified-Kontext `methods`. Wir nennen einen Eintrag `ShippingQuoteMethodArray`. So könnte dem Käufer z. B. ein *Standard-Versand* und ein *Express-Versand* angeboten werden. Das Array `ShippingQuoteArray` muss mindestens ein `ShippingQuoteMethodArray` beinhalten.
+Die Methode `quote()` muss ein Array zurückliefern wenn die Methode im Checkout angezeigt werden soll. Wird ein anderer Wert (wie z. B. `null`) zurückgegeben, wird die Versandart nicht im Checkout angezeigt. Das ist nützlich wenn das Versandgewicht z. B. zu hoch für eine Versandart ist.
+
+Wir nennen den zurückgegeben Array in diesem Text `ShippingQuoteArray`. Mit diesem Array wird dem Shop mitgeteilt, wie hoch die Versandkosten für die aktuelle Bestellung (die sich im Bestellablauf befindet) ausfallen werden. Zudem können in dem Array `ShippingQuoteArray` mehrere Versandoption definiert werden. Diese nennen sich im modified-Kontext `methods`. Wir nennen einen Eintrag `ShippingQuoteMethodArray`. So könnte dem Käufer z. B. ein *Standard-Versand* und ein *Express-Versand* angeboten werden. Das Array `ShippingQuoteArray` muss mindestens ein `ShippingQuoteMethodArray` beinhalten.
 
 Das `ShippingQuoteMethodArray` darf keine array keys (strings) enthalten und muss aus Indizes, beginnend mit `0` bestehen.
 
