@@ -172,9 +172,38 @@ public function display_free(): bool
 
 ### address()
 
+Ändert im Checkout die _Versandadresse_ zur _Abholadresse_. Nützlich bei Versandmodulen mit Selbstabholung.
+
 ```php
 public function address(): array
 ```
+
+Beispiel:
+```php
+public function address(): array {
+    $address = array(
+        'firstname'      => 'Max',
+        'lastname'       => 'Mustermann',
+        'company'        => '',
+        'street_address' => 'Musterstraße 1',
+        'city'           => 'Berlin',
+        'postcode'       => '10000',
+        'zone_id'        => 82, // Berlin
+        'country'        => array(
+            'id'         => 81, // Germany
+            'title'      => 'Germany',
+            'iso_code_2' => 'DE',
+            'iso_code_3' => 'DEU',
+        ),
+        'country_id'     => 81 // Germany,
+        'format_id'      => 5,
+    );
+
+    return $address;
+}
+```
+
+Es ist noch unklar welche array-keys erforderlich sind und nicht.
 
 ### session()
 
