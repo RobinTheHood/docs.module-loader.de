@@ -4,15 +4,33 @@ Erweitert die [abtrakte Modul Klasse](../module-class-abstract.md) um folgende A
 
 ## Meta
 
-| name                 | value                                               | example                    |
-|----------------------|-----------------------------------------------------|----------------------------|
-| class directory      | `/includes/modules/payment/`                        |                            |
-| lang directory       | `/lang/<LANGUAGE>/modules/payment/`                 |                            |
-| name                 | [`snake_case`](#)                                   | `my_module`                |
-| class name           | `payment_<NAME>` in [`snake_case`](#)               | `payment_my_module`        |
-| file name            | `<CLASS_NAME>.php` in [`snake_case`](#)             | `payment_my_module.php`    |
-| configuration type   | `MODULE_PAYMENT` in [`SCREAM_CASE`](#)              |                            |
-| configuration prefix | `<CONFIGURATION_TYPE>_<CLASS_NAME>` in [`SCREAM_CASE`](#) | `MODULE_PAYMENT_PAYMENT_MY_MODULE` |
+### Name
+
+| name               | schema / example                                                               | convention         |
+|--------------------|--------------------------------------------------------------------------------|--------------------|
+| class name         | `<namspce_prefix>_<module_name>` <br> `payment_mc_my_module`                   | [`snake_case`](#)  |
+| file name          | `<class_name>.php` <br> `payment_mc_my_module.php`                             | [`snake_case`](#)  |
+| configuration name | `<CONFIGURATION_PREFIX>_<CLASS_NAME>`<br>`MODULE_PAYMENT_PAYMENT_MC_MY_MODULE` | [`SCREAM_CASE`](#) |
+
+!!! info "Info"
+
+    modified verwendet keine Namespaces. Unterschiedliche Modulklassen zum selben Modul können dadurch nicht den gleichen Klassennamen erhalten. Um Namenskollisionen und PHP-Fehler zu vermeiden, empfehlen wir den Namespace-Prefix `payment` bei Payment-Klassen zu verwenden. Das hat zur Folge, dass `..._PAYMENT_PAYMENT_...` doppelt im Configuration-Name erscheint, was aber kein Nachteil ist.
+
+### Verzeichnis
+
+| name            | value                               |
+|-----------------|-------------------------------------|
+| class directory | `/includes/modules/payment/`        |
+| lang directory  | `/lang/<LANGUAGE>/modules/payment/` |
+
+### Prefix
+
+| name                 | value                               | convention       |
+|----------------------|-------------------------------------|------------------|
+| namespace prefix     | `payment`                           | [`snake_case`](#)  |
+| configuration prefix | `MODULE_PAYMENT`                    | [`SCREAM_CASE`](#) |
+
+
 
 ## Attribute
 

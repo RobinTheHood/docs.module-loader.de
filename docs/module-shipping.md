@@ -64,7 +64,7 @@ In diesem Abschnitt gehen wir auf alle Methoden im Detail ein.
 ### quote()
 
 ```php
-public function quote(string $method = '', string $module = ''): ShippingQuoteArray
+public function quote(string $method = '', string $module = ''): ?ShippingQuoteArray
 ```
 
 | Option   | Value |
@@ -75,7 +75,9 @@ public function quote(string $method = '', string $module = ''): ShippingQuoteAr
 
 #### Beschreibung
 
-Die Methode `quote()` muss ein Array zurückliefern. Wir nennen dieses Array in diesem Text `ShippingQuoteArray`. Mit diesem Array wird dem Shop mitgeteilt, wie hoch die Versandkosten für die aktuelle Bestellung (die sich im Bestellablauf befindet) ausfallen werden. Zudem können in dem Array `ShippingQuoteArray` mehrere Versandoption definiert werden. Diese nennen sich im modified-Kontext `methods`. Wir nennen einen Eintrag `ShippingQuoteMethodArray`. So könnte dem Käufer z. B. ein *Standard-Versand* und ein *Express-Versand* angeboten werden. Das Array `ShippingQuoteArray` muss mindestens ein `ShippingQuoteMethodArray` beinhalten.
+Die Methode `quote()` muss ein Array zurückliefern wenn die Methode im Checkout angezeigt werden soll. Wird ein anderer Wert (wie z. B. `null`) zurückgegeben, wird die Versandart nicht im Checkout angezeigt. Das ist nützlich wenn das Versandgewicht z. B. zu hoch für eine Versandart ist.
+
+Wir nennen den zurückgegeben Array in diesem Text `ShippingQuoteArray`. Mit diesem Array wird dem Shop mitgeteilt, wie hoch die Versandkosten für die aktuelle Bestellung (die sich im Bestellablauf befindet) ausfallen werden. Zudem können in dem Array `ShippingQuoteArray` mehrere Versandoption definiert werden. Diese nennen sich im modified-Kontext `methods`. Wir nennen einen Eintrag `ShippingQuoteMethodArray`. So könnte dem Käufer z. B. ein *Standard-Versand* und ein *Express-Versand* angeboten werden. Das Array `ShippingQuoteArray` muss mindestens ein `ShippingQuoteMethodArray` beinhalten.
 
 Das `ShippingQuoteMethodArray` darf keine array keys (strings) enthalten und muss aus Indizes, beginnend mit `0` bestehen.
 
@@ -84,7 +86,8 @@ In der Methode `quote()` werden typischerweise auf die globalen Variablen `$tota
 | Variable | Beschreibung |
 |----------|--------------|
 | `$order` | Die Bestelldaten |
-| `$shipping_weight` | Gesamtgewicht der Bestellung |
+| `$total_weight` | Gesamtgewicht der Bestellung, inklusive Paketleergewicht (`SHIPPING_BOX_WEIGHT`) |
+| `$shipping_weight` | Gesamtgewicht der Bestellung, exclusive Paketleergewicht (`SHIPPING_BOX_WEIGHT`) |
 | `$shipping_quoted` | ??? |
 | `$shipping_num_boxes` | ???. Vermutlich die Anzahl der Pakete, wie das berechnet/definiert wird ist noch unklar. |
 
@@ -149,4 +152,63 @@ public function quote(string $method = '', string $module = ''): array
 
     return $shippingQuoteArray;
 }
+```
+
+??? note "Textstatus - Skizze"
+
+    Status: 1 von 5 - Skizze: Ideen und Informationen in Stichpunkten unvollständig festgehalten.
+
+### ignore_cheapest()
+
+Wählt diese Versandart **nicht** automatisch aus wenn sie die günstigste ist und _Günstigste Versandart vorauswählen_ (`CHECK_CHEAPEST_SHIPPING_MODUL`) aktiviert ist.
+
+```php
+public function ignore_cheapest(): bool
+```
+
+### display_free()
+
+```php
+public function display_free(): bool
+```
+
+### address()
+
+Ändert im Checkout die _Versandadresse_ zur _Abholadresse_. Nützlich bei Versandmodulen mit Selbstabholung.
+
+```php
+public function address(): array
+```
+
+Beispiel:
+```php
+public function address(): array {
+    $address = array(
+        'firstname'      => 'Max',
+        'lastname'       => 'Mustermann',
+        'company'        => '',
+        'street_address' => 'Musterstraße 1',
+        'city'           => 'Berlin',
+        'postcode'       => '10000',
+        'zone_id'        => 82, // Berlin
+        'country'        => array(
+            'id'         => 81, // Germany
+            'title'      => 'Germany',
+            'iso_code_2' => 'DE',
+            'iso_code_3' => 'DEU',
+        ),
+        'country_id'     => 81 // Germany,
+        'format_id'      => 5,
+    );
+
+    return $address;
+}
+```
+
+Es ist noch unklar welche array-keys erforderlich sind und nicht.
+
+### session()
+
+```php
+public function session($method, $module, $quote): void
 ```

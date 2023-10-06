@@ -15,3 +15,7 @@ html {
 code {
     hyphens: none;
 }
+
+table td {
+    white-space: nowrap;
+}
