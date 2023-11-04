@@ -5,15 +5,11 @@ description: Ein Modul für modified kannst du dir als Ansammlung von hauptsäch
 
 # Was ist ein Modul im modified Kontext?
 
-??? note "Textstatus - Verbesserungsbedarf"
+Für Entwickler, die mit dem modifed eCommerce Shop System arbeiten, ist es wichtig zu verstehen, wie Module in dieser Umgebung funktionieren. Im Gegensatz zu anderen Modulkonzepten unterscheidet sich die Struktur von Modulen im Kontext von modifed von anderen Modulkonzepten. Ein Modul besteht nicht aus einem einzigen Verzeichnis, das alle zugehörigen Dateien enthält und das vom modifed System einfach geladen werden kann.
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
+Stattdessen ist ein Modul für modifed eine Sammlung von Include-Dateien, die in die verschiedenen Verzeichnisse des modifed Systems verteilt werden müssen. In komplexeren modifed-Modulen findest du häufig auch Controller- und Template-Dateien.
 
-Anders als bei anderen Modulkonzepten besteht ein Modul im modified Kontext nicht aus einem Verzeichnis, in dem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Verzeichnis '/modules', das vom modified System geladen werden könnte). Solltest du den MMLC verwenden, kann der dir diese Funktion jedoch simulieren.
-
-Ein Modul für modified kannst du dir als Ansammlung von hauptsächlich Include-Dateien vorstellen, die du in die unterschiedlichen Verzeichnisse des modified Systems verteilen musst. Komplexere modified Module beinhalten oft zusätzlich Controller- und Template-Dateien.
-
-Die Autoinclude-Dateien werden durch Autoinclude-Stellen in den modified Core geladen, an denen du mit deinem Modul eingreifen möchtest. Nicht jede beliebige Stelle des modified Systems ist erweiterbar. Auf die Möglichkeiten und Grenzen gehen wir im Abschnitt [_"Das Autoinclude System"_](#) ein.
+Die Autoinclude-Dateien, die du erstellst, werden anhand von Autoinclude-Stellen im Core des modifed-Systems geladen. Dies ermöglicht es dir, an Stellen in den Prozessen des Systems einzugreifen, an denen es dein Modul benötigt. Es ist jedoch wichtig zu beachten, dass nicht jede Stelle im modifed-System erweiterbar ist. Die Möglichkeiten und Einschränkungen des Autoinclude-Systems werden im Abschnitt [_"Das Autoinclude System"_](#) näher erläutert.
 
 !!! warning "Achtung"
 
@@ -21,35 +17,34 @@ Die Autoinclude-Dateien werden durch Autoinclude-Stellen in den modified Core ge
 
 ## Entwicklung von Modulen
 
-??? note "Textstatus - Verbesserungsbedarf"
+Diese Dokumentation dient als Leitfaden für Entwickler, die Module für das modifed Shop System erstellen möchten. Du lernst die grundlegenden Konzepte und Komponenten kennen, aus denen ein Modul aufgebaut wird und wie diese funktionieren. Nachfolgend findest du einen Überblick über diese Komponenten:
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
+- **Controller-Dateien**: Diese Dateien steuern die Logik deines Moduls und definieren, wie es mit Anfragen und Daten umgeht.
 
-Dieser Text erklärt dir die nötigen Konzepte, wie du Module für modified programmierst. Dazu gehen wir zuerst auf alle Bestandteile ein, aus denen ein Modul aufgebaut werden kann und schauen uns an, wozu sie dienen und wie sie funktionieren. Hier ein Überblick:
+- **Include-Dateien**: Hierbei handelt es sich um Dateien, die in verschiedene Teile des Systems eingebunden werden, um spezifische Funktionen oder Ressourcen hinzuzufügen.
 
-- Controller-Dateien
-- Include-Dateien
-- Autoinclude-Dateien
-- System Modul
-- Shipping Modul
-- Payment Modul
-- Klassenerweiterungen
-- etc.
+- **Autoinclude-Dateien**: Autoinclude-Dateien werden automatisch in den modifed Core geladen, um an bestimmten Stellen des Systems Erweiterungen deines Moduls einzufügen.
 
-Da dir dieser Text nicht jedes Detail erklären kann, kannst du dir zusätzlich ansehen, wie Probleme in anderen Modulen gelöst werden. Leider schwankt die Qualität von Modul zu Modul. Aus diesem Grund führen wir hier eine Liste mit ausgewählten Modulen für dich, an denen du dich orientieren solltest. Der Quellcode der aufgeführten Module lässt sich direkt im Browser ansehen. Zudem erweitern wir die Liste kontinuierlich:
+- **Konkrete Modul Klassen**: Konkrete Modul Klassen sind PHP Klassen, die grundlegende Erweiterungen oder Anpassungen am Core des modifed Systems erlauben.
 
--   [robinthehood/attribute-price-update](https://github.com/RobinTheHood/attribute-price-update)
--   [grandeljay/modified-spanish-language](https://github.com/grandeljay/modified-spanish-language) ([und viele mehr](https://github.com/grandeljay?tab=repositories&q=modified-shop&type=source&language=php))
+- **Klassenerweiterungen**: Du kannst bestehende Klassen des Systems erweitern, um neue Funktionalitäten hinzuzufügen oder vorhandene zu modifizieren.
+
+Dieser Text kann leider nicht jedes Detail abdecken. Es ist empfehlenswert, die Arbeitsweise und Lösungsansätze in bereits bestehenden Modulen zu studieren. Beachte jedoch, dass die Qualität und Struktur von Modulen variieren kann. Aus diesem Grund stellen wir eine Liste ausgewählter Module zur Verfügung, an denen du dich orientieren kannst. Der Quellcode dieser Module kann direkt im Browser eingesehen werden, und wir aktualisieren die Liste kontinuierlich, um dir stets aktuelle Beispiele zu bieten. Dies ermöglicht es dir, von bewährten Praktiken anderer Entwickler zu lernen und deine Module effektiver zu gestalten.
+
+### Zahlungsmodule
+- [robinthehood/stripe](https://github.com/RobinTheHood/modified-stripe)
+
+### Sprachpaket Module
+- [grandeljay/modified-spanish-language](https://github.com/grandeljay/modified-spanish-language) ([und viele mehr](https://github.com/grandeljay?tab=repositories&q=modified-shop&type=source&language=php))
+
+### Sonstige Module
+- [robinthehood/attribute-price-update](https://github.com/RobinTheHood/attribute-price-update)
 
 ## Nicht updatefähige Module
 
-??? note "Textstatus - Verbesserungsbedarf"
+In der Welt von modifed wird ein Modul als "nicht updatefähig" bezeichnet, wenn es nicht nur zusätzliche Dateien in Verzeichnissen hinzufügt, sondern auch eine spezielle Installationsanleitung vorsieht, die dich auffordert, manuelle Änderungen an den Core-Dateien des Systems vorzunehmen. Das bedeutet, dass du vorhandenen Programmcode eigenhändig ergänzen oder bearbeiten sollst. Ein solches Vorgehen kann jedoch erhebliche Nachteile mit sich bringen. Wenn du dein modifed-System aktualisierst, besteht die Gefahr, dass diese manuellen Änderungen an den Core-Dateien überschrieben oder gelöscht werden. Das liegt daran, dass das modifed-System keine Kenntnis von den von dir vorgenommenen Anpassungen hat.
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
-
-Im modified Umfeld wird von einem _nicht updatefähigen Modul_ gesprochen, wenn ein Modul nicht nur Dateien in Verzeichnissen ergänzt, sondern eine mitgelieferte Installationsanleitung verlangt, dass du Core-Dateien per Hand veränderst. Also, wenn du bestehenden Programmcode per Hand hinzufügen oder ändern sollst. Wenn du ein Update deines modified System machst, werden diese manuellen Änderungen an den Core-Dateien oft überschrieben oder gelöscht, da das modified System keine Kenntnis über deine Änderungen hat.
-
-Ein nicht updatefähiges Modul verhindert also, dass du dein modified System fehlerfrei updaten kannst, ohne dass du nach dem Update kontrollieren musst, ob das Modul noch ordnungsgemäß eingebaut ist und funktioniert.
+Im Ergebnis führt ein nicht updatefähiges Modul dazu, dass du dein modifed-System nicht mehr reibungslos aktualisieren kannst, ohne im Anschluss sorgfältig zu überprüfen, ob das Modul nach dem Update immer noch ordnungsgemäß integriert ist und wie beabsichtigt funktioniert. Dies kann zu potenziellen Problemen und Konflikten führen, die die Stabilität und Sicherheit deines Shops beeinträchtigen können. Daher ist es ratsam, sich der Auswirkungen von nicht updatefähigen Modulen bewusst zu sein und nach Möglichkeit solche Module zu vermeiden, um sicherzustellen, dass dein System reibungslos aktualisiert werden kann.
 
 !!! warning "Achtung"
 
@@ -57,23 +52,15 @@ Ein nicht updatefähiges Modul verhindert also, dass du dein modified System feh
 
 ## Updatefähige Module
 
-??? note "Textstatus - Verbesserungsbedarf"
+In in dieser Entwickler Dokumentation verwenden wir den Begriff "updatefähiges Modul", um ein Modul zu beschreiben, das bei Aktualisierungen des modifed Systems nicht gelöscht wird und somit sichergestellt ist, dass dein modified Shop weiterhin reibungslos funktioniert. Die Kennzeichnung "updatefähiges Modul" weist darauf hin, dass kein Programmcode direkt in den Core des Systems eingebettet werden sollte. Dies steht im klaren Gegensatz zu "nicht updatefähigen Modulen", bei denen manuelle Änderungen an den Core-Dateien erforderlich sind.
 
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
+Ein updatefähiges Modul bietet den Vorteil, dass es die Integrität deines Shopsystems während Aktualisierungen aufrechterhält und dabei gleichzeitig sicherstellt, dass keine Konflikte mit den Core-Dateien auftreten. Dies trägt zur Stabilität und Sicherheit deines Shops bei und ermöglicht dir, von den neuesten Funktionen und Verbesserungen im modifed-System zu profitieren.
 
-Ein Modul wird als _updatefähiges Modul_ bezeichnet, wenn es bei einem Update des modified Systems nicht (in Teilen) gelöscht wird und dein Shopsystem weiterhin ordnungsgemäß funktioniert. Programmcode darf nicht in den Core eingebaut werden. Es ist als das Gegenteil zum _nicht updatefähigen Modul_ zu sehen.
+## Aufbau von updatefähigen Modulen für das modifed Shop System
 
-## Aufbau von updatefähigen modified Shop Modulen
+Beim Erstellen von "updatefähigen Modulen" für modifed, stehen grundsätzlich zwei Hauptansätze zur Verfügung, die oft kombiniert werden. Dabei können entweder das "Autoinclude-System" oder die Erweiterung von modifed-PHP-Klassen genutzt werden. Zudem ist es ratsam, dein Modul stets über eine System-Modul-Klasse zu verwalten, wie wir es im Abschnitt [???](#) näher erläutern.
 
-??? note "Textstatus - Verbesserungsbedarf"
-
-    Status: 3 von 5 - Verbesserungsbedarf: Dieser Abschnitt könnte besser geschrieben werden.
-
-[comment]: <> (TODO: add links to sections)
-
-Grundsätzlich gibt es zwei Möglichkeiten, wie du updatefähige Module in modified aufbauen kannst. In den meisten Fällen wirst du diese beiden Möglichkeiten vermischen. Du kannst das "Autoinclude System" verwenden, das wir dir im Abschnitt [???](#) vorstellen oder einige modified-PHP-Klassen erweitern, was wir in Abschnitt [???](#) besprechen werden. Zudem solltest du dein Modul immer über eine System Modul-Klasse verwalten bzw. ins System einbinden, was Thema in Abschnitt [???](#) sein wird.
-
-In all diesen Fällen, verteilst du deine PHP-Dateien in den Verzeichnissen von modifed. Es gibt kein Verzeichnis, indem dein Modul und alle dazugehörigen Dateien gebündelt liegen (wie z. B. in einem Ordner '/modules', das vom modified System geladen wird). Das modified System sucht in ausgewählte Verzeichnisse nach deinen Dateien und lädt den Code in den Core.
+Unabhängig von der gewählten Methode ist es wichtig zu verstehen, dass du deine Dateien in den verschiedenen Verzeichnissen von modifed verteilst. Anders als bei anderen Modul-Konzepten gibt es kein zentrales Verzeichnis, in dem dein Modul und alle zugehörigen Dateien gebündelt liegen. Das modifed System sucht gezielt in ausgewählten Verzeichnissen nach den Dateien deines Moduls und lädt den Code in den Core des Systems.
 
 In der Regel besteht ein updatefähiges Modul aus folgenden Elementen:
 
