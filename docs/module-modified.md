@@ -5,11 +5,9 @@ description: Ein Modul für modified kannst du dir als Ansammlung von hauptsäch
 
 # Was ist ein Modul im modified Kontext?
 
-Für Entwickler, die mit dem modifed eCommerce Shop System arbeiten, ist es wichtig zu verstehen, wie Module in dieser Umgebung funktionieren. Im Gegensatz zu anderen Modulkonzepten unterscheidet sich die Struktur von Modulen im Kontext von modifed von anderen Modulkonzepten. Ein Modul besteht nicht aus einem einzigen Verzeichnis, das alle zugehörigen Dateien enthält und das vom modifed System einfach geladen werden kann.
+Für Entwickler, die mit dem modifed Shop System arbeiten, ist es wichtig zu verstehen, wie Module in dieser Umgebung funktionieren. Im Gegensatz zu anderen Modulkonzepten unterscheidet sich die Struktur von Modulen im Kontext von modifed von anderen Modulkonzepten. Ein Modul besteht nicht aus einem einzigen Verzeichnis, das alle zugehörigen Dateien enthält und das vom modifed System einfach geladen werden kann.
 
-Stattdessen ist ein Modul für modifed eine Sammlung von Include-Dateien, die in die verschiedenen Verzeichnisse des modifed Systems verteilt werden müssen. In komplexeren modifed-Modulen findest du häufig auch Controller- und Template-Dateien.
-
-Die Autoinclude-Dateien, die du erstellst, werden anhand von Autoinclude-Stellen im Core des modifed-Systems geladen. Dies ermöglicht es dir, an Stellen in den Prozessen des Systems einzugreifen, an denen es dein Modul benötigt. Es ist jedoch wichtig zu beachten, dass nicht jede Stelle im modifed-System erweiterbar ist. Die Möglichkeiten und Einschränkungen des Autoinclude-Systems werden im Abschnitt [_"Das Autoinclude System"_](#) näher erläutert.
+Stattdessen ist ein Modul für modifed eine Sammlung von Dateien, die in die verschiedenen Verzeichnisse des modifed Systems verteilt werden müssen. Die Dateien können aus Klassenmodule, Klassenerweiterungen, Include, Autoincludes, Controller und Templates, sowie weiteren Hilfsdateien bestehen.
 
 !!! warning "Achtung"
 
@@ -19,17 +17,20 @@ Die Autoinclude-Dateien, die du erstellst, werden anhand von Autoinclude-Stellen
 
 Diese Dokumentation dient als Leitfaden für Entwickler, die Module für das modifed Shop System erstellen möchten. Du lernst die grundlegenden Konzepte und Komponenten kennen, aus denen ein Modul aufgebaut wird und wie diese funktionieren. Nachfolgend findest du einen Überblick über diese Komponenten:
 
-- **Controller-Dateien**: Diese Dateien steuern die Logik deines Moduls und definieren, wie es mit Anfragen und Daten umgeht.
+- **Controller-Dateien**: Diese Dateien steuern die Logik deines Moduls und definieren, wie es mit Anfragen und Daten umgeht. Diese Controller-Dateien bilden gleichzeitig die Routen deines Moduls.
 
 - **Include-Dateien**: Hierbei handelt es sich um Dateien, die in verschiedene Teile des Systems eingebunden werden, um spezifische Funktionen oder Ressourcen hinzuzufügen.
 
 - **Autoinclude-Dateien**: Autoinclude-Dateien werden automatisch in den modifed Core geladen, um an bestimmten Stellen des Systems Erweiterungen deines Moduls einzufügen.
 
-- **Konkrete Modul Klassen**: Konkrete Modul Klassen sind PHP Klassen, die grundlegende Erweiterungen oder Anpassungen am Core des modifed Systems erlauben.
+- **Klassenmodulen**: Konkrete Modul Klassen sind PHP Klassen, die grundlegende Erweiterungen oder Anpassungen am Core des modifed Systems erlauben.
 
 - **Klassenerweiterungen**: Du kannst bestehende Klassen des Systems erweitern, um neue Funktionalitäten hinzuzufügen oder vorhandene zu modifizieren.
 
-Dieser Text kann leider nicht jedes Detail abdecken. Es ist empfehlenswert, die Arbeitsweise und Lösungsansätze in bereits bestehenden Modulen zu studieren. Beachte jedoch, dass die Qualität und Struktur von Modulen variieren kann. Aus diesem Grund stellen wir eine Liste ausgewählter Module zur Verfügung, an denen du dich orientieren kannst. Der Quellcode dieser Module kann direkt im Browser eingesehen werden, und wir aktualisieren die Liste kontinuierlich, um dir stets aktuelle Beispiele zu bieten. Dies ermöglicht es dir, von bewährten Praktiken anderer Entwickler zu lernen und deine Module effektiver zu gestalten.
+
+## Beispiele
+
+Diese Dokumentation kann leider nicht jedes Detail abdecken. Es ist empfehlenswert, die Arbeitsweise und Lösungsansätze in bereits bestehenden Modulen zu studieren. Beachte jedoch, dass die Qualität und Struktur von Modulen variieren kann. Aus diesem Grund stellen wir eine Liste ausgewählter Module zur Verfügung, an denen du dich orientieren kannst. Der Quellcode dieser Module kann direkt im Browser eingesehen werden und wir aktualisieren die Liste kontinuierlich, um dir stets aktuelle Beispiele zu bieten. Dies ermöglicht es dir, von bewährten Praktiken anderer Entwickler zu lernen und deine Module effektiver zu entwickeln.
 
 ### Zahlungsmodule
 - [robinthehood/stripe](https://github.com/RobinTheHood/modified-stripe)
@@ -58,23 +59,18 @@ Ein updatefähiges Modul bietet den Vorteil, dass es die Integrität deines Shop
 
 ## Aufbau von updatefähigen Modulen für das modifed Shop System
 
-Beim Erstellen von "updatefähigen Modulen" für modifed, stehen grundsätzlich zwei Hauptansätze zur Verfügung, die oft kombiniert werden. Dabei können entweder das "Autoinclude-System" oder die Erweiterung von modifed-PHP-Klassen genutzt werden. Zudem ist es ratsam, dein Modul stets über eine System-Modul-Klasse zu verwalten, wie wir es im Abschnitt [???](#) näher erläutern.
+Beim Erstellen von "updatefähigen Modulen" für das modifed Shop System stehen zwei Hauptansätze zur Verfügung, die oft in Kombination verwendet werden. Du kannst entweder das "Autoinclude-System" nutzen oder modifed-PHP-Klassen erweitern. Zusätzlich ist es ratsam, dein Modul über ein Klassenmodul zu verwalten, wobei oft ein System-Klassenmodul verwendet wird.
 
-Unabhängig von der gewählten Methode ist es wichtig zu verstehen, dass du deine Dateien in den verschiedenen Verzeichnissen von modifed verteilst. Anders als bei anderen Modul-Konzepten gibt es kein zentrales Verzeichnis, in dem dein Modul und alle zugehörigen Dateien gebündelt liegen. Das modifed System sucht gezielt in ausgewählten Verzeichnissen nach den Dateien deines Moduls und lädt den Code in den Core des Systems.
+Unabhängig vom gewählten Ansatz ist es wichtig zu verstehen, dass du deine Dateien in verschiedenen Verzeichnissen innerhalb des modifed Systems verteilst. Im Unterschied zu anderen Modulkonzepten gibt es kein zentrales Verzeichnis, in dem dein Modul und alle zugehörigen Dateien gebündelt liegen. Das modifed System sucht gezielt in ausgewählten Verzeichnissen nach den Dateien deines Moduls und lädt den Code in den Core des Systems.
 
 In der Regel besteht ein updatefähiges Modul aus folgenden Elementen:
 
--   Eine System Modul-Datei/Klasse die im Verzeichnis `/admin/includes/modules/system/` liegt.
--   Eine oder mehrere Sprachdateien die im Verzeichnis `/lang/<LANGUAGE>/modules/system/` liegen.
--   Optional: Eine oder mehrere Auto-Include-Dateien die in `/includes/extra/` oder `/admin/includes/extra/` liegen.
--   Optional: Eine oder mehrere Klassenerweiterungen die in `/includes/modules/` oder `/admin/includes/modules/` liegen.
--   Optional: Eine oder mehrere Controller-Dateien die in `/` oder `/admin/` liegen
--   Optional: Eine oder mehrere Menü-Dateien die in `/admin/includes/extra/menu/` liegen.
--   Optional: Eine oder mehrere Template-Dateien die in `/templates/<TEMPLATE>/` liegen.
+- **Klassenmodul:** Diese Dateien befinden sich im Verzeichnis `/includes/modules/` oder `/admin/includes/modules/`.
+- **Sprachdateien:** Diese Dateien liegen im Verzeichnis `/lang/<LANGUAGE>/modules/`.
+- **Autoinclude-Dateien:** (optional) Diese Dateien befinden sich im Verzeichnis `/includes/extra/` oder `/admin/includes/extra/`.
+- **Klassenerweiterungen:** (optional) Diese Dateien liegen im Verzeichnis `/includes/modules/` oder `/admin/includes/modules/`.
+- **Controller-Dateien:** (optional) Diese Dateien befinden sich im Verzeichnis `/` oder `/admin/`.
+- **Menü-Dateien:** (optional) Diese Dateien liegen im Verzeichnis `/admin/includes/extra/menu/`.
+- **Template-Dateien:** (optional) Diese Dateien sind in `/templates/<TEMPLATE>/` zu finden.
 
-Um die Programmierung von Modulen für das modified System zu verstehen, solltest du dir folgende Themen in der aufgeführten Reihenfolge ansehen:
-
-1. Das Autoinclude System
-1. System Modul
-1. Eigene Controller
-1. Klassenerweiterungen
+Um die Programmierung von Modulen für das modified System zu beherrschen, empfehlen wir dir, die folgenden Themen in der angegebenen Reihenfolge zu studieren: Klassenmodule, Das Autoinclude System, Eigene Controller und Klassenerweiterungen. Diese grundlegenden Konzepte werden dir helfen, effiziente und leistungsfähige Module für das modified System zu entwickeln und anzupassen.
