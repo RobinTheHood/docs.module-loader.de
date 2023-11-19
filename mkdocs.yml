@@ -9,7 +9,7 @@ nav:
   - Architektur:
     - Architektur: architecture.md
     - Versionen: modified-versions.md
-  - Module:
+  - Modulentwicklung:
     - Einleitung: module-modified.md
     - Klassen:
       - Abstrakt: module-class-abstract.md
@@ -26,7 +26,7 @@ nav:
     - setFunction: configuration-set.md
     - useFunction: configuration-use.md
   - Admin-Menü: admin-menu.md
-  - Referenzen:
+  - Klassen und Schnittstellenreferenz:
     - references/index.md
     - Modul Klassen:
       - references/module-classes/index.md
