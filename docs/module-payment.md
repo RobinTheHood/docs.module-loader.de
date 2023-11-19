@@ -11,33 +11,38 @@ description: Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul 
 
 ## Konzept
 
-Einige Informationen zur Entwicklung zu Payment Modulen findest du im modified Forum unter [www.modified-shop.org/forum/index.php?topic=21701](https://www.modified-shop.org/forum/index.php?topic=21701)
 
-Für einen besseren Überblick schaue dir diese Dokumentation an.
+Wenn du weitere Informationen zur Entwicklung von Payment-Modulen suchst, findest du im modified Forum unter [www.modified-shop.org/forum/index.php?topic=21701](https://www.modified-shop.org/forum/index.php?topic=21701) hilfreiche Ressourcen.
+
+Um einen umfassenden Überblick zu erhalten, empfehle wird dir, diese Dokumentation zu lesen.
 
 ## Aufbau
 
-Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul aufgebaut. Es benötigt jedoch zusätzliche Mehtoden, die von modified während des Bestellablaufs aufgerufen werden können.
+Ein Zahlungs- oder Payment-Modul folgt dem [Aufbauschema von Modul Klassen](/module-class-abstract/#der-aufabau-von-modul-klassen). Allerdings erfordert es zusätzliche Methoden, die von modified während des Bestellablaufs aufgerufen werden können.
 
-Um eine Payment Modul Klasse zu erstellen, musst du eine Modul-Datei in das Verzeichnis `/includes/modules/payment/` anlegen. Die Sprachdateien liegen in `/lang/<LANGUAGE>/modules/shipping/`.
-
-Die Sprachdateien liegen in `/lang/<LANGUAGES>/modules/payment/`.
+Zur Erstellung einer Payment-Modulklasse legst du eine Moduldatei im Verzeichnis `/includes/modules/payment/` an. Die zugehörigen Sprachdateien befinden sich in `/lang/<LANGUAGE>/modules/payment/`.
 
 ```
 ├── includes
 │   └── modules
 │       └── payment
-│           └── mc_my_first_module.php
+│           └── payment_mc_my_module.php
 └── lang
 	└── <LANGUAGE>
 		└── modules
 			└── payment
-				└── mc_my_first_module.php
+				└── payment_mc_my_module.php
 ```
 
-Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, gibt es als Muster-Dateien unter [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions)
+Für einen klaren Überblick über alle verfügbaren Modulklassen und deren erweiterbare Methoden stehen Musterdateien auf [github.com/RobinTheHood/class-extensions](https://github.com/RobinTheHood/class-extensions) und in unserer [Klassen und Schnittstellenfeferenz](/references/module-classes/concrete/payment) zur Verfügung. 
+
+
+Für eine konkrete Umsetzung eines Payment-Moduls und aller dazugehörigen Dateien kannst du einen Blick auf unser Stripe-Modul unter [github.com/RobinTheHood/modified-stripe](https://github.com/RobinTheHood/modified-stripe) werfen. Dieses Beispiel bietet eine praktische Referenz, um die Struktur und die benötigten Dateien für ein funktionierendes Payment-Modul zu verstehen. Dieses Beispiel dient als praktische Referenz und bietet eine umfassende Dokumentation des Quellcodes, um Entwicklern bei der Verständnisbildung zu helfen.
+
 
 ## Der Bestellablauf
+
+Hier ist eine detaillierte Übersicht des Bestellablaufs und der Reihenfolge, wie die Payment-Modul-Methoden vom modified eCommerce Shop System abgearbeitet werden:
 
 | **Schritt** | **Name** | **Controller-Datei** |
 |-------------|----------|----------------------|
@@ -48,24 +53,24 @@ Eine Liste mit allen Modul Klassen und deren Methoden, die du erweitern kannst, 
 | 4b | `iFrame` | /checkout_payment_iframe.php (optional) |
 | 5 | `success` | /checkout_success.php |
 
-
-Die Reihenfolge, wie die Payment-Modul-Methoden vom modified System abgearbeitet werden, ist folgende:
-
 ### 1. checkout_shipping.php { data-toc-label='checkout_shipping' }
 
-In Schritt `shipping` bekommt der Käufer eine Liste mit Versandoptionen angezeigt. Hier kann er sich für eine Versandoption entscheiden. Zahlungsmodule greifen in diesem Schritt nicht in den Bestellablauf ein.
+In Schritt `shipping` wird dem Käufer eine Liste mit Versandoptionen angezeigt. Hier kann er die bevorzugte Versandoption auswählen. In diesem Schritt greifen Zahlungsmodule nicht in den Bestellablauf ein.
 
 ### 2. checkout_payment.php { data-toc-label='checkout_payment' }
 
-In Schritt `payment` bekommt der Käufer eine Liste mit Zahlungsoptionen angezeigt. Hier kann er sich für eine Zahlungsoption entscheiden und die nötigen Informationen in die Eingabemaske eintrage. (z. B. IBAN, Kreditkartennummer, etc.).
+In Schritt `payment` wird dem Käufer eine Liste mit verschiedenen Zahlungsoptionen angezeigt. Hier kann er die bevorzugte Zahlungsoption auswählen und erforderliche Informationen in die Eingabemaske eingeben (z. B. IBAN, Kreditkartennummer usw.).
 
-1. `selection()` - rendert die Eingabemaske
-1. `get_error()` - liefert Fehlermeldungen, z. B. bei fehlerhafter Eingabe
+Methoden im Zahlungsmodul:
+1. `selection()` - Rendert die Eingabemaske.
+1. `get_error()` - Liefert Fehlermeldungen, z. B. bei fehlerhafter Eingabe.
+1. `javascript_validation()`
 
 ### 3. checkout_confirmation.php { data-toc-label='checkout_confirmation' }
 
-In Schritt `confirmation` bekommt der Käufer eine Übersicht mit allen Daten angezeigt, die während des Kaufprozesses erhoben wurden. Wie z. B. Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen. Der Käufer wird zudem aufgefordert, diese Daten zu bestätigen, um den Kauf abzuschließen.
+In Schritt `confirmation` wird dem der Käufer eine Übersicht aller während des Kaufprozesses gesammelten Daten, einschließlich Warenkorb, Rechnungs- und Lieferadresse, Versandart und Zahlungsoptionen angezeigt. Der Käufer wird aufgefordert, diese Daten zu bestätigen, um den Kauf abzuschließen.
 
+Methoden im Zahlungsmodul:
 1. `update_status()` - überprüft, ob die Zahlungsoption möglich ist
 1. `pre_confirmation_check()`
 1. `confirmation()`
@@ -73,20 +78,24 @@ In Schritt `confirmation` bekommt der Käufer eine Übersicht mit allen Daten an
 
 ### 4a. checkout_process.php { data-toc-label='checkout_process' }
 
-In Schritt `process` werden die Daten, die während des Kaufsprosses gesammelt wurden, verarbeitet.
+In Schritt `process`` werden die während des Kaufprozesses gesammelten Daten verarbeitet.
 
+Methoden im Zahlungsmodul:
 1. `before_process()`
 1. `payment_action()`
 1. `before_send_order()`
 1. `after_process()`
 
 ### 4b. checkout_payment_iframe.php (optional) { data-toc-label='checkout_payment_iframe' }
+
+Methoden im Zahlungsmodul:
 1. `iframeAction()`
 
 ### 5. checkout_success.php { data-toc-label='checkout_success' }
 
-In Schritt `success` wird dem Käufer angezeigt, dass er seine Bestellung erfolgreich getätigt hat.
+In Schritt `success` erhält der Käufer eine Bestätigung über den erfolgreichen Abschluss seiner Bestellung.
 
+Methoden im Zahlungsmodul:
 1. `success()`
 
 
@@ -127,6 +136,9 @@ public function update_status(): void
     }
 }
 ```
+
+In diesem Beispiel wird die Zahlungsart nur dann aktiviert, wenn das Land der Rechnungsadresse die ID 1 hat. Andernfalls wird die Zahlungsart deaktiviert. Beachte, dass du auf verschiedene Parameter wie `$order`, `$xtPrice` oder andere globale Variablen zugreifen kannst, um die Bedingungen für die Aktivierung der Zahlungsart zu definieren.
+
 
 ### pre_confirmation_check()
 
@@ -484,7 +496,7 @@ public function javascript_validation(): string
 | Option   | Value |
 |----------|-------|
 | optional | ✅ |
-| caller   | checkout_shipping.php, checkout_payment.php |
+| caller   | checkout_payment.php |
 
 <h4>Beschreibung</h4>
 
@@ -494,7 +506,7 @@ Diese Methode wird vom System aufgerufen, um Javascript in den Header zu laden.
 
 <h4>Zeitpunkt der Verwendung</h4>
 
-Die Methode wird in `checkout_shipping.php` und `checkout_payment.php` aufgerufen.
+Die Methode wird in `checkout_payment.php` aufgerufen.
 
 ### create_paypal_link()
 
