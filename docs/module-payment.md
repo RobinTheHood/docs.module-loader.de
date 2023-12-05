@@ -14,7 +14,7 @@ description: Ein Zahlungs- oder Payment Modul ist wie ein normales System Modul 
 
 Wenn du weitere Informationen zur Entwicklung von Payment-Modulen suchst, findest du im modified Forum unter [www.modified-shop.org/forum/index.php?topic=21701](https://www.modified-shop.org/forum/index.php?topic=21701) hilfreiche Ressourcen.
 
-Um einen umfassenden Überblick zu erhalten, empfehle wird dir, diese Dokumentation zu lesen.
+Um einen umfassenden Überblick zu erhalten, empfehlen wird dir, diese Dokumentation zu lesen.
 
 ## Aufbau
 
